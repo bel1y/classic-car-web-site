@@ -1,0 +1,182 @@
+.body{
+    width: 90%;
+    margin: auto;
+}
+.imgg{
+    background: url("https://cfx-wp-images.imgix.net/2017/11/DSC_0359.jpg?auto=compress%2Cformat&ixlib=php-3.3.0&s=ab2859378f945466c7393d28c535a97c")no-repeat;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-position: center;
+}
+.black h1{
+    font-size: 39px;
+    text-align: center;
+    
+}
+.black span{
+    font-size: 31px;
+}
+.black{
+    padding-top: 100px;
+    background-color: rgba(0, 0, 0, 0.536);
+    width: 100%;
+    min-height: 400px;
+}
+.clascar{
+    margin-top:40px ;
+    width: 60%;
+    margin-left: 250px;
+}
+.pitch{
+    margin-top: 50px;
+    min-width: 300px;
+}
+.dealer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+}
+.setting{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 10px;
+}
+.new{
+    background-color: #006b81;
+    padding: 10px 0px;
+    width: 10%;
+    font-size: 15px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+}
+/* .newfeature{
+    display: flex;
+    align-items: center;
+
+} */
+.new2{
+    background-color: #006b81;
+    padding:8px 0px;
+    height: 40px;
+    width: 40%;
+    font-size: 15px;
+    border-radius:20px;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 30px;
+}
+.set{
+    font-size: 30px;
+    transition: .4s;
+}
+.setting:hover{
+    .set{
+        color:#821213;
+    }
+}
+.featur{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.featur h1 span{
+    color: #821213;
+}
+.featur h1{
+    font-weight: 500;
+}
+.circle{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.collector{
+    display: flex;
+    width: 99%;
+    margin: auto;
+    justify-content: space-between;
+}
+.move{
+    width: 50%;
+}
+.move1{
+    width: 70%;
+}
+.intro{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.intro h1{
+    line-height: 10px;
+    color: #821213;
+    font-weight: 600;
+}
+.intro h2{
+    font-weight: 600;
+    line-height: 20px;
+}
+.circle h3{
+    font-weight: 500;
+}
+.check{
+    color: #821213;
+    font-size: 20px;
+}
+.request{
+    text-align: center;
+    font-size: 35px;
+    margin-top: 50px;
+    font-weight: 500;
+}
+.input_big{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* background-color: #d3d3d3 ; */
+    border-radius: 7px;
+    padding: 10px;
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 5px #a9a9a9;
+}
+.name{
+    margin-bottom: 30px;
+}
+.name input{
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid grey;
+    margin-top: 6px;
+    margin-bottom: 40px;
+}
+.name label{
+    margin-left: 5px;
+}
+.btn1{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    width: 90%;
+}
+.btn1 button{
+    width:60%;
+    border: none;
+    background-color: black;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 7px;
+}
+.btn1 button:hover{
+    background-color: #821213;
+}
