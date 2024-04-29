@@ -1,0 +1,19 @@
+header{
+    height: 500px;
+    width: 100%;
+    background-color: black;
+}
+.white{
+    background-color: bisque;
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+    min-height: 300px;
+    margin-top: -150px;
+}
+.premium{
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    /* height: 80px; */
+    /* align-items: start; */
+}
