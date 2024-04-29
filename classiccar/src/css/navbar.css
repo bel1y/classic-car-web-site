@@ -8,7 +8,11 @@
     justify-content: space-between;
     max-width: 100%;
     padding: 0px 10px;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 99999;
+
 }
 .logo-navbar img{
     width: 200px;
@@ -34,7 +38,7 @@
     font-size: 15px;
     font-weight: 600;
     border-radius: 30px;
-    padding: 3px 5px 3px 15px;
+    padding: 15px 5px 0px 15px;
     width: 100px;
     height: 40px;
 }
@@ -65,10 +69,16 @@
     height: auto;
     width: 320px;
     position: absolute;
-    top: 100px;
+    top: 109px;
     right: 0px;
     padding: 10px 0px 0px 0px;
-
+    z-index: 9999;
+}
+@media (max-width:425px) {
+    .media-text-navbar{
+        width: 100%;
+    
+    }
 }
 .media-text-navbar p{
     display: flex;

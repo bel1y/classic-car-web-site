@@ -1,0 +1,121 @@
+*{
+    box-sizing: border-box;
+}
+
+.up-footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px ;
+}
+.get-daily-footer{
+    color: #fff;
+    background-color: #000;
+    width: 250px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-family: "Arimo", sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.get-daily-footer:hover{
+    background-color: #821213;
+}
+
+.network-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.text-footer hr{    
+    border: none;
+    height: 2px;
+    background-color: #000;
+    margin-bottom: 30px;
+}
+.FaInstagram{
+    width: 35px;
+    height: 35px;
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 660;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.FaInstagram:hover{
+    background-color: #821213;
+}
+
+@media (max-width:996px) {
+    .big-social-media-footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+@media (max-width:746px) {
+    .text-footer{
+        width: 100%;
+    }
+    .big-df-div-footer{
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .df-first-div-footer p, .df-second-div-footer p{
+        cursor: pointer;
+        font-family: "Arimo", sans-serif;
+        font-size: 15px !important;
+        font-weight: 500;
+        margin-top: 0;
+    }
+    .logo-footer img{
+        width: 300px;
+    }
+}
+
+.big-df-div-footer{
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    cursor: pointer;
+}
+.df-first-div-footer p, .df-second-div-footer p{
+    cursor: pointer;
+    font-family: "Arimo", sans-serif;
+    font-size: 15px;
+}
+.df-first-div-footer p:hover, .df-second-div-footer p:hover{
+color: #821213;
+}
+
+
+
+.down-footer{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 13px;
+    font-family: "Arimo", sans-serif;
+}
+.down-footer span{
+    color: #821213;
+    text-decoration: underline;
+}
+
+.classiccar-footer{
+    height: auto;
+    padding: 0px 0px 20px 0px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(158, 158, 158, 0.452);
+}
