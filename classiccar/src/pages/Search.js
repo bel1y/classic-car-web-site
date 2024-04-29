@@ -56,7 +56,7 @@ export default function Search() {
                 <button className='button-search3' onClick={()=>BigButton3()}>Find by CC-Number</button>
                 </div>
                 {page==1 ? <div className='page-first-search'>
-                <p>Find by Specific Details</p>
+                <h3>Find by Specific Details</h3>
                 <div className="big-search-div">
                     <div className="first-div-search">
                         <h3>Year(s):</h3>

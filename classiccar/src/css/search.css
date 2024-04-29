@@ -45,3 +45,36 @@
     font-weight: 600;
     box-shadow: 0px 0px 5px #666666;
 }
+
+.first-div-search{
+    width: 33%;
+}
+.first-div-search h3{
+    margin-bottom: 10px;
+}
+.search-input-div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.first-input-search p{
+    margin-bottom: 0px;
+}
+.first-input-search input{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    outline: none;
+    height: 40px;
+}
+.first-input-search input:focus{
+    box-shadow: 0px 0px 5px #007bff;
+}
+
+
+.second-div-search{
+    width: 33%;
+}
+.third-div-search{
+    width: 33%;
+}
