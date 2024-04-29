@@ -35,7 +35,7 @@ export default function Joinnetwork() {
   <IoMdSettings className={s.set}/><h3>Award-winning customer support team</h3>
   </div>
 <div className={s.setting}>
-  <IoMdSettings className={s.set}/><h3> Choice of classified listings or auction listings</h3><div className={s.new}>NEW</div>
+  <IoMdSettings className={s.set}/><h3> Choice of classified listings or auction listings</h3> 
   </div>
 <div className={s.setting}>
 <IoMdSettings className={s.set}/><h3>Quick startup. List today</h3>
@@ -45,25 +45,34 @@ export default function Joinnetwork() {
 <div className={s.new_feature}>
 <div className={s.df1}>
 <div className={s.new2}>New Feature!</div>
-<h1>The Dealer Network now provides an additional way to move your inventory.</h1>
+<h1><span>The Dealer Network</span> now provides an additional way to move your inventory.</h1>
 </div>
 <div className={s.intro}>
   <div className={s.introich}>
-    <h1>Introducing AutoHunter</h1>
+   
+    <h1 style={{ color:'#821213'}}>Introducing AutoHunter</h1>
     <h3>The premier online collector-car auction platform</h3>
     <div className={s.fast}>
       <div className={s.fast1}>
         <div className={s.checkt}>
-        <FaCheckCircle /> <h3>Move Inventory Fast</h3>
+        <FaCheckCircle className={s.circlech} /> <h3>Move Inventory Fast</h3>
         </div>
         <div className={s.checkt}>
-        <FaCheckCircle /> <h3>Move Inventory Fast</h3>
+        <FaCheckCircle className={s.circlech} /> <h3>No Seller Commission</h3>
         </div>
         <div className={s.checkt}>
-        <FaCheckCircle /> <h3>Move Inventory Fast</h3>
+        <FaCheckCircle className={s.circlech} /> <h3>Personalized Service</h3>
         </div>
       </div>
-      <div className={s.fast1}></div>
+      <div className={s.fast1}>
+      <div className={s.checkt}>
+        <FaCheckCircle className={s.circlech} /> <h3>Listed in Days Not Weeks!</h3>
+        </div>
+        <div className={s.checkt}>
+        <FaCheckCircle className={s.circlech} /> <h3>No Risk, Unsold Inventory Relists on ClassicCars.com</h3>
+        </div>
+        <img className={s.online} src="https://classiccars.com/img/logos/AutoHunter-Live-Online-Auctions-Driven-By-Classic-Cars.gif" alt="" />
+      </div>
     </div>
   </div>
 </div>
