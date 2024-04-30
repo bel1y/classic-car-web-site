@@ -4,21 +4,222 @@ header{
     background-color: black;
 }
 .white{
-    background-color: bisque;
+    background-color: white;
     width: 100%;
     max-width: 1300px;
     margin: auto;
-    min-height: 300px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    min-height: 600px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 10px;
+    padding-right: 20px;
     margin-top: -150px;
 }
 .premium{
     display: grid;
     grid-template-columns: 3fr 1fr 1fr 1fr;
-    /* height: 80px; */
-    /* align-items: start; */
+  
 }
 .until{
     display: flex;
     align-items: center;
     gap: 10px;
+    height: 40px;
+    /* background-color: red; */
+}
+.until2{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+}
+.sold2{
+    background-color: #f8f9fa;
+    /* margin-top: 20p/x; */
+    /* margin-bottom:40px; */
+    padding-left: 10px;
+}
+.sold1{
+    /* background-color: red; */
+    margin-top: 20px;
+    margin-bottom:40px;
+
+}
+
+.sold4{
+    background-color: #f8f9fa;
+    /* margin-top: 20p/x; */
+    /* margin-bottom:40px; */
+    padding-left: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-top: -30px;
+}
+.until3{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-items: center;
+    height: 40px;
+}
+.sold3{
+    /* background-color: #f8f9fa; */
+    /* margin-top: 20p/x; */
+    margin-bottom:40px;
+    padding-left: 10px;
+    margin-top: -30px;
+}
+.sold5{
+    /* background-color: #f8f9fa; */
+    /* margin-top: 20p/x; */
+    margin-bottom:40px;
+    padding-left: 10px;
+    margin-top: -15px;
+}
+.pricing1{
+    margin-bottom: 20px !important;
+}
+.guar{
+    padding-top: 20px;
+    margin-bottom:40px;
+}
+/* .choose{
+    width: 99%;
+    margin: auto;
+} */
+.regular{
+    text-align: center;
+}
+.regular button{
+      padding: 10px 60px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius:6px;
+}
+.regular1{
+    text-align: center;
+}
+.regular1 button{
+      padding: 10px 60px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius:6px;
+
+}
+.regular2{
+    text-align: center;
+}
+.regular2 button{
+    padding: 10px 60px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    border-radius:6px;
+
+    border: none;
+}
+.regular1{
+    border: 2px solid black;
+}
+.regular button:hover, .regular1 button:hover, .regular2 button:hover{
+    background-color: #821213;
+}
+.pric0{
+    background-color: #f8f9fa;
+    height: 60px;
+    margin-top: -6px;
+    /* margin-bottom: 20px; */
+    padding-top:10px;
+    font-size: 25px;
+    font-weight: 600;
+    /* margin-bottom: -10px; */
+}
+.pric{
+    background-color: #f8f9fa;
+    height: 60px;
+    margin-top: -6px;
+    margin-bottom: 20px;
+    padding-top:10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.pric2{
+    background-color: #f8f9fa;
+    height: 60px;
+    margin-top: -6px;
+    margin-bottom: 20px;
+    padding-top:10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.pric1{
+    background-color: #f8f9fa;
+    /* margin-top: -6px; */
+    margin-top: 20px;
+    margin-bottom: -10px;
+    padding-top: 0.1px;
+    height: 60px;
+    padding-left: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.pricx{
+    background-color: #f8f9fa;
+    /* margin-top: -6px; */
+    margin-top: 20px;
+    margin-bottom: -10px;
+    padding-top: 15px;
+    font-weight: 600;
+    font-size: 25px;
+    height: 60px;
+    /* padding-left: 10px; */
+    
+}
+.pricx_1{
+    background-color: #f8f9fa;
+    /* margin-top: -6px; */
+    /* margin-top: px; */
+    margin-bottom: -10px;
+    padding-top: 25px;
+    font-weight: 600;
+    font-size: 25px;
+    height: 84px;
+    /* padding-left: 10px; */
+    
+}
+.pric_1{
+   
+    /* margin-top: -6px; */
+    margin-top: 30px;
+    /* margin-bottom: -10px; */
+    /* padding-top: 15px; */
+    font-weight: 600;
+    font-size: 25px;
+    height: 60px;
+    
+}
+.pric_2{
+   
+    /* margin-top: -6px; */
+    margin-top: 30px;
+    /* margin-bottom: -10px; */
+    /* padding-top: 15px; */
+    height: 60px;
+    
+}
+.pricing{
+    height: 100px;
+}
+.choose p{
+    font-weight: 700;
 }
