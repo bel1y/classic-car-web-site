@@ -9,8 +9,10 @@ import { HiCheck } from "react-icons/hi2";
 export default function SellMyCar() {
   return (
     <div>
-        <header>
-
+        <header className={s.header1}>
+<div className={s.imgd}>
+  
+</div>
         </header>
         <div className={s.table1}>
             <div className={s.white}>
