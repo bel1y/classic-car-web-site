@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import s from "../css/sellMyCar.module.css"
 import { MdOutlineClose } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
@@ -7,7 +7,8 @@ import { TbNotebook } from "react-icons/tb";
 import { BiSolidUpArrow } from "react-icons/bi";
 import { BiSolidDownArrow } from "react-icons/bi";
 import { CgShare } from "react-icons/cg";
-import { FaShareAlt } from "react-icons/fa";  
+import { FaShareAlt } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";  
 import { FaCheck } from "react-icons/fa6";
 import { HiCheck } from "react-icons/hi2";
 
@@ -22,6 +23,37 @@ import 'swiper/css/navigation';
 // import required modules
 import { Navigation } from 'swiper/modules';
 export default function SellMyCar() {
+      // Swiper.use([Navigation, Pagination, Autoplay]);
+    const swiperRef = useRef(null);
+
+    const handleNextSlide = () => {
+      if (swiperRef.current) {
+        swiperRef.current.swiper.slideNext();
+      }
+    };
+  
+    const handlePrevSlide = () => {
+      if (swiperRef.current) {
+        swiperRef.current.swiper.slidePrev();
+      }
+    };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset >=450) {
+document.querySelector("#page12").style="display:none"
+      } else {
+        document.querySelector("#page12").style="display:flex"
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   return (
     <div>
       <div className={s.imgd}>
@@ -30,7 +62,7 @@ export default function SellMyCar() {
 <div className={s.imgg}>
 <h1>Sell Your Classic Car <br /> <span>List your classic car in front of millions of classic car enthusiasts.</span></h1>
 </div>
-        <header className={s.header1}>
+        <header id='page12' className={s.header1}>
 
         </header>
         <div style={{width:'100%',background:'white'}}>
@@ -272,8 +304,41 @@ export default function SellMyCar() {
 
         </div></div>
 
-        <div className={s.swip1}>
-        <Swiper navigation={true} modules={[Navigation]} 
+  <div className={s.drive}>
+  <div className={s.great}>
+    <div className={s.dark}>
+      <h1>Drive more people to your listing</h1>
+      <div className={s.chris}>
+      <FaCheckCircle style={{color:'#821213',fontSize:'15px'}} /><span><strong>Want to show off your classic car?</strong> Our listings feature descriptions with nearly unlimited length, as well as the ability to upload as many as 100 photos along with video</span>
+      </div>
+      <div className={s.chris}>
+      <FaCheckCircle style={{color:'#821213',fontSize:'15px'}} /><span><strong>Need to make changes?</strong> You can edit your listing whenever it is convenient for you</span>
+      </div>
+      <div className={s.chris}>
+      <FaCheckCircle style={{color:'#821213',fontSize:'15px'}} /><span><strong>Don't be in the dark:</strong> Use our seller dashboard to track how many views your ad is getting</span>
+      </div>
+      <div className={s.chris}>
+      <FaCheckCircle style={{color:'#821213',fontSize:'15px'}} /><span><strong>Leverage our huge reach</strong> - across search engines, social media and the ClassicCars.com community - to promote your vehicle</span>
+      </div>
+      <div className={s.chris}>
+      <FaCheckCircle style={{color:'#821213',fontSize:'15px'}} /><span><strong>In a hurry? </strong>We get it: You can post your listing now and add photos later</span>
+      </div>
+      <div className={s.chris}>
+      <FaCheckCircle style={{color:'#821213',fontSize:'15px'}} /><span><strong>Sellers, you'll get emails from interested buyers sent directly to your inbox</strong> - no messing with another email system</span>
+      </div>
+      <div className={s.chris}>
+      <FaCheckCircle style={{color:'#821213',fontSize:'15px'}} /><span>
+      Our Safe-n-Secure <sup>TM</sup> program lets both sellers and buyers be confident that their sale is going through a protected process
+      </span>
+      </div>
+    </div>
+  </div>
+  </div>
+
+   <div className={s.swp}>
+         <div className={s.swip1}>
+        <Swiper
+ref={swiperRef}
           breakpoints={{
             // Breackpointlar bo'yicha stil o'zgartirish
             640: {
@@ -289,18 +354,113 @@ export default function SellMyCar() {
               spaceBetween: 40,
             },
           }}
-        className="mySwiper">
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        className={s.mySwiper}>
+         <div id={s.left} onClick={()=>{handleNextSlide()}}  className="swiper-button-next"></div>
+      <div id={s.right} onClick={()=>{handlePrevSlide()}}  className="swiper-button-prev"></div>
+        <SwiperSlide>
+          <div className={s.card1}>
+           <div className={s.img1}>
+
+           </div>
+            <div className={s.card1_body}>
+              <h3>1993 Ford Mustang SVT Cobra</h3>
+              <h2>$42,900</h2>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className={s.card1}>
+           <div className={s.img1}>
+
+           </div>
+            <div className={s.card1_body}>
+              <h3>1993 Ford Mustang SVT Cobra</h3>
+              <h2>$42,900</h2>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className={s.card1}>
+           <div className={s.img1}>
+
+           </div>
+            <div className={s.card1_body}>
+              <h3>1993 Ford Mustang SVT Cobra</h3>
+              <h2>$42,900</h2>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className={s.card1}>
+           <div className={s.img1}>
+
+           </div>
+            <div className={s.card1_body}>
+              <h3>1993 Ford Mustang SVT Cobra</h3>
+              <h2>$42,900</h2>
+            </div>
+          </div>
+
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className={s.card1}>
+           <div className={s.img1}>
+
+           </div>
+            <div className={s.card1_body}>
+              <h3>1993 Ford Mustang SVT Cobra</h3>
+              <h2>$42,900</h2>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className={s.card1}>
+           <div className={s.img1}>
+
+           </div>
+            <div className={s.card1_body}>
+              <h3>1993 Ford Mustang SVT Cobra</h3>
+              <h2>$42,900</h2>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className={s.card1}>
+           <div className={s.img1}>
+
+           </div>
+            <div className={s.card1_body}>
+              <h3>1993 Ford Mustang SVT Cobra</h3>
+              <h2>$42,900</h2>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className={s.card1}>
+           <div className={s.img1}>
+
+           </div>
+            <div className={s.card1_body}>
+              <h3>1993 Ford Mustang SVT Cobra</h3>
+
+              <h2>$42,900</h2>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className={s.card1}>
+           <div className={s.img1}>
+
+           </div>
+            <div className={s.card1_body}>
+              <h3>1993 Ford Mustang SVT Cobra</h3>
+              <h2>$42,900</h2>
+            </div>
+          </div>
+        </SwiperSlide>
       </Swiper>
         </div>
+   </div>
     </div>
   )
 }
