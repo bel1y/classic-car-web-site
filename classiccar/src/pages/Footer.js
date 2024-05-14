@@ -5,28 +5,46 @@ import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
+    function windowlocation() {
+        window.location = '/'
+    }
+    function windowlocation1() {
+        window.location = '/search'
+    }
+    function windowlocation2() {
+        window.location = '/sell-a-car'
+    }
+    function windowlocation3() {
+        window.location = '/auction'
+    }
+    function windowlocation4() {
+        window.location = '/resourse'
+    }
+    function windowlocation5() {
+        window.location = '/join-net-work'
+    }
+    function windowlocation5() {
+        window.location = '/join-net-work'
+    }
   return (
     <div className='classiccar-footer'>
         <div className="up-footer">
             <div className="logo-footer">
-                <img src={logo} alt="" />
+                <img src={logo} alt="" onClick={()=>windowlocation()}/>
             </div>
             <div className="text-footer">
         <h1>MORE INFO</h1>
         <hr />
         <div className="big-df-div-footer">
            <div className="df-first-div-footer">
-    <p>Help Center</p>
-    <p>About ClassicCars.com</p>
-    <p>Contact Us</p>
-    <p>Business Advertisers</p>
-    <p>Career Opportunities</p>
+           <p onClick={()=>windowlocation1()}>SEARCH</p>
+            <p onClick={()=>windowlocation2()}>SELL A CAR</p>
+            <p >FIND DEALERS</p>
         </div>
         <div className="df-second-div-footer">
-            <p>Read The Journal</p>
-            <p>Privacy Policy</p>
-            <p>Terms & Conditions</p>
-            <p>Awards & Achievements</p>
+        <p onClick={()=>windowlocation5()}>JOIN OUR DEALERS</p>
+            <p onClick={()=>windowlocation3()}>AUCTION CENTRAL</p>
+            <p onClick={()=>windowlocation4()}>RESOURCES</p>    
         </div> 
         </div>
         

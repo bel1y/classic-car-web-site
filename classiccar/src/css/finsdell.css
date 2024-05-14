@@ -1,0 +1,379 @@
+* {
+  box-sizing: border-box;
+}
+
+.work {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.work_one {
+  width: 100%;
+  max-height: 773px;
+  min-height: 500px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  background-image: url('../img/header-find-dell.png');
+  background-size: cover;
+  background-position: 50%, 50%;
+  background-repeat: no-repeat;
+  padding-top: 70px;
+}
+
+.work_one h1 {
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 20px #000;
+  font-family: "Poppins", sans-serif;
+  font-size: 2.6rem;
+  margin-bottom: 0.65rem;
+  line-height: 1.2;
+  font-weight: bold;
+  letter-spacing: -1px;
+  font-style: normal;
+  margin-top: 100px;
+}
+
+.work_one p {
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 20px #000;
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  line-height: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-style: normal;
+}
+
+.work_two {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.waty_finddeal {
+  max-width: 1000px;
+  width: 100%;
+  height: 333px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin-top: -100px;
+  border-radius: 7px;
+  border-color: #d3d3d3;
+  border-width: 1px;
+  box-shadow: 1px 1px 5px #a9a9a9;
+  background-color: #f0f0f0;
+  padding-bottom: 14px;
+  padding: 15px;
+  gap: 10px;
+}
+
+.waty_finddeal iframe {
+  width: 1000px;
+  height: 304px;
+}
+
+.lop_finddeal {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.select_finddeal {
+  width: 180px;
+  display: block;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.1rem 0.2rem;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.scroll {
+  width: 180px;
+  height: 275px;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: #ffffff;
+  border: solid 1px #ddd;
+  list-style-type: none;
+}
+
+.scroll ul li {
+  font-size: 0.95rem;
+  padding: 0.23rem 0 0.23rem 0.33rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+}
+
+.work_three {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../img/section-img.png');
+  background-size: cover;
+  background-position: 50%, 50%;
+  height: 540px;
+  margin-top: 50px;
+}
+
+.work_three_big {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.work_three_h1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.work_three_h1 h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.65rem;
+  color: #fff;
+  line-height: 2.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.work_three_card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: start;
+  border-radius: 7px;
+  border-color: #d3d3d3;
+  border-width: 1px;
+  box-shadow: 1px 1px 5px #a9a9a9;
+  border: solid 1px #ccc;
+  background-color: #fff;
+  padding: 0.9rem;
+}
+
+.work_three_card_small {
+  width: auto;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+.work_three_card ul li {
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: normal;
+  color: #333;
+  text-decoration: none;
+  padding: 0.33rem;
+  text-transform: none;
+  right: 4s;
+}
+
+.work_three_card ul li:hover {
+  color: chocolate;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .waty_finddeal iframe {
+    width: 600px;
+  }
+
+  .waty_finddeal {
+    width: 800px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .work_three_card {
+    width: 800px;
+  }
+
+.work_three {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../img/section-img.png');
+    background-size: cover;
+    background-position: 50%, 50%;
+    height: 540px;
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 814px) {
+  .work_three_card {
+    width: 600px;
+    height: 390px;
+    overflow: hidden;
+  }
+
+  .waty_finddeal iframe {
+    width: 400px;
+  }
+
+  .waty_finddeal {
+    width: 600px;
+  }
+}
+
+@media (max-width: 626px) {
+  .waty_finddeal {
+    flex-direction: column;
+    height: 700px;
+  }
+
+  .lop_finddeal {
+    width: 100%;
+  }
+
+  .select_finddeal {
+    width: 100%;
+  }
+
+  .scroll {
+    width: 100%;
+  }
+
+  .waty_finddeal iframe {
+    width: 100%;
+    height: 350px;
+  }
+
+  .waty_finddeal {
+    width: 470px;
+    height: 652px;
+  }
+}
+
+@media (max-width: 604px) {
+  .work_three_card {
+    width: 80%;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+  }
+
+  .work_three_card_small {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .work_three_h1 h1 {
+    font-size: 4px;
+  }
+
+  .work_one h1 {
+    font-size: 33px;
+  }
+  .work_one p {
+    font-size: 24px;
+  }
+}
+
+.katta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc;
+  padding-top: 74px;
+  padding-bottom: 74px;
+  margin-bottom: 0px !important;
+}
+
+.kart {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.kichkina_h1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.kichkina_h1 h1 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: "Arial";
+  margin-bottom: 0.65rem;
+}
+
+.kichkina_p {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  height: auto;
+  padding: 14px;
+  border-radius: 7px;
+  border-color: #d3d3d3;
+  border-width: 1px;
+  box-shadow: 1px 1px 5px #a9a9a9;
+  flex-wrap: wrap;
+}
+
+.kichkina_p p {
+  width: 14rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: normal;
+  padding: 10px;
+}
+
+@media (max-width: 1250px) {
+  .kart {
+    max-width: 1100px;
+  }
+}
+.kichkina_p p:hover {
+  color: chocolate;
+  cursor: pointer;
+
+}

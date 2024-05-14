@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import Navbar from "./Navbar";
+import React, { useRef, useState, useEffect } from "react";
+import Navbar from "./Nav";
 import Footer from "./Footer";
 import "../css/home.css";
 import Accordion from "react-bootstrap/Accordion";
@@ -10,8 +10,34 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
+import axios from 'axios'
 
-export default function Home() {
+
+export default function Home({match}) {
+  const [data, setData] = useState([]);
+
+
+  function open(id) {
+    window.location = `/about-car/${id}`
+  }
+  function opensearch() {
+    window.location = '/search'
+  }
+
+  useEffect(()=>{
+    console.log(match);
+
+axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars')
+.then(res=>{
+  console.log(res.data);
+  setData(res.data)
+})
+.catch(err=>{
+
+})
+  },[])
+
+
   return (
     <div>
       <Navbar />
@@ -35,27 +61,29 @@ export default function Home() {
                 <p>MAKE</p>
                 <select name="" id="">
                   <option value=""></option>
-                  <option value="">BMW</option>
-                  <option value="">AUDI</option>
-                  <option value="">MERS</option>
-                  <option value="">FERRARI</option>
+                  <option value="">{data.map(item=>{
+                    return <p>
+                      {item.make}
+                    </p>
+                  })}</option>
                 </select>
               </div>
               <div className="select-text-home">
                 <p>MODEL</p>
                 <select name="" id="">
                   <option value=""></option>
-                  <option value="">BMW</option>
-                  <option value="">AUDI</option>
-                  <option value="">MERS</option>
-                  <option value="">FERRARI</option>
+                  <option value="">{data.map(item=>{
+                    return <p>
+                      {item.model}
+                    </p>
+                  })}</option>
                 </select>
               </div>
             </div>
           </div>
 
           <div className="add-own-searching-home">
-            <p> Advanced Search</p>
+            <p onClick={()=>opensearch()}>Advanced Search</p>
             <p>Search</p>
           </div>
         </div>
@@ -119,50 +147,22 @@ export default function Home() {
           </div>
           <p className="featured-home">Featured Listings</p>
           <div className="big-cars-div-home">
-            <div className="cars-div-home">
-                <img src={car} alt="" />
+          {data.map(item=>{
+                return <div className="cars-div-home" onClick={()=>open(item.id)}>
+
+                <img src={item.image} alt="" />
 
                 <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
+                    {item.title}
                 </h3>
                 <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
+                {item.description}
                 </p>
-                <span className="price-car-home">$72,000</span>
+                <span className="price-car-home">${item.price}</span>
             </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
+              })}
 
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
+              
               <Swiper
         slidesPerView={3}
         spaceBetween={30}
@@ -175,7 +175,7 @@ export default function Home() {
               spaceBetween: 30,
               slidesPerView: 1,
             },
-            500: {
+            600: {
                 spaceBetween: 30,
                 slidesPerView: 2,
               },
@@ -188,19 +188,22 @@ export default function Home() {
         navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
-      >
-        <SwiperSlide><div className="cars-div-home1">
-                <img src={car} alt="" />
+      >{data.map(item=>{
+        return  <SwiperSlide>       
+                <div className="cars-div-home1" onClick={()=>open(item.id)}>
+
+                <img src={item.image} alt="" />
 
                 <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
+                    {item.title}
                 </h3>
                 <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
+                {item.description}
                 </p>
-                <span className="price-car-home">$72,000</span>
-            </div></SwiperSlide>
-        <SwiperSlide>
+                <span className="price-car-home">{item.price}</span>
+            </div>
+             </SwiperSlide> })}
+        {/* <SwiperSlide>
         <div className="cars-div-home1">
                 <img src={car} alt="" />
 
@@ -238,12 +241,12 @@ export default function Home() {
                 </p>
                 <span className="price-car-home">$72,000</span>
             </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
           </div>
         </div>
       </section>
-
+{/* 
       <section className="first-section-home">
         <div className="accordion-home">
          
@@ -783,7 +786,7 @@ export default function Home() {
       </Swiper>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer/>
     </div>

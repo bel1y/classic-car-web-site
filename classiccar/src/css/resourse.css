@@ -1,0 +1,238 @@
+*{
+    box-sizing: border-box;
+}
+
+.header-resourse{
+    background: url('../img/resourse.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 450px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Arimo", sans-serif; 
+}
+.header-text-resourse h1{
+    font-weight: 600;
+}
+.header-text-resourse h3{
+    font-weight: 600;
+}
+
+.section-resourse{
+    margin-top: 50px;
+}
+
+.big-div-resourse{
+    width: 90%;
+    margin: auto;
+    box-shadow: 0px 0px 5px #666666;
+    border-radius: 5px;
+    padding: 20px 10px 10px 10px;
+    cursor: pointer;
+    background-color: #fff;
+    margin-top: 20px;
+}
+.big-div-resourse:hover{
+    background-color: #f2f2f2;
+}
+.big-div-resourse h1{
+    font-size: 28px;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+}
+.big-div-resourse p{
+    font-size: 18px;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 500;
+    width: 80%;
+    margin-top: 30px;
+}
+.inside-little-resourse{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: #821213;
+}
+.inside-little-resourse span{
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+}
+
+.for-span-section-resourse{
+    width: 90% !important;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    text-align: start;
+    font-size: 17px;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 500;
+}
+
+@media (max-width:550px) {
+    .big-div-resourse h1{
+        font-size: 23px;
+        font-family: "Arimo", sans-serif; 
+        font-weight: 600;
+    }
+    .big-div-resourse p{
+        font-size: 15px;
+        font-family: "Arimo", sans-serif; 
+        font-weight: 500;
+        width: 80%;
+        margin-top: 30px;
+    }
+    .for-span-section-resourse{
+        font-size: 15px;
+    }
+}
+
+.first-section-inside{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.first-section-inside p{
+color: #821213;
+font-family: "Arimo", sans-serif; 
+font-weight: 600;
+display: flex;
+align-items: center;gap: 10px;
+cursor: pointer;
+}
+
+.first-section-inside h1{
+    color: #666666;
+    font-family: "Arimo", sans-serif; 
+    font-size: 40px;
+    font-weight: 550;
+    margin-top: 50px;
+}
+.first-section-inside h6{
+    margin-top: 50px;
+    width: 80%;
+    font-family: "Arimo", sans-serif; 
+}
+.hr-for-resourse-inside{
+    border: none;
+    height: 1px;
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    background: #666666;
+}
+.hr-for-resourse-inside1{
+    border: none;
+    height: 1px;
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+    background: #666666;
+}
+.second-section-inside{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.comment-div-resourse-inside{
+    display: flex;
+    align-items: start;
+}
+.img-comment-resourse{
+    max-width: 700px;
+    width: 500px ;
+    border: 1px solid #c5c5c5;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+@media (max-width:1000px) {
+    .img-comment-resourse{
+        width: 700px !important;
+    }
+}
+@media (max-width:800px) {
+    .img-comment-resourse{
+        width: 900px !important;
+    }
+}
+.img-comment-resourse img{
+    width: 100%;
+}
+.text-comment-resourse{
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+.text-comment-resourse h2{
+    font-family: "Arimo", sans-serif; 
+    font-weight: 550;
+    color: #000;
+}
+.text-comment-resourse p{
+    font-family: "Arimo", sans-serif; 
+    font-weight: 500;
+    color: #000;
+    margin-top: 50px;
+}
+.df-visit-web-side-resourse{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.df-visit-web-side-resourse p{
+    margin-top: 20px !important;
+    color: #821213;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    font-size: 18px;
+}
+
+@media (max-width:700px) {
+    .comment-div-resourse-inside{
+        display: block;
+    }
+    .img-comment-resourse{
+        width: 100% !important;
+    }
+    .img-comment-resourse img{
+        width: 250px;
+    }
+    .img-comment-resourse{
+        max-width: 700px;
+        width: 500px ;
+        border: 1px solid #c5c5c5;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .text-comment-resourse{
+        background-color: #f2f2f2;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .text-comment-resourse h2{
+        text-align: center;
+    }
+}
+@media (max-width:400px) {
+    .df-visit-web-side-resourse p{
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    
+}

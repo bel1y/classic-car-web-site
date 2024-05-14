@@ -25,6 +25,10 @@
     background-color: #821213;
 }
 
+.get-daily-footer p{
+    margin: auto;
+}
+
 .network-footer{
     display: flex;
     align-items: center;
@@ -37,6 +41,9 @@
     height: 2px;
     background-color: #000;
     margin-bottom: 30px;
+}
+.text-footer h1{
+    padding-top: 0px !important;
 }
 .FaInstagram{
     width: 35px;
@@ -81,6 +88,12 @@
     }
     .logo-footer img{
         width: 300px;
+    }
+}
+
+@media (max-width:330px) {
+    .logo-footer img{
+        width: 280px;
     }
 }
 

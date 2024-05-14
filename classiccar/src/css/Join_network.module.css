@@ -6,24 +6,28 @@
 .imgg{
     background: url("https://classiccars.com/img/bg-images/6.jpg?_vCache=638485040700000000")no-repeat;
     background-size: cover;
-    height: 400px;
+    min-height: 550px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     background-position: center;
+    padding: 10px;
 }
 .black h1{
-    font-size: 39px;
+    font-size: 40px;
     text-align: center;
-    
+    margin-top: 65px;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
 }
 .black span{
-    font-size: 31px;
+    font-size: 25px;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
 }
 .black{
     padding-top: 100px;
-    background-color: rgba(0, 0, 0, 0.536);
     width: 100%;
     height: 400px;
 }
@@ -41,12 +45,18 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: start;
+    margin-top: 50px;
 }
 .setting{
     display: grid;
     grid-template-columns: 30px auto;
-    align-items: center;
     gap: 10px;
+    margin-top: 10px;
+}
+.setting h3{
+    font-size: 18px;
+    font-weight: 550;
+    font-family: "Arimo", sans-serif;
 }
 .new{
     background-color: #006b81;
@@ -66,19 +76,22 @@
 .new2{
     background-color: #006b81;
     padding:8px 0px;
-    height: 40px;
-    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
     font-size: 15px;
     border-radius:50%;
     color: white;
     font-weight: 900;
     max-width: 200px;
     text-align: center;
-    margin-top: 30px;
 }
 .set{
     font-size: 30px;
     transition: .4s;
+    margin-top: -4px;
 }
 .setting:hover{
     .set{
@@ -95,12 +108,13 @@
 .input_big{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    /* background-color: #d3d3d3 ; */
     border-radius: 7px;
     padding: 10px;
     justify-content: center;
     margin-bottom: 30px;
     box-shadow: 1px 1px 5px #a9a9a9;
+    background-color: #f9f9f9 ;
+    margin-top: 30px;
 }
 .name{
     margin-bottom: 30px;
@@ -108,12 +122,13 @@
 .name input{
     width: 90%;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 5px;
     outline: none;
-    border: 1px solid grey;
+    border: 1px solid #ced4da;
     margin-top: 6px;
     margin-bottom: 40px;
 }
+
 .name label{
     margin-left: 5px;
 }
@@ -162,6 +177,12 @@
         width: 70%;
         margin-left: 150px;
     }
+    .hunter{
+         margin-top: 30px;
+    }
+    .intro{
+        margin-top: 20px;
+    }
 }
 @media (max-width:1010px) {
     .dealer{
@@ -196,14 +217,13 @@
     }
     .black{
         padding-top: 10px;
-        background-color: rgba(0, 0, 0, 0.536);
         width: 100%;
         height: 200px;
     }
     .imgg{
         background: url("https://classiccars.com/img/bg-images/6.jpg?_vCache=638485040700000000")no-repeat;
         background-size: cover;
-        height: 200px;
+        min-height: 400px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -259,19 +279,30 @@
     }
 }
 .df1{
-    display: grid;
+    display: flex;
+    align-items: start !important;
     gap: 10px;
-    grid-template-columns: 130px auto;
+}
+.df1 h1{
+    font-size: 25px;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
 }
 .fast{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 .checkt{
-    display: grid;
-    grid-template-columns: 20px auto;
-    align-items: center;
+    display: flex;
+    align-items: start;
     gap: 10px;
+    margin-top: 15px;
+}
+.checkt h3{
+    font-size: 20px;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+    width: 80%;
 }
 .df1 span{
     color: #821213;
@@ -281,7 +312,10 @@
     margin-bottom: 20px;
 }
 .circlech{
-    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #821213;
 }
 .intro{
     background-color: white;
@@ -291,6 +325,17 @@
 .introich{
     width: 95%;
     margin: auto;
+    padding: 10px;
+}
+.introich h1{
+    font-size: 30px;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+}
+.introich h3{
+    font-size: 20px;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
 }
 @media (max-width:730px) {
     .df1 h1{
@@ -334,7 +379,7 @@
 }
 @media (max-width:470px){
     .black h1{
-        font-size: 25px;
+        font-size: 35px;
         text-align: center;
         
     }
@@ -360,7 +405,7 @@
 }
 @media (max-width:390px){
     .black h1{
-        font-size: 20px;
+        font-size: 30px;
         text-align: center;
         
     }
@@ -378,4 +423,10 @@
         margin-top: 50px;
         font-weight: 500;
     }
+}
+
+.com{
+    font-size: 30px;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
 }

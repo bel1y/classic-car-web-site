@@ -1,0 +1,760 @@
+*{
+    box-sizing: border-box;
+}
+
+.header-sellacar{
+    background: url('../img/sell-a-car.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 550px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.text-header-sellacar h1{
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+}
+.text-header-sellacar h3{
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+}
+
+
+.section-table-sellacar{
+    width: 95%;
+    margin: auto;
+}
+.section-table-sellacar table{
+    width: 100%;
+    box-shadow: 0px 0px 5px #666666;
+    border-radius: 10px;
+    margin-top: -150px;
+    background-color: #fff;
+}
+
+.section-table-sellacar tr{
+    height: 80px;
+    width: 97% !important;
+    margin: auto;
+}
+
+.big-th-in-sellacar{
+    width: 40%;
+    font-family: "Arimo", sans-serif;
+}
+
+.small-th-in-sellacar{
+    width: 20%;
+    font-family: "Arimo", sans-serif;
+    color: #821213;
+    text-align: center;
+    font-size: 35px;
+}
+
+.big-td-in-sellacar{
+    width: 40%;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.small-td-in-sellacar{
+    width: 20%;
+    font-family: "Arimo", sans-serif;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.special-for-bgc-in-sellacar{
+background-color: #fff;
+}
+.special-for-bgc-in-sellacar1{
+    background-color: #eee;
+}
+    .special-for-padding-sellacar{
+        border-top-left-radius: 10px ;
+        border-bottom-left-radius: 10px;
+        padding: 10px ;
+}
+.special-for-padding-sellacar1{
+    border-top-right-radius: 10px ;
+    border-bottom-right-radius: 10px;
+    padding: 10px ;
+}
+
+.small-td-in-sellacar button{
+    font-size: 17px;
+    width: 80%;
+    margin: auto;
+    height: 45px;
+    border: none;
+    background-color: #000;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #fff;
+}
+.small-td-in-sellacar button:hover{
+    background-color: #821213;
+}
+.big-td-in-sellacar p{
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.FaCalendar-sellacar{
+    margin-top: -5px;
+}
+.big-td-in-sellacar span{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 0 !important;
+}
+.IoCloseSharp-sellacar{
+    color: #777;
+}
+.IoCheckmarkOutline-sellacar{
+    color: #821213;
+}
+.small-td-in-sellacar h5{
+    font-size: 16px ;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.small-td-in-sellacar h6{
+    font-size: 20px ;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+.second-section-sellacar{
+    display: flex;
+    align-items: start;
+    width: 95%;
+    margin: auto;
+}
+.about-sell-in-sellacar{
+    width: 50%;
+    min-height: 600px;
+    height: auto;
+}
+.text-sell-in-sellacar{
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    
+}
+.check-sellacar-div{
+    width: 25px;
+    height: 25px;
+    background-color: #821213;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.text-lettle-sellacar{
+    width: 80%;
+    color: #333;
+}
+
+.about-sell-in-sellacar h1{
+    font-family: "Arimo", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #000;
+}
+.about-sell-in-sellacar1 h1{
+    font-family: "Arimo", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #000;
+}
+.second-section-sellacar{
+    margin-top: 80px;
+}
+.first-review-in-sellacar{
+    width: 40%;
+    text-align: center;
+}
+.star-review-in-sellacar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.FaStar-sellacar{
+    width: 30px;
+    height: 30px;
+    background-color: #73cf11;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.FaStar-sellacar1{
+    width: 30px;
+    height: 30px;
+    background-color: #dcdce6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.first-review-in-sellacar h5{
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.first-review-in-sellacar p{
+    font-family: "Arimo", sans-serif;
+    font-size: 13px;
+    margin-top: 10px;
+    color: #191919;
+}
+.span-FaStar-sellacar{
+    color: #00b67a;
+}
+
+
+  .about-sell-in-sellacar1{
+    width: 50%;
+    border-left: 1px solid #eee;
+    padding: 0px 5px 5px 35px;
+    min-height: 600px;
+    height: auto;
+  }
+
+.read-more-sellacar{
+    width: 60%;
+    margin: auto;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 200px;
+}
+.read-more-sellacar:hover{
+    background-color: #821213;
+}
+
+
+
+  .fourth-section-sellacar{
+    background: url('../img/sell-a-car1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 550px;
+    color: #fff;
+    display: flex;
+    padding: 100px 10px 10px 10px;
+    gap: 10px;
+}
+
+.div-about-safe-sellacar{
+    width: 50%;
+    text-align: center;
+    font-family: "Arimo", sans-serif;
+}
+.div-about-safe-sellacar p{
+    font-weight: 600;
+    font-size: 20px ;
+    padding-top: 30px;
+    width: 70%;
+    margin: auto;
+}
+.div-about-safe-sellacar h5{
+    font-weight: 600;
+    font-size: 23px ;
+    color: #f90;
+    margin-top: 50px;
+}
+
+
+
+
+.div-about-safe-sellacar1{
+    width: 50%;
+    font-family: "Arimo", sans-serif;
+}
+.div-about-safe-sellacar1 h3{
+    font-weight: 600;
+    font-size: 35px ;
+    color: #f90;
+}
+.div-about-safe-sellacar1 p{
+    margin-top: 80px;
+    width: 80%; 
+    font-size: 17px;
+}
+
+.third-section-sellacar{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.third-section-sellacar h1{
+    text-align: center;
+    font-family: "Arimo", sans-serif;
+    font-size: 30px;
+    font-weight: 550;
+}
+
+.swiper {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;       
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .div-for0img-swiper-porsche{
+    height: 180px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+  }
+  .div-for0img-swiper-porsche img{
+width: 100%;
+height: 100%;
+  }
+  .big-inside-div-for-swiper-sellacar{
+    width: 100%;
+    text-align: start ;
+    box-shadow: 0px 0px 10px #666666;
+border-radius: 10px;
+  }
+  .big-inside-div-for-swiper-sellacar p{
+    font-weight: 600;
+    font-size: 18px;
+    font-family: "Arimo", sans-serif;
+    padding: 10px;
+    color: #333;
+  }
+  .big-inside-div-for-swiper-sellacar h4{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px;
+    color: #821213;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: "Arimo", sans-serif;
+  }
+  .for-star-div-review-sellacar{
+    display: flex;
+    gap: 2px;
+  }
+  .FaStar-sellacar2 {
+    background-color: #00b67a;
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;justify-content: center;
+    color: #fff;
+  }
+  .big-swiper-nothing-sellacar{
+    text-align: start !important;
+  }
+  .big-swiper-nothing-sellacar p{
+    font-weight: 550;
+    font-size: 15px;
+    font-family: "Arimo", sans-serif;
+    margin-top: 10px;
+    margin-bottom: -2px;
+  }
+  .big-swiper-nothing-sellacar span{
+    font-weight: 500;
+    font-size: 14px;
+    font-family: "Arimo", sans-serif;
+  }
+  .big-swiper-nothing-sellacar h6{
+    font-weight: 550;
+    font-size: 12px;
+    font-family: "Arimo", sans-serif;
+    color: #00000099;
+    margin-top: 10px;
+  }
+  .review-in-sellacar{
+    display: flex;
+    align-items: center;
+  }
+  .second-review-in-sellacar{
+    width: 60%;
+  }
+
+  @media (max-width:1000px) {
+    .review-in-sellacar{
+        display: block;
+      }
+      .second-review-in-sellacar{
+        width: 100%;
+        margin-top: 20px;
+      }
+      .first-review-in-sellacar{
+        width: 100%;
+      }
+      .read-more-sellacar{
+        margin-top: 150px;
+        width: 100%;    
+    }
+  }
+  @media (max-width:750px) {
+    .second-section-sellacar{
+        display: block;
+    }
+    .about-sell-in-sellacar{
+        width: 100%;
+        min-height: auto    ;
+    }
+    .about-sell-in-sellacar1{
+        width: 100%;
+        margin-top: 20px;
+        border-left: none;
+        padding: 10px;
+    }
+    .about-sell-in-sellacar1 h1{
+        width: 100%;
+    }
+    .text-sell-in-sellacar{
+        width: 100%;
+    }
+    .text-lettle-sellacar{
+        width: 100%;
+        color: #333;
+    }
+    .read-more-sellacar{ 
+        margin-top: 50px;
+        width: 90%;
+    }
+    .second-review-in-sellacar{
+        width: 100%;
+    }
+
+  }
+  @media (max-width:400px) {
+    .about-sell-in-sellacar1 h1{
+        font-size: 25px;
+    }
+    .about-sell-in-sellacar h1{
+        font-size: 25px;
+    }
+  }
+  @media (max-width:600px) {
+    .div-for0img-swiper-porsche{
+        height: 200px;
+    }
+  }
+  @media (max-width:800px) {
+    .fourth-section-sellacar{
+display: block;
+text-align: center;
+    }
+    .div-about-safe-sellacar{
+        width: 100%;
+    }
+    .div-about-safe-sellacar1{
+        width: 100%;
+        margin-top: 40px;
+    }
+    .div-about-safe-sellacar1 p{
+        width: 80%;
+        padding-top: 40px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .div-about-safe-sellacar p{
+        width: 100%;
+    }
+    .div-about-safe-sellacar h5{
+        width: 100%;
+    }
+  }
+  @media (max-width:410px) {
+    .div-about-safe-sellacar1 p{
+        width: 100%;
+    }
+    .div-about-safe-sellacar1 h3{
+        font-size: 30px;
+    }
+    .div-about-safe-sellacar p{
+        width: 100%;
+    }
+    .div-about-safe-sellacar h5{
+        width: 100%;
+    }
+    .div-about-safe-sellacar img{
+        width: 320px;
+    }
+  }
+  @media (max-width:900px) {
+    .section-table-sellacar{
+        display: none;
+    }
+    .section-for-mediya-sellacar{
+      display: block !important;
+    }
+  }
+
+  .section-for-mediya-sellacar{
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    display: none;
+  }
+  .div-mediya-sellacar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #f2f2f2;
+  }
+
+  .div-mediya-sellacar1{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #fff;
+  }
+  .div-mediya-sellacar2{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #f2f2f2;
+  }
+  .big-div-mediya-sellacar{
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+  .div-mediya-sellacar h3{
+    color: #000;
+font-size: 30px;
+font-weight: 550;
+font-family: "Arimo", sans-serif;
+width: 40%;
+text-align: center;
+  }
+
+  .div-mediya-sellacar h1{
+    color: #821213;
+    font-size: 35px;
+font-weight: 550;
+font-family: "Arimo", sans-serif;
+width: 40%;
+text-align: center;
+  }
+  .div-mediya-sellacar h4{
+    width: 20%;
+    font-size: 30px;
+    text-align: center;
+  }
+  .div-mediya-sellacar1 h3{
+    color: #333;
+font-size: 20px;
+font-weight: 550;
+font-family: "Arimo", sans-serif;
+width: 40%;
+text-align: center;
+  }
+
+  .div-mediya-sellacar1 h1{
+    color: #333;
+    font-size: 20px;
+font-weight: 550;
+font-family: "Arimo", sans-serif;
+width: 40%;
+text-align: center;
+  }
+  .div-mediya-sellacar1 h4{
+    width: 20%;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .div-mediya-sellacar2 h3{
+    color: #333;
+font-size: 20px;
+font-weight: 550;
+font-family: "Arimo", sans-serif;
+width: 40%;
+text-align: center;
+  }
+
+  .div-mediya-sellacar2 h1{
+    color: #333;
+    font-size: 20px;
+font-weight: 550;
+font-family: "Arimo", sans-serif;
+width: 40%;
+text-align: center;
+  }
+  .div-mediya-sellacar2 h4{
+    width: 20%;
+    font-size: 30px;
+    text-align: center;
+  }
+
+
+
+  .special-for-button-div-sellacar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .special-for-button-div-sellacar button{
+    width: 60%;
+    height: 40px;   
+    border: none;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 550;
+    font-family: "Arimo", sans-serif;  
+  }
+  .special-for-button-div-sellacar button:hover{
+    width: 60%;
+    height: 40px;   
+    border: none;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #821213;
+    color: #fff;
+    font-weight: 550;
+    font-family: "Arimo", sans-serif;  
+  }
+  .IoCheckmarkOutline-mediya-sellacar{
+    color: #821213;
+    font-size: 30px;
+    font-weight: 600 !important;
+  }
+  .special-for-mediya-table-sellacar{
+    display: none;
+  }
+  .special-for-mediya-table-sellacar1{
+    display: none;
+  }
+  .special-for-mediya-table-sellacar2{
+    display: none;
+  }
+  .open-for-open-table{
+    display: block;
+  }
+  .open-for-open-table1{
+    display: block;
+  }
+  .open-for-open-table2{
+    display: block;
+  }
+
+  @media (max-width:550px) {
+    .div-mediya-sellacar1 h3{
+        color: #333;
+    font-size: 15px;
+    font-weight: 550;
+    font-family: "Arimo", sans-serif;
+    width: 40%;
+    text-align: center;
+      }
+    
+      .div-mediya-sellacar1 h1{
+        color: #333;
+        font-size: 15px;
+    font-weight: 550;
+    font-family: "Arimo", sans-serif;
+    width: 40%;
+    text-align: center;
+      }
+      .div-mediya-sellacar1 h4{
+        width: 20%;
+        font-size: 30px;
+        text-align: center;
+      }
+      .div-mediya-sellacar h3{
+        color: #000;
+    font-size: 25px;
+    font-weight: 550;
+    font-family: "Arimo", sans-serif;
+    width: 40%;
+    text-align: center;
+      }
+    
+      .div-mediya-sellacar h1{
+        color: #821213;
+        font-size: 28px;
+    font-weight: 550;
+    font-family: "Arimo", sans-serif;
+    width: 40%;
+    text-align: center;
+      }
+      .div-mediya-sellacar h4{
+        width: 20%;
+        font-size: 30px;
+        text-align: center;
+      }
+      .div-mediya-sellacar2 h3{
+        color: #333;
+    font-size: 15px ;
+    font-weight: 550;
+    font-family: "Arimo", sans-serif;
+    width: 40%;
+    text-align: center;
+      }
+    
+      .div-mediya-sellacar2 h1{
+        color: #333;
+        font-size: 20px;
+    font-weight: 550;
+    font-family: "Arimo", sans-serif;
+    width: 40%;
+    text-align: center;
+      }
+      .div-mediya-sellacar2 h4{
+        width: 20%;
+        font-size: 30px;
+        text-align: center;
+      }
+    
+  }

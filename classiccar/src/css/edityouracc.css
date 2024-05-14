@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+.big-div-edit-account h1{
+    color: #821213;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 150px;
+}
+.big-div-edit-account h3{
+    color: #000000;
+    font-family: "Arimo", sans-serif;
+    text-align: center;
+    font-weight: 550;
+}
+
+.df-big-edit-account{
+    display: flex;
+    align-items: start;
+    width: 95%;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #666666;
+    padding: 30px 15px;
+    gap: 10px;
+}
+
+.first-edit-account{
+    width: 50%;
+}
+
+.first-edit-account p{
+    margin-bottom: 0px;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    font-size: 13px;
+    color: #666666;
+}
+.first-edit-account input{
+    width: 99%;
+    outline: none;
+    color: #666666;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.first-edit-account input:focus{
+    box-shadow: 0px 0px 5px #007bff;
+}
+.first-edit-account h3{
+    color: #821213;
+    font-family: "Arimo", sans-serif;
+    text-align: start;
+    font-weight: 550;
+}
+.first-edit-account h6{
+    color: #000;
+    font-family: "Arimo", sans-serif;
+    margin-top: 20px;
+    width: 90%;
+}
+.first-edit-account h5{
+    color: #821213;
+    font-family: "Arimo", sans-serif;
+    text-align: start;
+    font-weight: 550;
+    margin-top: 15px;
+}
+.first-edit-account h2{
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.checkbox-edit-account{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+.checkbox-edit-account input{
+    width: 20px;
+    height: 20px;
+}
+.checkbox-edit-account p{
+    color: #666666;
+    font-size: 15px;
+    margin-top: -7px;
+}
+.button-save-edit-account{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+.button-save-edit-account button{
+    width: 150px;
+    height: 40px;
+    background-color: #821213;
+    border-radius: 5px;
+    font-family: "Arimo", sans-serif;
+    color: #fff;
+    border: none;
+    font-weight: 550;
+}
+
+@media (max-width:700px) {
+    .df-big-edit-account{
+        display: block;
+    }
+    .first-edit-account{
+        width: 100%;
+    }
+    .first-edit-account input{
+        width: 100%;
+    }
+    .checkbox-edit-account input{
+        width: 20px;
+    }
+    .button-save-edit-account button{
+        width: 100%;
+    }
+}

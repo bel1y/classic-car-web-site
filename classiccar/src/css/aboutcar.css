@@ -1,0 +1,387 @@
+*{
+    box-sizing: border-box;
+}
+
+.h1-aboutcar-div{
+    color: #821213;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    text-align: center;
+    padding-top: 100px;
+}
+.df-anons-aboutcar{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 95%;
+    margin: auto;
+    margin-top: 50px;
+}
+.first-anons-aboutcar{
+    width: 25%;
+    box-shadow: 0px 0px 5px #666666;
+    height: 130px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 5px 10px 5px;
+}
+.first-anons-aboutcar img{
+    width: 95%;
+    margin: auto;
+}
+.first-anons-aboutcar p{
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 20px;
+}
+.about-car-div{
+    width: 100%;
+}
+
+
+  .first-section-aboutcar{
+    display: flex;
+    align-items: start;
+    width: 95%;
+    margin: auto;
+    margin-top: 50px;
+  }
+  .add-favorite-div{
+    display: flex;                                                  
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    border: 1px solid #808080;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  .add-favorite-div p{
+    margin-top: 12px;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 500;
+    font-size: 18px;
+    display: flex;
+    gap: 15px;
+    color: #821213;
+  }
+  .add-favorite-div a{
+    text-decoration: none;
+  }
+  .add-favorite-div span{
+    color: #000;
+  }
+
+  .description-aboutcar-div{
+    width: 100%;
+    color: #000;
+    font-family: "Arimo", sans-serif; 
+    background-color: #f2f2f2;
+    padding: 15px 10px 30px 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  .description-aboutcar-div h1{
+    font-weight: 550;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  .description-aboutcar-div p{
+    font-weight: 500;
+    margin-top: 50px;
+    width: 80%;
+  }
+  .description-aboutcar-div span{
+    font-weight: 500;
+    margin-top: 20px !important;
+  }
+
+  .about-car-div table{
+    width: 100%;
+  }
+
+  .about-car-div h1{
+    font-family: "Arimo", sans-serif; 
+    margin-top: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  .listed-by-smone-aboutcar{
+    width: 100%;
+    background-color: #821213;
+    height: 100px;
+    border-radius: 10px;
+    color: #fff;
+    font-family: "Arimo", sans-serif; 
+    font-size: 18px;
+    padding: 15px;
+    margin-top: 25px;
+  }
+  .listed-by-smone-aboutcar p{
+    margin-bottom: 0px;
+    font-weight: 600;
+  }
+
+  .input-contact-seller-aboutcar input{
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 40px;
+    border: 1px solid #ced4da;
+    border-left: 4px solid #821213;
+    padding-left: 10px;
+    outline: none;
+  }
+  .input-contact-seller-aboutcar input:focus{
+    box-shadow: 0px 0px 5px #61dafb;
+  }
+  .input-contact-seller-aboutcar textarea{
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 200px;
+    border: 1px solid #ced4da;
+    border-left: 4px solid #821213;
+    padding: 10px;  
+    outline: none;
+    margin-bottom: 0;
+  }
+  .input-contact-seller-aboutcar textarea:focus{
+    box-shadow: 0px 0px 5px #61dafb;
+  }
+  .input-contact-seller-aboutcar span{
+    font-size: 13px;
+    color: #666666;
+  }
+.check-input-aboutcar{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: -10px;
+}
+.check-input-aboutcar input{
+    width: 15px;
+    height: 15px;
+}
+.check-input-aboutcar input:focus{
+    box-shadow: none;
+}
+.check-input-aboutcar p{
+    padding-top: 26px;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    font-size: 15px;
+    color: #000;
+}
+.info-aboutseller-div{
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    font-size: 14px; 
+    color: #000;
+    margin-bottom: 0;
+}
+.info-aboutseller-div1{
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    font-size: 14px;
+    color: #821213;
+}
+.input-contact-seller-aboutcar button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    margin-top: 20px;
+}
+.input-contact-seller-aboutcar button:hover{
+    background-color: #821213;
+}
+
+.similar-vehicles-aboutcar p{
+    font-family: "Arimo", sans-serif; 
+    font-weight: 500;
+    font-size: 16px; 
+    color: #000;
+    margin-bottom: 10px;
+}
+.similar-vehicles-aboutcar button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+}
+.similar-vehicles-aboutcar button:hover{
+    background-color: #821213;
+}
+.similar-vehicles-aboutcar{
+    margin-top: 40px;
+}
+
+.adverticement-aboutcar{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin-top: 80px;
+}
+.adverticement-aboutcar img{
+    box-shadow: 0px 0px 5px #666666;
+    width: 95%;
+    margin: auto;
+}
+@media (max-width:500px) {
+    .adverticement-aboutcar{
+        margin-top: 10px;
+    }
+}
+
+@media (max-width:1000px) {
+    .first-anons-aboutcar{
+        height: 95px !important;
+    }
+    .listed-by-smone-aboutcar{
+        height: 80px;
+        padding: 5px 10px 10px 10px;
+    }
+}
+@media (max-width: 800px) {
+    .df-anons-aboutcar{
+        display: block;
+    }
+    .first-anons-aboutcar{
+        height: 150px !important;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .first-anons-aboutcar img{
+        width: 50%;
+    }
+    .first-section-aboutcar{
+        display: block;
+    }
+    .about-car-div{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 700px) {
+    .first-anons-aboutcar{
+        height: 130px !important;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 600px) {
+    .first-tr-in-table-aboutcar th{
+        color: #821213;
+        font-size: 18px !important;
+        font-weight: 800;
+    }
+    .first-anons-aboutcar{
+        height: 110px !important;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .listed-by-smone-aboutcar{
+        height: 60px;
+        padding: 5px 10px 10px 10px;
+    }
+    .listed-by-smone-aboutcar p{
+    font-size: 14px;
+    }
+    .input-contact-seller-aboutcar textarea{
+    height: 150px;
+    }
+
+}
+@media (max-width: 500px) {
+    .first-anons-aboutcar{
+        height: 95px !important;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .description-aboutcar-div p{
+        width: 100%;
+      }
+}
+@media (max-width: 450px) {
+    .first-anons-aboutcar img{
+        width: 60%;
+    }
+    .check-input-aboutcar p{
+        font-size: 12px;
+    }
+    .info-aboutseller-div{
+        font-size: 12px;
+    }
+    .info-aboutseller-div1{
+        font-size: 12px;
+    }
+    .input-contact-seller-aboutcar button{
+        height: 40px;
+        font-size: 13px;
+    }
+    .similar-vehicles-aboutcar button{
+        height: 40px;
+        font-size: 13px;
+    }
+    .similar-vehicles-aboutcar p{
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+.table-in-aboutcar{
+    box-shadow: 0px 0px 3px #666666;
+    border-radius: 5px;
+}
+.first-tr-in-table-aboutcar{
+    height: 70px;
+    background-color: #fafafa;
+}
+.first-tr-in-table-aboutcar1{
+    height: 70px;
+    background-color: #fff;
+}
+.first-tr-in-table-aboutcar td, .first-tr-in-table-aboutcar1 td, .first-tr-in-table-aboutcar th{
+    padding: 10px;
+    font-family: "Arimo", sans-serif; 
+    border-bottom: 1px solid #ced4da;
+}
+.first-tr-in-table-aboutcar th{
+    color: #821213;
+    font-size: 23px;
+    font-weight: 800;
+}
+.first-tr-in-table-aboutcar td, .first-tr-in-table-aboutcar1 td{
+    font-size: 15px;
+    font-weight: 600;
+}
+.special-for-color-aboutcar{
+    color: #821213;
+    font-size: 20px !important;
+}
+
+.swiper-for-about-car-div{
+    height: 500px;
+}
+.swiper-for-about-car-div img{
+    width: 100%;
+    height: 100%;
+}
+.swiper-zoom-container{
+    width: 100% !important;
+}

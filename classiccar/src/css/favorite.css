@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+}
+.big-div-favorite-page h1{
+    color: #821213;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 150px;
+}
+.big-div-favorite-page h3{
+    color: #000000;
+    font-family: "Arimo", sans-serif;
+    text-align: center;
+    font-weight: 550;
+    margin-bottom: 40px;
+}
+
+.div-big-favorite-df{
+    display: flex;
+    align-items: start;
+    width: 95%;
+    margin: auto;
+    box-shadow: 0px 0px 5px #666666;
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.first-img-favorites-div{
+    height: 100%;
+}
+.first-img-favorites-div img{
+height: 100%;
+}
+.inside-little-favorites-div{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+.inside-little-favorites-div p{
+    color: #fff;
+    font-family: "Arimo", sans-serif; 
+    background-color: #821213;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 5px;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+}
+.inside-little-favorites-div span{
+    color: #821213;
+}
+.first-text-favorites-div{
+    width: 100%;
+    font-family: "Arimo", sans-serif; 
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 10px 10px 0px;
+}
+.first-text-favorites-div h4{
+    font-family: "Arimo", sans-serif; 
+    font-size: 25px;
+    font-weight: 600;
+    color: #000;
+    margin-left: 20px;
+}
+.first-text-favorites-div p{
+    font-weight: 500;
+    font-family: "Arimo", sans-serif; 
+    margin-left: 20px;
+    margin-top: 40px;
+}
+.df-delete-and-price-favorites p{
+    font-weight: 600;
+    font-family: "Arimo", sans-serif; 
+    color: #821213;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+}
+.MdDelete-favorite{
+    font-size: 20px;
+    margin-top: -5px;
+}
+.df-delete-and-price-favorites h5{
+    color: #821213;
+    font-weight: 600;
+    font-family: "Arimo", sans-serif; 
+    font-size: 25px;
+}
+.df-delete-and-price-favorites{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px ;
+    margin-top: 30px;
+}
+
+@media (max-width:772px) {
+    .first-text-favorites-div p{
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+    .first-text-favorites-div h4{
+        font-family: "Arimo", sans-serif; 
+        font-size: 22px;
+        font-weight: 600;
+        color: #000;
+        margin-left: 10px;
+    }
+}
+@media (max-width:650px) {
+    .div-big-favorite-df{
+        display: block;
+        width: 70%;
+        height: auto;
+    }
+    .first-img-favorites-div{
+        width: 100%;
+        height: 350px;
+    }
+    .first-img-favorites-div img{
+        width: 100%;
+    }
+}
+@media (max-width:550px) {
+    .div-big-favorite-df{
+        display: block;
+        width: 95%;
+        height: auto;
+    }
+    .first-img-favorites-div{
+        width: 100%;
+        height: 300px;
+    }
+    .first-img-favorites-div img{
+        width: 100%;
+    }
+}

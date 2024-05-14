@@ -1,0 +1,152 @@
+*{
+    box-sizing: border-box;
+} 
+
+.big-div-signinandup h1{
+    color: #821213;
+    font-family: "Arimo", sans-serif;  
+    font-weight: 600;  
+    text-align: center;
+    padding-top: 100px;
+}
+.big-div-signinandup h3{
+    color: #000;
+    font-family: "Arimo", sans-serif;  
+    font-weight: 600;  
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+.signin-signup-big-div{
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    width: 95%;
+    margin: auto;
+    margin-top: 30px;
+}
+.Login-big-div{
+    width: 49%;
+}   
+.Login-big-div h2{
+    color: #333333;
+    font-family: "Arimo", sans-serif;  
+    font-weight: 600;
+    font-size: 25px;
+}
+.existing-user-input{
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    box-shadow: 0px 0px 5px #666;
+    padding: 15px 10px;
+}
+.existing-user-input input{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    outline: none;
+    height: 40px;
+    color: #495057;
+    margin-bottom: 20px;
+}
+.existing-user-input input:focus{
+    box-shadow: 0px 0px 5px #007bff;
+}
+.existing-user-input p{
+    margin-bottom: 0px;
+    color: #333333;
+    font-family: "Arimo", sans-serif;  
+    font-weight: 500;
+}
+.forgot-password-login{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-family: "Arimo", sans-serif;  
+}
+.forgot-password-login p{
+    color: #821213;
+    cursor: pointer;
+}
+.sing-for-button-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.sing-for-button-login button{
+    width: 50%;
+    height: 45px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #821213;
+    font-family: "Arimo", sans-serif;  
+    font-weight: 600;
+    margin: auto;
+}
+
+.new-user-big-div{
+    width: 49%;
+}
+.new-user-big-div h2{
+    color: #333333;
+    font-family: "Arimo", sans-serif;  
+    font-weight: 600;
+    font-size: 25px;
+}
+.show-button-signup-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin-bottom: 20px;
+}
+.show-button-signup-login button{
+    height: 100%;
+    background-color: #821213;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #fff;
+    font-family: "Arimo", sans-serif;  
+    font-weight: 550;
+}
+.show-button-signup-login input{
+    height: 100% !important;
+    margin-top: 20px;
+}
+.remember-me-login{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.remember-me-login p{
+    font-family: "Arimo", sans-serif;  
+    margin-top: -15px;
+}
+.remember-me-login input{
+    width: 20px;
+    height: 20px;
+}
+@media (max-width:850px) {
+    .signin-signup-big-div{
+        display: block;
+    }
+    .Login-big-div{
+        width: 100%;
+    }
+    .new-user-big-div{
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+@media (max-width:500px) {
+    .remember-me-login p{
+        font-size: 15px;
+        width: 80%;
+    }
+}

@@ -1,4 +1,4 @@
-*{
+    *{
     box-sizing: border-box;
 }
 
@@ -93,6 +93,9 @@
     font-weight: 500;
     margin-top: 10px;
 }
+.add-own-searching-home p{
+    cursor: pointer;
+}
 .advertisement-home{
     display: flex;
     align-items: center;
@@ -108,6 +111,7 @@
     font-family: "Arimo", sans-serif;
     padding: 0px 10px;
     text-align: center;
+    cursor: pointer;
 }
 .advertisement-home:hover{
     color: #a0a0a0;
@@ -127,10 +131,7 @@
     .select-text-home{
         width: 100%;
     }
-    .view-sells-car-home{
-        width: 100% !important;
-        margin-top: 20px;
-    }
+
 }
 @media (max-width:500px) {
     .find-car-home{
@@ -179,10 +180,10 @@
     gap: 3%;
 }
 .accordion-home{
-    width: 20%;
+    width: 25%;
 }
 .view-sells-car-home{
-    width: 75%;
+    width: 100%;
 }
 .add-your-car-to-sell, .add-your-car-to-sell1{
     display: flex;
@@ -233,13 +234,14 @@
 .big-cars-div-home{
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .cars-div-home{
     cursor: pointer;
-    width: 25%;
+    width: 250px;
+    margin-top: 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -254,16 +256,20 @@
     height: 180px;
 }
 .title-home{
-    padding: 0px 5px;
+    padding: 5px 5px;
     margin-top: 0;
     color: #000000;
-    font-size: 15px;
+    font-size: 18px;
+    text-align: start !important;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
 }
 .discreaption-home{
     padding: 0px 5px;
     color: #a0a0a0;
     margin-top: 0;
     font-size: 12px;
+    text-align: start !important;
 }
 .price-car-home{
     padding: 5px;
@@ -276,7 +282,10 @@
 }
 
 
-
+.cars-div-home1 img{
+    width: 100%;
+    height: 150px !important;
+}
 
 .swiper {
     width: 100%;
@@ -341,7 +350,7 @@
 
   .cars-div-home1{
     cursor: pointer;
-    width: 100%;
+    width: 250px !important;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -359,15 +368,19 @@
         display: block !important;  
     }
     .cars-div-home{
-        display: none;
+        display: none !important;
     }
 }
 
-@media (max-width:800px) {
+@media (max-width:1000px) {
     .first-section-home{
         display: block;
     }
     .accordion-home{
         width: 100%;
+    }
+    .view-sells-car-home{
+        width: 100% !important;
+        margin-top: 20px;
     }
 }
