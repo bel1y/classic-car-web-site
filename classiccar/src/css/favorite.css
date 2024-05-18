@@ -50,6 +50,9 @@ height: 100%;
 }
 .inside-little-favorites-div span{
     color: #821213;
+    font-family: "Arimo", sans-serif; 
+    font-size: 15px;
+    font-weight: 600;
 }
 .first-text-favorites-div{
     width: 100%;

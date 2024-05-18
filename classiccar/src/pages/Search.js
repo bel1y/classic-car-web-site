@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/search.css";
 import Navbar from "./Nav";
 import Footer from "./Footer";
@@ -6,9 +6,51 @@ import img from "../img/for-search.png";
 import img1 from "../img/for-search1.png";
 import img2 from "../img/for-search2.png";
 import reklama from "../img/reklama.gif";
+import axios from "axios";
 
 export default function Search() {
   const [page, setPage] = useState(1);
+  const [data, setData] = useState([]);
+
+
+useEffect(()=>{
+axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars?category=1&&subcategory=1')
+.then(res=>{
+  setData(res.data)
+})
+.catch(err=>{
+
+})
+}, [])
+
+function openresult() {
+  window.location = '/listings-find'
+  var a = [
+    {
+      year: document.querySelector("#year-search").value,
+      year1: document.querySelector("#year-search1").value,
+    },
+    {
+      make: document.querySelector("#select-search").value,
+    },
+    {
+      model: document.querySelector("#model-search").value,
+    },
+    {
+      price: document.querySelector("#price-search").value,
+      price1: document.querySelector("#price-search1").value,
+    },
+    {
+      location: document.querySelector("#location-search").value,
+    },
+    {
+      description: document.querySelector("#description-search").value,
+    },
+  ]
+
+  localStorage.setItem("search", JSON.stringify(a));
+
+}
 
   function BigButton1() {
     document.querySelector(".button-search1").style =
@@ -113,42 +155,55 @@ export default function Search() {
                 <div className="search-input-div">
                   <div className="first-input-search">
                     <p>From</p>
-                    <input type="text" />
+                    <input type="number" 
+                    id="year-search"
+                    />
                   </div>
                   <div className="first-input-search">
                     <p>To</p>
-                    <input type="text" />
+                    <input type="number"
+                    id="year-search1"
+                    />
                   </div>
                 </div>
                 <h3>Vehicle:</h3>
                 <div className="select-search-div">
                   <p>Make</p>
-                  <select name="" id="">
+                  <select name="" id="select-search">
                     <option value=""></option>
-                    <option value="">BMW</option>
-                    <option value="">AUDI</option>
-                    <option value="">MERS</option>
-                    <option value="">FERRARI</option>
+                    {data.map(item=>{
+                      return <option value={item.id} >{item.title}</option>
+                    })}
                   </select>
                   <p>Model</p>
-                  <select name="" id="">
-                    <option value="">Model Selection</option>
+                  <select name="" id="model-search"> 
+                    <option value=""></option>
+                    {data.map(item=>{
+                      return <option value={item.id}>{item.model}</option>
+                    })}
                   </select>
                 </div>
                 <h3>Price:</h3>
                 <div className="input-search-div">
                   <p>Lowest</p>
-                  <input type="text" />
+                  <input type="number" 
+                  id="price-search"
+                  />
                   <p>Highest</p>
-                  <input type="text" />
+                  <input type="number" 
+                  id="price-search1"
+                  />
                 </div>
               </div>
               <div className="second-div-search">
                 <h3>Location:</h3>
                 <div className="select-and-input-search">
                   <p>Country</p>
-                  <select name="" id="">
+                  <select name="" id="location-search">
                     <option value=""></option>
+                    {data.map(item=>{
+                      return <option value="">{item.location}</option>
+                    })}
                   </select>
                   <div className="state-and-zip-search">
                     <div className="select-search-div1">
@@ -166,7 +221,9 @@ export default function Search() {
                 <h3>Key Details:</h3>
                 <div className="description-select-search">
                   <p>Keyword (Description)</p>
-                  <input type="text" />
+                  <input type="text"
+                  id="description-search"
+                  />
                   <p>Vehicle Type</p>
                   <select name="" id="">
                     <option value="">Select</option>
@@ -219,7 +276,7 @@ export default function Search() {
               </div>
             </div>
             <div className="page-first-search-button">
-              <button>SEARCH</button>
+              <button onClick={()=>openresult()}>SEARCH</button>
             </div>
           </div>
         ) : (

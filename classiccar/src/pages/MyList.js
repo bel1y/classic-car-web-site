@@ -4,13 +4,18 @@ import Footer from "./Footer";
 import Navbar from "./Nav";
 
 export default function MyList() {
+
+  function openaddlisting() {
+    window.location = '/add-listing'
+  }
+
   return (
     <div className="big-div-my-list">
       <Navbar />
       <h1>Listing for: Private Seller</h1>
       <h3>Manage your saved vehicles.</h3>
       <div className="my-list-add-new-car-to-sell">
-        <button className="button-add-new-new-listing">+ADD NEW LIST</button>
+        <button className="button-add-new-new-listing" onClick={()=>openaddlisting()}>+ADD NEW LIST</button>
         <div className="input-fiter-add-new-div">
           <p>Filter By</p>
           <div className="input-fiter-add-new-div1">

@@ -23,9 +23,11 @@ export default function Home({match}) {
   function opensearch() {
     window.location = '/search'
   }
+  function openlistinfind() {
+    window.location = '/listings-find'
+  }
 
   useEffect(()=>{
-    console.log(match);
 
 axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars')
 .then(res=>{
@@ -37,6 +39,9 @@ axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars')
 })
   },[])
 
+  function searchdata() {
+    window.location = '/listings-find'
+}
 
   return (
     <div>
@@ -61,22 +66,24 @@ axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars')
                 <p>MAKE</p>
                 <select name="" id="">
                   <option value=""></option>
-                  <option value="">{data.map(item=>{
-                    return <p>
+                  {data.map(item=>{
+                    return <option value="">
+                    <p>
                       {item.make}
                     </p>
-                  })}</option>
+                 </option> })}
                 </select>
               </div>
               <div className="select-text-home">
                 <p>MODEL</p>
                 <select name="" id="">
                   <option value=""></option>
-                  <option value="">{data.map(item=>{
-                    return <p>
+                {data.map(item=>{
+                    return  <option value=""> <p>
                       {item.model}
                     </p>
-                  })}</option>
+                </option> 
+               })}
                 </select>
               </div>
             </div>
@@ -84,11 +91,11 @@ axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars')
 
           <div className="add-own-searching-home">
             <p onClick={()=>opensearch()}>Advanced Search</p>
-            <p>Search</p>
+            <p onClick={()=>searchdata()}>Search</p>
           </div>
         </div>
 
-        <div className="advertisement-home">
+        <div className="advertisement-home" onClick={()=>openlistinfind()}>
           <p>38,034 CLASSIC CARS AND TRUCKS FOR SALE TODAY</p>
         </div>
       </header>

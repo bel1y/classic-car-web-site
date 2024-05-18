@@ -1,0 +1,256 @@
+
+*{
+    box-sizing: border-box;
+}
+.instead-of-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.instead-of-navbar-img{
+    width: 60%;
+}
+.instead-of-navbar-text{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 40%;
+}
+.instead-of-navbar-text p{
+    width: 90%;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    font-size: 14px;
+}
+.instead-of-navbar-text b{
+    color: #821213;
+    cursor: pointer;
+}
+.instead-of-navbar-text1{
+    width: 10% !important; 
+    color: #821213;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+}
+@media (max-width:750px) {
+    .instead-of-navbar{
+        display: block;
+        text-align: center;
+    }
+    .instead-of-navbar-img{
+        width: 100%;
+    }
+    .instead-of-navbar-text{
+        width: 100%;
+        padding: 10px;
+    }
+    .instead-of-navbar-text p{
+        width: 100%;
+    }
+    .instead-of-navbar-text1{
+        display: none;
+    }
+}
+@media (max-width:500px) {
+   .instead-of-navbar-img img{
+    width: 320px;
+   } 
+}
+.big-div-addlisting-for-text{
+    margin-top: 50px;
+    padding: 10px;
+}
+.big-div-addlisting-for-text h1{
+    color: #821213;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    text-align: center;
+    font-size: 40px;
+}
+.big-div-addlisting-for-text h3{
+    color: #000000;
+    font-family: "Arimo", sans-serif;
+    text-align: center;
+    font-weight: 550;
+}
+
+.account-information-div-add-listing{
+    width: 95%;
+    margin: auto;
+    box-shadow: 0px 0px 5px #666666;
+    border-radius: 10px;
+    height: auto;
+    margin-top: 30px;
+}
+
+.second-account-information-div-add-listing{
+    display: flex;
+    width: 100%;
+    padding: 20px 20px 0px 50px;
+}
+.first-inside-account-information-div-add-listing{
+    width: 100%;
+    margin-bottom: 50px;
+}
+.first-inside-account-information-div-add-listing p{
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+    font-size: 15px;
+    color: #666666;
+    margin-bottom: 0;
+}
+.first-inside-account-information-div-add-listing h3{
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+    color: #821213;
+    font-size: 25px;
+}
+.inside-account-information-div-add-listing{
+    width: 50%;
+    margin-top: 20px;
+}
+.first-account-information-div-add-listing{
+    width: 100%;
+    background-color: #821213;
+    color: #fff;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+    height: 35px;
+    display: flex;
+    padding: 5px;
+    padding-left: 20px !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+@media (max-width:1050px) {
+    .inside-account-information-div-add-listing{
+        width: 40%;
+        margin-top: 20px;
+    }
+}
+@media (max-width: 900px) {
+    .inside-account-information-div-add-listing{
+        width: 30%;
+        margin-top: 20px;
+    }
+    .second-account-information-div-add-listing{
+        display: flex;
+        width: 100%;
+        padding: 20px 20px 20px 20px;
+    }
+}
+@media (max-width:650px) {
+    .second-account-information-div-add-listing{
+        display: block;
+    }
+    .first-inside-account-information-div-add-listing{
+        margin-bottom: 20px;
+    }
+}
+@media (max-width:450px) {
+    .first-inside-account-information-div-add-listing h3{
+        font-size: 20px;
+    }
+    .first-inside-account-information-div-add-listing p{
+        width: 100% !important;
+    }
+    .second-account-information-div-add-listing{
+        padding: 5px;
+    }
+}
+
+
+.second-input-information-div-add-listing{
+    display: flex;
+    gap: 2%;
+    width: 100%;
+    padding: 20px;
+}
+
+.inside-input-acc-div-add-listing{
+    width: 48%;
+}
+.first-inside-input-acc-div-add-listing p{
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+    font-size: 17px;
+    margin-bottom: 0;
+}
+.first-inside-input-acc-div-add-listing input{
+    border: 1px solid #ddd;
+    border-left: 2px solid #821213;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+    padding-left: 20px;
+    height: 35px;
+    color: #666;
+}
+.first-inside-input-acc-div-add-listing input:focus{
+    box-shadow: 0px 0px 5px #007bff;
+}
+.first-inside-input-acc-div-add-listing select{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+    padding-left: 20px;
+    height: 35px;
+    color: #666;
+}
+.first-inside-input-acc-div-add-listing select:focus{
+    box-shadow: 0px 0px 5px #007bff;
+}
+.first-inside-input-acc-div-add-listing{
+    margin-top: 20px;
+}
+.third-button-information-div-add-listing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.third-button-information-div-add-listing button{
+    border: none;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #821213;
+    color: #fff;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.fourth-input-information-div-add-listing{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.fourth-input-information-div-add-listing p{
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+    font-size: 17px;
+    margin-bottom: 0;
+}
+.fourth-input-information-div-add-listing textarea{
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 300px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.fourth-input-information-div-add-listing textarea:focus{
+    box-shadow: 0px 0px 5px #007bff; 
+}
+
+@media (max-width:650px) {
+    .second-input-information-div-add-listing{
+        display: block;
+    }
+    .inside-input-acc-div-add-listing{
+        width: 100%;
+    }
+}

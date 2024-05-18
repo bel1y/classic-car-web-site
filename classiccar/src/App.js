@@ -33,6 +33,8 @@ import Edityouracc from './pages/Edityouracc';
 import Favorites from './pages/Favorites';
 import Inventoryanalytic from './pages/Inventoryanalytic';
 import Nav from './pages/Navbar1'
+import Result from './pages/Result';
+import AddListing from './pages/AddListing';
 
 export default function App() {
   return (
@@ -40,6 +42,8 @@ export default function App() {
       <BrowserRouter>
 <Routes>
   <Route path="/" element={<Home/>} />
+  <Route path="/add-listing" element={<AddListing/>} />
+  <Route path="/listings-find" element={<Result/>} />
   <Route path="/search" element={<Search/>}/>
   <Route path="/sell-a-car" element={<Sell/>}/>
   <Route path="/auction" element={<Auction/>}/>
