@@ -254,3 +254,167 @@
         width: 100%;
     }
 }
+
+
+.inside-add-photo-acc-div-add-listing{
+    text-align: center;
+    width: 30%;
+    box-shadow: 0px 0px 5px #666;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    min-height: 200px;
+    max-height: 250px;
+    background: linear-gradient(180deg, #f2f2f2 50% , #fff 100% );
+}
+.inside-add-photo-acc-div-add-listing h5{
+    color: #821213;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+    margin-bottom: 20px;
+}
+
+.inside-add-photo-acc-div-add-listing h4{
+    color: #fff;
+    background-color: #006b81 ;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+    font-size: 13px;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.inside-add-photo-acc-div-add-listing p{
+    font-family: "Arimo", sans-serif;
+    font-size: 13px;
+    font-weight: 550;
+    width: 80%;
+    margin: auto;
+}
+.inside-add-photo-acc-div-add-listing b{
+    color: #821213;
+}
+.inside-add-photo-acc-div-add-listing h6{
+    color: #fff;
+    background-color: #09f ;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+    font-size: 13px;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.inside-add-photo-acc-div-add-listing h3{
+    color: #09f;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.inside-add-photo-acc-div-add-listing span{
+    color: #821213;
+    cursor: pointer;width: 80%;
+    margin: auto;
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+}
+.inside-add-photo-acc-div-add-listing span:hover{
+    color: #ca171a;
+}
+.second-add-photo-information-div-add-listing{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+@media (max-width:800px) {
+    .second-add-photo-information-div-add-listing{
+        display: block;
+        padding: 20px;
+    }
+    .inside-add-photo-acc-div-add-listing{
+        text-align: center;
+        width: 100%;
+        box-shadow: 0px 0px 5px #666;
+        border-radius: 10px;
+        margin-top: 20px;
+        padding: 15px;
+        min-height: 200px;
+        max-height: 300px;
+    }
+}
+
+.fourth-add-photo-information-div-add-listing{
+    padding: 20px;
+}
+.fourth-add-photo-information-div-add-listing p{
+    font-family: "Arimo", sans-serif;
+    font-weight: 550;
+}
+.info-div-about-image-add-listing h6{
+    font-weight: 600;
+}
+.info-div-about-image-add-listing{
+    display: flex;
+    font-family: "Arimo", sans-serif;
+    align-items: start;
+    gap: 10px;
+    background: linear-gradient(180deg, #0868ce 60%, #09f 100%);
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+.place-for-image-looking-add-listing{
+    min-height: 30px;
+    height: auto;
+    background-color: #f2f2f2;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+.fifth-add-photo-information-div-add-listing{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-family: "Arimo", sans-serif;
+}
+.fifth-add-photo-information-div-add-listing h5{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.sixth-add-photo-information-div-add-listing{
+    padding: 20px;
+}
+.inside-sixth-add-photo-information-div-add-listing{
+    background-color: #ddd;
+    height: 250px;
+    border: 5px dashed #ccc;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.inside-sixth-add-photo-information-div-add-listing p{
+    color: #821213;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+.inside-sixth-add-photo-information-div-add-listing h2{
+    color: #821213;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+}

@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import '../css/addlisting.css'
 import { MdArrowBackIosNew } from "react-icons/md";
 import logo from '../img/classiccarlogo.webp'
-import { FaLock } from "react-icons/fa";
+import { FaLock, FaEyeSlash, FaPhoneAlt, FaQuestion, FaInfo } from "react-icons/fa";
+import { PiExportBold } from "react-icons/pi";
 
 export default function AddListing() {
 
@@ -110,7 +111,7 @@ export default function AddListing() {
       </div>
       <div className="account-information-div-add-listing">
         <div className="first-account-information-div-add-listing">
-          <p>Basic Vehicle Information</p>
+          <p>Extended Vehicle Information</p>
         </div>
         <div className="second-input-information-div-add-listing">
     <div className="inside-input-acc-div-add-listing">
@@ -139,6 +140,52 @@ export default function AddListing() {
         <div className="fourth-input-information-div-add-listing">
           <p>Description</p>
           <textarea name="" id=""></textarea>
+        </div>
+        <div className="third-button-information-div-add-listing">
+          <button>CONTINUE</button>
+        </div>
+      </div>
+      <div className="account-information-div-add-listing">
+        <div className="first-account-information-div-add-listing">
+          <p>Photos </p>
+        </div>
+        <div className="second-add-photo-information-div-add-listing">
+    <div className="inside-add-photo-acc-div-add-listing">
+    <h5><FaEyeSlash /></h5>
+    <h5>Don't have any photos yet?</h5>
+    <p>No problem, you can skip this step and add photos after you have finished creating your listing</p>
+    </div>
+    <div className="inside-add-photo-acc-div-add-listing">
+    <h4><FaPhoneAlt  /></h4>
+    <h5>Don't know how to upload photos?</h5>
+    <p>That's ok, our Customer Support team are available to help you with this after you have finished creating your listing: <b>480-285-1600</b></p>
+    </div>
+    <div className="inside-add-photo-acc-div-add-listing">
+    <h6><FaQuestion  /></h6>
+    <h3>Ready to add photos?</h3>
+    <span>Click here to get info on our photo requirements.</span>
+    </div>
+        </div>
+        <div className="fourth-add-photo-information-div-add-listing">
+          <p>Your Uploaded Photos:</p>
+          <div className="info-div-about-image-add-listing">
+            <p><FaInfo /></p>
+            <h6>Photos in this box will show in your listing on the Vehicle Details Page Carousel. To remove an image, simply click on the " X " at the top-right of the thumbnail image. Only upload photos taken in landscape mode.</h6>
+          </div>
+          <div className="place-for-image-looking-add-listing">
+            
+            </div>
+        </div>
+        <div className="fifth-add-photo-information-div-add-listing">
+<h5>Drag and drop images below, or click below to select files from your computer or device.</h5>
+  <h5>(Only JPG files are supported, iPhone/iPad photos taken with the 'LIVE' setting turned on are not supported. Each photo file size must be under 10 MB)</h5>
+   <h5>Please note: For best representation of your vehicle, photos should be taken in landscape mode only.</h5>
+        </div>
+        <div className="sixth-add-photo-information-div-add-listing">
+        <div className="inside-sixth-add-photo-information-div-add-listing">
+        <h2><PiExportBold /></h2>
+        <p>Drag & Drop images here or click to select files - use only photos taken in landscape mode.</p>
+        </div>
         </div>
         <div className="third-button-information-div-add-listing">
           <button>CONTINUE</button>
