@@ -13,26 +13,36 @@ import { TbPlayerTrackPrevFilled } from "react-icons/tb";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 import nowlife from '../img/now-life.png';
 import Footer from './Footer';
+import url from './host';
 
 export default function Result() {
     const [data, setData] = useState([]);
-    const [filter, setFilter] = useState(() => JSON.parse(localStorage.getItem("search")) || {});
+    var [category,setCategory]=useState([])
+    var [subcategory,setSubCategory]=useState([])
+    const [filter, setFilter] = useState(JSON.parse(localStorage.getItem("search")));
+    
+      useEffect(()=>{
+    
 
-useEffect(()=>{
-    axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars')
+    axios.get(`${url}/api/v1/cars`)
     .then(res=>{
+    axios.get(`${url}/api/v1/category`).then(res2=>{
+      setCategory(res2.data)
+      console.log(res2.data);
+      axios.get(`${url}/api/v1/subcategory`).then(res3=>{
+    setSubCategory(res3.data)
+    console.log(res3.data);
+      })
+    })
       setData(res.data)
-
-      var b = filter.make
-
-      const a = res.data.filter(item => item.make.includes(b));
-      console.log("A:", a);
-      
     })
     .catch(err=>{
     
     })
-},[])
+
+
+
+      },[])
 
 
 

@@ -7,21 +7,32 @@ import img1 from "../img/for-search1.png";
 import img2 from "../img/for-search2.png";
 import reklama from "../img/reklama.gif";
 import axios from "axios";
+import url from "./host";
 
 export default function Search() {
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);
 
 
-useEffect(()=>{
-axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars?category=1&&subcategory=1')
-.then(res=>{
-  setData(res.data)
-})
-.catch(err=>{
-
-})
-}, [])
+  var [category,setCategory]=useState([])
+  var [subcategory,setSubCategory]=useState([])
+  
+    useEffect(()=>{
+  
+  axios.get(`${url}/api/v1/cars`)
+  .then(res=>{
+  axios.get(`${url}/api/v1/category`).then(res2=>{
+    setCategory(res2.data)
+    axios.get(`${url}/api/v1/subcategory`).then(res3=>{
+  setSubCategory(res3.data)
+    })
+  })
+    setData(res.data)
+  })
+  .catch(err=>{
+  
+  })
+    },[])
 
 function openresult() {
   window.location = '/listings-find'
@@ -29,25 +40,14 @@ function openresult() {
     {
       year: document.querySelector("#year-search").value,
       year1: document.querySelector("#year-search1").value,
-    },
-    {
       make: document.querySelector("#select-search").value,
-    },
-    {
       model: document.querySelector("#model-search").value,
-    },
-    {
       price: document.querySelector("#price-search").value,
       price1: document.querySelector("#price-search1").value,
-    },
-    {
       location: document.querySelector("#location-search").value,
-    },
-    {
       description: document.querySelector("#description-search").value,
-    },
+    }
   ]
-
   localStorage.setItem("search", JSON.stringify(a));
 
 }
@@ -171,15 +171,15 @@ function openresult() {
                   <p>Make</p>
                   <select name="" id="select-search">
                     <option value=""></option>
-                    {data.map(item=>{
+                    {category.map(item=>{
                       return <option value={item.id} >{item.title}</option>
                     })}
                   </select>
                   <p>Model</p>
                   <select name="" id="model-search"> 
                     <option value=""></option>
-                    {data.map(item=>{
-                      return <option value={item.id}>{item.model}</option>
+                    {subcategory.map(item=>{
+                      return <option value={item.id}>{item.title}</option>
                     })}
                   </select>
                 </div>

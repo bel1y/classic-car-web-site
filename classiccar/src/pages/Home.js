@@ -14,7 +14,7 @@ import axios from 'axios'
 import url from "./host.js";
 
 
-export default function Home({match}) {
+export default function Home() {
   const [data, setData] = useState([]);
 
 
@@ -112,50 +112,25 @@ setSubCategory(res3.data)
 
       <section className="first-section-home">
         <div className="accordion-home">
-          <Accordion defaultActiveKey="0">
-            <Accordion.Item eventKey="0">
-              <Accordion.Header>Popular Searches</Accordion.Header>
+          
+            <Accordion defaultActiveKey="0">
+       {category.map((item,key)=>{   return   <Accordion.Item eventKey={key}>
+              <Accordion.Header>{item.title}</Accordion.Header>
               <Accordion.Body>
-                <p>Ford Mustang</p>
-                <p>Chevrolet Corvette</p>
-                <p>Chevrolet Camaro</p>
-                <p>Chevrolet Impala</p>
-                <p>Chevrolet C10</p>
-                <p>Ford Thunderbird</p>
-                <p>Chevrolet Chevelle</p>
+{item.sub.map((item2,key)=>{
+ return <p onClick={()=>window.location=`/listings-find/${item.id}?category=${item.id}&&subcategory=${item2.id}`}>{item2.title}</p>
+})}
+         
               </Accordion.Body>
             </Accordion.Item>
-            <Accordion.Item eventKey="1">
-              <Accordion.Header>BROWSE BY CATEGORY</Accordion.Header>
-              <Accordion.Body>
-                <p>$250,000 and Up</p>
-                <p>Under $5,000</p>
-                <p>Trucks</p>
-                <p>Newest Listings</p>
-                <p>Muscle Cars</p>
-                <p>Motorcycles</p>
-                <p>Luxury Performance</p>
-                <p>Future Classics</p>
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="2">
-              <Accordion.Header>BROWSE BY MAKE</Accordion.Header>
-              <Accordion.Body>
-                <p>All Makes A to E</p>
-                <p>All Makes F to M</p>
-                <p>All Makes N to Z</p>
-                <p>Alfa Romeo (133)</p>
-                <p>AMC (120)</p>
-                <p>Aston Martin (97)</p>
-                <p>Audi (105)</p>
-                <p>BMW (507)</p>
-              </Accordion.Body>
-            </Accordion.Item>
-            
+           
+            })}
           </Accordion>
+          
+          
         </div>
 
-        <div className="view-sells-car-home">
+         <div className="view-sells-car-home">
           <div className="add-your-car-to-sell">
             <h1>PRIVATE SELLER LISTINGS</h1>
             <h5>SELL YOUR CAR </h5>
@@ -259,7 +234,7 @@ setSubCategory(res3.data)
         </SwiperSlide> */}
       </Swiper>
           </div>
-        </div>
+        </div> 
       </section>
 {/* 
       <section className="first-section-home">

@@ -4,6 +4,7 @@ import { MdArrowBackIosNew } from "react-icons/md";
 import logo from '../img/classiccarlogo.webp'
 import { FaLock, FaEyeSlash, FaPhoneAlt, FaQuestion, FaInfo } from "react-icons/fa";
 import { PiExportBold } from "react-icons/pi";
+import { FaPlus } from "react-icons/fa6";
 
 export default function AddListing() {
 
@@ -11,6 +12,26 @@ export default function AddListing() {
 
     function return1(){
     window.location="/my-list"
+    }
+
+    function open() {
+      document.querySelector(".for-display-block-and-none-addlist").style = "display: block"
+      document.querySelector(".for-alittle-bitten-info-next-page").style = "display: none"
+      document.querySelector(".third-button-information-div-add-listing").style = "display: none"
+    }
+    function open1() {
+      document.querySelector(".for-display-block-and-none-addlist1").style = "display: block"
+      document.querySelector(".for-alittle-bitten-info-next-page1").style = "display: none"
+      document.querySelector(".third1-button-information-div-add-listing").style = "display: none"
+    }
+    function open2() {
+      document.querySelector(".for-display-block-and-none-addlist2").style = "display: block"
+      document.querySelector(".for-alittle-bitten-info-next-page2").style = "display: none"
+      document.querySelector(".third2-button-information-div-add-listing").style = "display: none"
+    }
+    function open3() {
+      document.querySelector(".third3-button-information-div-add-listing").style = "display: none"
+      document.querySelector(".for-display-block-and-none-addlist4").style = "display: flex"
     }
 
   return (
@@ -32,7 +53,7 @@ export default function AddListing() {
         <h3>Enter your vehicle information to begin your Regular Listing.</h3>
         </div>
         
-      <div className="account-information-div-add-listing">
+      <div className="account-information-div-add-listing for-display-block-and-none-addlist3">
         <div className="first-account-information-div-add-listing">
           <p>Contact Information</p>
         </div>
@@ -58,8 +79,11 @@ export default function AddListing() {
   </div>  
 </div>
         </div>
+        <div className="third-button-information-div-add-listing">
+          <button onClick={()=>open()}>CONTINUE</button>
+        </div>
       </div>
-      <div className="account-information-div-add-listing">
+      <div className="account-information-div-add-listing for-display-block-and-none-addlist">
         <div className="first-account-information-div-add-listing">
           <p>Basic Vehicle Information</p>
         </div>
@@ -105,11 +129,11 @@ export default function AddListing() {
       </div>
     </div>
         </div>
-        <div className="third-button-information-div-add-listing">
-          <button>CONTINUE</button>
+        <div className="third1-button-information-div-add-listing">
+          <button onClick={()=>open1()}>CONTINUE</button>
         </div>
       </div>
-      <div className="account-information-div-add-listing">
+      <div className="account-information-div-add-listing for-display-block-and-none-addlist1">
         <div className="first-account-information-div-add-listing">
           <p>Extended Vehicle Information</p>
         </div>
@@ -141,13 +165,13 @@ export default function AddListing() {
           <p>Description</p>
           <textarea name="" id=""></textarea>
         </div>
-        <div className="third-button-information-div-add-listing">
-          <button>CONTINUE</button>
+        <div className="third2-button-information-div-add-listing">
+          <button onClick={()=>open2()}>CONTINUE</button>
         </div>
       </div>
-      <div className="account-information-div-add-listing">
+      <div className="account-information-div-add-listing for-display-block-and-none-addlist2">
         <div className="first-account-information-div-add-listing">
-          <p>Photos </p>
+          <p>Photos</p>
         </div>
         <div className="second-add-photo-information-div-add-listing">
     <div className="inside-add-photo-acc-div-add-listing">
@@ -182,14 +206,29 @@ export default function AddListing() {
    <h5>Please note: For best representation of your vehicle, photos should be taken in landscape mode only.</h5>
         </div>
         <div className="sixth-add-photo-information-div-add-listing">
+        {/* <input type="file" /> */}
         <div className="inside-sixth-add-photo-information-div-add-listing">
         <h2><PiExportBold /></h2>
         <p>Drag & Drop images here or click to select files - use only photos taken in landscape mode.</p>
         </div>
+        
         </div>
-        <div className="third-button-information-div-add-listing">
-          <button>CONTINUE</button>
+        <div className="third3-button-information-div-add-listing">
+          <button onClick={()=>open3()}>CONTINUE</button>
         </div>
+      </div>
+      <div className="for-display-block-and-none-addlist4">
+        <button>Continue to Check-Out</button>
+      </div>
+
+      <div className="for-alittle-bitten-info-next-page">
+        <h6><FaPlus /></h6><p>Basic Vehicle Information</p>
+      </div>
+      <div className="for-alittle-bitten-info-next-page1">
+        <h6><FaPlus /></h6><p>Extended Vehicle Information</p>
+      </div>
+      <div className="for-alittle-bitten-info-next-page2">
+        <h6><FaPlus /></h6><p>Photos</p>
       </div>
 
     </div>

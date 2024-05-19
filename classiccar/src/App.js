@@ -43,7 +43,7 @@ export default function App() {
 <Routes>
   <Route path="/" element={<Home/>} />
   <Route path="/add-listing" element={<AddListing/>} />
-  <Route path="/listings-find" element={<Result/>} />
+  <Route path="/listings-find/:id" element={<Result/>} />
   <Route path="/search" element={<Search/>}/>
   <Route path="/sell-a-car" element={<Sell/>}/>
   <Route path="/auction" element={<Auction/>}/>

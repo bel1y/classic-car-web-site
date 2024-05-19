@@ -222,6 +222,57 @@
     font-weight: 600;
     margin-bottom: 30px;
 }
+.third1-button-information-div-add-listing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.third1-button-information-div-add-listing button{
+    border: none;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #821213;
+    color: #fff;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.third2-button-information-div-add-listing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.third2-button-information-div-add-listing button{
+    border: none;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #821213;
+    color: #fff;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.third3-button-information-div-add-listing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.third3-button-information-div-add-listing button{
+    border: none;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #821213;
+    color: #fff;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
 
 .fourth-input-information-div-add-listing{
     padding-left: 20px;
@@ -396,6 +447,12 @@
 
 .sixth-add-photo-information-div-add-listing{
     padding: 20px;
+    position: relative;
+}
+.sixth-add-photo-information-div-add-listing input{
+    position: absolute;
+    width: 100%;
+    height: 250px;
 }
 .inside-sixth-add-photo-information-div-add-listing{
     background-color: #ddd;
@@ -412,9 +469,124 @@
     font-family: "Arimo", sans-serif;
     font-weight: 600;
     font-size: 20px;
+    text-align: center;
 }
 .inside-sixth-add-photo-information-div-add-listing h2{
     color: #821213;
     font-family: "Arimo", sans-serif;
     font-weight: 600;
+}
+
+
+.for-display-block-and-none-addlist{
+    display: none;
+}
+.for-display-block-and-none-addlist1{
+    display: none;
+}
+.for-display-block-and-none-addlist2{
+    display: none;
+}
+.for-display-block-and-none-addlist3{
+    margin-bottom: 20px;
+}
+
+.for-alittle-bitten-info-next-page{
+    width: 95%;
+    margin: auto;
+    height: 40px;
+    background-color: #ccc;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #666;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 15px;
+}
+.for-alittle-bitten-info-next-page p{
+    margin-bottom: 0px !important;
+    margin-top: 5px;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+}
+.for-alittle-bitten-info-next-page h6{
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+}
+
+.for-alittle-bitten-info-next-page1{
+    width: 95%;
+    margin: auto;
+    height: 40px;
+    background-color: #ccc;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #666;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 15px;
+}
+.for-alittle-bitten-info-next-page1 p{
+    margin-bottom: 0px !important;
+    margin-top: 5px;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+}
+.for-alittle-bitten-info-next-page1 h6{
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+}
+
+
+.for-alittle-bitten-info-next-page2{
+    width: 95%;
+    margin: auto;
+    height: 40px;
+    background-color: #ccc;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #666;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 15px;
+}
+.for-alittle-bitten-info-next-page2 p{
+    margin-bottom: 0px !important;
+    margin-top: 5px;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+}
+.for-alittle-bitten-info-next-page2 h6{
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+}
+
+.for-display-block-and-none-addlist4{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+.for-display-block-and-none-addlist4 button{
+    background: #4b8212;
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-family: "Arimo", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
 }
