@@ -11,6 +11,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
 import axios from 'axios'
+import url from "./host.js";
 
 
 export default function Home({match}) {
@@ -26,12 +27,19 @@ export default function Home({match}) {
   function openlistinfind() {
     window.location = '/listings-find'
   }
+var [category,setCategory]=useState([])
+var [subcategory,setSubCategory]=useState([])
 
   useEffect(()=>{
 
-axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars')
+axios.get(`${url}/api/v1/cars`)
 .then(res=>{
-  console.log(res.data);
+axios.get(`${url}/api/v1/category`).then(res2=>{
+  setCategory(res2.data)
+  axios.get(`${url}/api/v1/subcategory`).then(res3=>{
+setSubCategory(res3.data)
+  })
+})
   setData(res.data)
 })
 .catch(err=>{
@@ -66,10 +74,10 @@ axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars')
                 <p>MAKE</p>
                 <select name="" id="">
                   <option value=""></option>
-                  {data.map(item=>{
+                  {category.map(item=>{
                     return <option value="">
                     <p>
-                      {item.make}
+                      {item.title}
                     </p>
                  </option> })}
                 </select>
@@ -78,9 +86,9 @@ axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars')
                 <p>MODEL</p>
                 <select name="" id="">
                   <option value=""></option>
-                {data.map(item=>{
+                {subcategory.map(item=>{
                     return  <option value=""> <p>
-                      {item.model}
+                      {item.title}
                     </p>
                 </option> 
                })}
