@@ -3,6 +3,7 @@ import "../css/signpage.css";
 import Navbar from "./Nav";
 import Footer from "./Footer";
 import axios from "axios";
+import url from './host'
 
 export default function Signpage() {
   function show() {
@@ -16,7 +17,7 @@ export default function Signpage() {
     );
 
     axios
-      .post(`https://car-muhammadali-back.onrender.com/auth/v1/login`, formdata)
+      .post(`${url}/auth/v1/login`, formdata)
       .then((res) => {
         window.location = "/";
         localStorage.setItem("user", JSON.stringify(res.data));
@@ -44,15 +45,37 @@ export default function Signpage() {
     formdata.append("phone", document.querySelector("#phone-for-signup").value);
 
     axios
-      .post(`https://car-muhammadali-back.onrender.com/auth/v1/users`, formdata)
+      .post(`${url}/auth/v1/users`, formdata)
       .then((res) => {
-        window.location = "/";
-        localStorage.setItem("user", JSON.stringify(res.data));
+        if (document.querySelector("#email-for-signup").value == '') {
+          document.querySelector("#email-for-signup").style = 'box-shadow: 0px 0px 10px red'
+        }
+        else{
+          if (document.querySelector("#password-for-signup").value == '') {
+            document.querySelector("#password-for-signup").style = 'box-shadow: 0px 0px 10px red'
+          }
+          else if (document.querySelector("#firstname-for-signup").value == '') {
+            document.querySelector("#firstname-for-signup").style = 'box-shadow: 0px 0px 10px red'
+          }
+          else  if (document.querySelector("#lastname-for-signup").value == '') {
+            document.querySelector("#lastname-for-signup").style = 'box-shadow: 0px 0px 10px red'
+          }
+          else if (document.querySelector("#phone-for-signup").value == '') {
+            document.querySelector("#phone-for-signup").style = 'box-shadow: 0px 0px 10px red'
+          }
+          
+          else{
+            window.location = "/";
+            localStorage.setItem("user", JSON.stringify(res.data)); 
+          }
+        }
       })
       .catch((err) => {
         alert("Попробуйти позже, ещё раз");
       });
   }
+
+
   return (
     <div className="big-div-signinandup">
       <Navbar />

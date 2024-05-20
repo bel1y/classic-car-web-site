@@ -13,56 +13,54 @@ export default function Search() {
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);
 
+  var [category, setCategory] = useState([]);
+  var [subcategory, setSubCategory] = useState([]);
+  var [country, setCountry] = useState([]);
+  useEffect(() => {
+    var a = [];
+    axios
+      .get(`${url}/api/v1/cars`)
+      .then((res) => {
+        for (let i = 0; i < res.data.length; i++) {
+          var push = true;
+          for (let j = 0; j < a.length; j++) {
+            if (a[j] == res.data[i].location) {
+              push = false;
+            }
+          }
+          if (push) {
+            a.push(res.data[i].location);
+          }
+        }
+        setCountry(a);
 
-  var [category,setCategory]=useState([])
-  var [subcategory,setSubCategory]=useState([])
-  var [country,setCountry]=useState([])
-  useEffect(()=>{
-  var a=[]
-  axios.get(`${url}/api/v1/cars`)
-  .then(res=>{
-for (let i = 0; i < res.data.length; i++) { 
-  var push=true
-for (let j = 0; j < a.length; j++) {
-if(a[j]==res.data[i].location){
-push=false
-}
-}
-if(push){
-a.push(res.data[i].location)
-}
-}
-setCountry(a)
+        axios.get(`${url}/api/v1/category`).then((res2) => {
+          setCategory(res2.data);
+          axios.get(`${url}/api/v1/subcategory`).then((res3) => {
+            setSubCategory(res3.data);
+          });
+        });
+        setData(res.data);
+      })
+      .catch((err) => {});
+  }, []);
 
-  axios.get(`${url}/api/v1/category`).then(res2=>{
-    setCategory(res2.data)
-    axios.get(`${url}/api/v1/subcategory`).then(res3=>{
-  setSubCategory(res3.data)
-    })
-  })
-    setData(res.data)
-  })
-  .catch(err=>{
-  
-  })
-    },[])
-
-function openresult() {
-  var a = [
-    {
-      year: document.querySelector("#year-search").value,
-      year1: document.querySelector("#year-search1").value,
-      make: document.querySelector("#select-search").value,
-      model: document.querySelector("#model-search").value,
-      price: document.querySelector("#price-search").value,
-      price1: document.querySelector("#price-search1").value,
-      location: document.querySelector("#location-search").value,
-      description: document.querySelector("#description-search").value,
-    }
-  ]
-  localStorage.setItem("search", JSON.stringify(a));
-  window.location = `/listings-find/1?category=${document.querySelector("#select-search").value}&&subcategory=${document.querySelector("#model-search").value}&&count=${document.querySelector("#countpage").value}&&lacotion=${document.querySelector("#location-search").value}&&sortterm=${document.querySelector("#sortterm-search").value}&&description=${document.querySelector("#description-search").value}`
-}
+  function openresult() {
+    var a = [
+      {
+        year: document.querySelector("#year-search").value,
+        year1: document.querySelector("#year-max-search").value,
+        make: document.querySelector("#select-search").value,
+        model: document.querySelector("#model-search").value,
+        price: document.querySelector("#price-search").value,
+        price1: document.querySelector("#price-search1").value,
+        location: document.querySelector("#location-search").value,
+        description: document.querySelector("#description-search").value,
+      },
+    ];
+    localStorage.setItem("search", JSON.stringify(a));
+    window.location = `/listings-find/1?category=${document.querySelector("#select-search").value}&&subcategory=${document.querySelector("#model-search").value}&&count=${document.querySelector("#countpage").value}&&lacotion=${document.querySelector("#location-search").value}&&sortterm=${document.querySelector("#sortterm-search").value}&&description=${document.querySelector("#description-search").value}&&year-min=${document.querySelector("#year-search").value}&&year-max=${document.querySelector("#year-max-search").value}&&price-min=${document.querySelector("#price-search").value}&&price-max=${document.querySelector("#price-search1").value}&&looking=${document.querySelector("#looking-search").value}`;
+  }
 
   function BigButton1() {
     document.querySelector(".button-search1").style =
@@ -167,15 +165,11 @@ function openresult() {
                 <div className="search-input-div">
                   <div className="first-input-search">
                     <p>From</p>
-                    <input type="number" 
-                    id="year-search"
-                    />
+                    <input type="number" id="year-search" />
                   </div>
                   <div className="first-input-search">
                     <p>To</p>
-                    <input type="number"
-                    id="year-search1"
-                    />
+                    <input type="number" id="year-max-search" />
                   </div>
                 </div>
                 <h3>Vehicle:</h3>
@@ -183,28 +177,24 @@ function openresult() {
                   <p>Make</p>
                   <select name="" id="select-search">
                     <option value=""></option>
-                    {category.map(item=>{
-                      return <option value={item.id} >{item.title}</option>
+                    {category.map((item) => {
+                      return <option value={item.id}>{item.title}</option>;
                     })}
                   </select>
                   <p>Model</p>
-                  <select name="" id="model-search"> 
+                  <select name="" id="model-search">
                     <option value=""></option>
-                    {subcategory.map(item=>{
-                      return <option value={item.id}>{item.title}</option>
+                    {subcategory.map((item) => {
+                      return <option value={item.id}>{item.title}</option>;
                     })}
                   </select>
                 </div>
                 <h3>Price:</h3>
                 <div className="input-search-div">
                   <p>Lowest</p>
-                  <input type="number" 
-                  id="price-search"
-                  />
+                  <input type="number" id="price-search" />
                   <p>Highest</p>
-                  <input type="number" 
-                  id="price-search1"
-                  />
+                  <input type="number" id="price-search1" />
                 </div>
               </div>
               <div className="second-div-search">
@@ -213,8 +203,8 @@ function openresult() {
                   <p>Country</p>
                   <select name="" id="location-search">
                     <option value=""></option>
-                    {country.map((item,key)=>{
-                      return <option value={`${item}`}>{item}</option>
+                    {country.map((item, key) => {
+                      return <option value={`${item}`}>{item}</option>;
                     })}
                   </select>
                   <div className="state-and-zip-search">
@@ -233,9 +223,7 @@ function openresult() {
                 <h3>Key Details:</h3>
                 <div className="description-select-search">
                   <p>Keyword (Description)</p>
-                  <input type="text"
-                  id="description-search"
-                  />
+                  <input type="text" id="description-search" />
                   <p>Vehicle Type</p>
                   <select name="" id="">
                     <option value="">Select</option>
@@ -267,16 +255,16 @@ function openresult() {
                 <h3>Sorting Options:</h3>
                 <div className="div-select-page-size-search">
                   <p>Sort Term</p>
-                  <select name="" id="sortterm-search" >
+                  <select name="" id="sortterm-search">
                     <option value="1">Default</option>
                     <option value="2">Date List</option>
                     <option value="3">Make/Model</option>
                     <option value="4">Price</option>
                   </select>
                   <p>Sort Ascending</p>
-                  <select name="" id="">
-                    <option value="">Lowest</option>
-                    <option value="">Highest</option>
+                  <select name="" id="looking-search">
+                    <option value="1">Lowest</option>
+                    <option value="2">Highest</option>
                   </select>
                   <p>Page Size</p>
                   <select name="" id="countpage">
@@ -288,7 +276,7 @@ function openresult() {
               </div>
             </div>
             <div className="page-first-search-button">
-              <button onClick={()=>openresult()}>SEARCH</button>
+              <button onClick={() => openresult()}>SEARCH</button>
             </div>
           </div>
         ) : (

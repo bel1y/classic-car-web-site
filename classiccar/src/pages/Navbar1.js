@@ -7,7 +7,8 @@ import '../css/navbar.css'
 import { FaLock } from "react-icons/fa";
 
 export default function Navbar1() {
-    const [data, setData] = useState(JSON.parse(localStorage.getItem("user")));
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+
     function OpenMedia() {
         // document.querySelector(".media-text-navbar1").style="display:none"
         document.querySelector(".media-text-navbar").classList.toggle("open-media-text-navbar")
@@ -77,7 +78,7 @@ export default function Navbar1() {
         </div>
         <div className="my-account-check-open" >
 <div className="name-my-account">
-    <p>Hello, {data.firstname}  </p>
+    <p>Hello, {user.firstname}  </p>
 </div>
 <div className="df-my-account-div" onClick={()=>Openaccount()}>
 <p>MY ACCOUNT</p>
