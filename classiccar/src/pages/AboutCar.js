@@ -95,7 +95,7 @@ return <SwiperSlide>
           </div>
 
     <div className="favorite-cintact-div-aboutcar">
-      <button className="add-favorite-div">
+      <button className="add-favorite-div" onClick={()=> localStorage.setItem("favorite", JSON.stringify(data))}>
         <p><span><FaHeartCirclePlus /></span> favorite</p>
       </button>
       <button className="add-favorite-div">
