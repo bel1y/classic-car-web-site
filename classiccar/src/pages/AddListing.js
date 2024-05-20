@@ -95,15 +95,11 @@ export default function AddListing() {
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Make</p>
-        <select name="" id="">
-          <option value="">Make Selection</option>
-        </select>
+        <input type="text" name="" id="" />
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Model</p>
-        <select name="" id="">
-        <option value="">Model Selection</option>
-        </select>
+        <input type="text" name="" id="" />
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Price</p>
@@ -113,7 +109,7 @@ export default function AddListing() {
     <div className="inside-input-acc-div-add-listing">
       <div className="first-inside-input-acc-div-add-listing">
         <p>Country</p>
-        <select name="" id=""></select>
+        <input type="text" />
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>City</p>
@@ -150,7 +146,8 @@ export default function AddListing() {
       <div className="first-inside-input-acc-div-add-listing">
         <p>Transmission</p>
         <select name="" id="">
-        <option value="">Model Selection</option>
+        <option value="">Manual</option>
+        <option value="">Automatic</option>
         </select>
       </div>
     </div>
