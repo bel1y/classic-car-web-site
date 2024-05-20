@@ -19,8 +19,18 @@ export default function Signpage() {
     axios
       .post(`${url}/auth/v1/login`, formdata)
       .then((res) => {
-        window.location = "/";
-        localStorage.setItem("user", JSON.stringify(res.data));
+        if (document.querySelector("#email-for-signin").value == '') {
+          document.querySelector("#email-for-signin").style = 'box-shadow: 0px 0px 10px red'
+        }
+        else if (document.querySelector("#password-for-signin").value == '') {
+          document.querySelector("#password-for-signin").style = 'box-shadow: 0px 0px 10px red'
+        }
+        else {
+          window.location = "/";
+          localStorage.setItem("user", JSON.stringify(res.data));
+        }
+
+
       })
       .catch((err) => {
         alert("Не правильная электронная почта или пароль");
@@ -50,8 +60,7 @@ export default function Signpage() {
         if (document.querySelector("#email-for-signup").value == '') {
           document.querySelector("#email-for-signup").style = 'box-shadow: 0px 0px 10px red'
         }
-        else{
-          if (document.querySelector("#password-for-signup").value == '') {
+        else if (document.querySelector("#password-for-signup").value == '') {
             document.querySelector("#password-for-signup").style = 'box-shadow: 0px 0px 10px red'
           }
           else if (document.querySelector("#firstname-for-signup").value == '') {
@@ -68,7 +77,7 @@ export default function Signpage() {
             window.location = "/";
             localStorage.setItem("user", JSON.stringify(res.data)); 
           }
-        }
+        
       })
       .catch((err) => {
         alert("Попробуйти позже, ещё раз");
