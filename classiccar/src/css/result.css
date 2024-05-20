@@ -173,6 +173,7 @@
 .third-div-search-tools-result{
     display: flex;  
     align-items: center;
+    justify-content: center;
     gap: 10px;
     width: 100%;
     margin-top: 20px;
@@ -274,6 +275,7 @@ color: #fff;
 .big-div-for-img-result{
     width: 80%;
     margin: auto;
+    margin-top: 30px;
 }
 .big-div-for-img-result img{
     width: 100%;

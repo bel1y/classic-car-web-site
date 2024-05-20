@@ -24,9 +24,10 @@ export default function Home() {
   function opensearch() {
     window.location = '/search'
   }
-  function openlistinfind() {
-    window.location = '/listings-find'
+  function openlistinfind(id) {
+    window.location = `/listings-find/${id}`
   }
+
   var [category, setCategory] = useState([])
   var [subcategory, setSubCategory] = useState([])
 
@@ -47,9 +48,6 @@ export default function Home() {
       })
   }, [])
 
-  function searchdata() {
-    window.location = '/listings-find'
-  }
 
   return (
     <div>
@@ -100,12 +98,13 @@ export default function Home() {
 
           <div className="add-own-searching-home">
             <p onClick={() => opensearch()}>Advanced Search</p>
-            <p onClick={() => searchdata()}>Search</p>
+            <p onClick={() => openlistinfind(data.id)}>Search</p>
           </div>
         </div>
 
-        <div className="advertisement-home" onClick={() => openlistinfind()}>
-          <p>38,034 CLASSIC CARS AND TRUCKS FOR SALE TODAY</p>
+        <div className="advertisement-home" onClick={() => openlistinfind(data.id)}>
+           <p>{data.length} CLASSIC CARS AND TRUCKS FOR SALE TODAY</p>
+          
         </div>
       </header>
 

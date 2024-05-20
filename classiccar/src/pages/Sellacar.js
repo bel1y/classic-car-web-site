@@ -16,8 +16,13 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import porsche from "../img/porsche.png";
+import url from './host'
+import axios from 'axios'
 
 export default function Sellacar() {
+  const [data, setData]=useState([])
+
+
   function open() {
     document.querySelector(".special-for-mediya-table-sellacar").style =
       "display:block";
@@ -41,6 +46,22 @@ export default function Sellacar() {
       "display:none";
     document.querySelector(".special-for-mediya-table-sellacar").style =
       "display:none";
+  }
+
+  useEffect(()=>{
+
+    axios.get(`${url}/api/v1/cars`)
+    .then(res=>{
+      console.log(res.data);
+      setData(res.data);
+    })
+    .catch(err=>{
+      console.error(err);
+    })
+  })
+
+  function open(id) {
+    window.location = `/about-car/${id}`
   }
   return (
     <div>
@@ -669,87 +690,17 @@ export default function Sellacar() {
             },
           }}
         >
-          <SwiperSlide>
+          {data.map(item=>{
+            return <SwiperSlide onClick={()=>open(item.id)}>
             <div className="big-inside-div-for-swiper-sellacar">
               <div className="div-for0img-swiper-porsche">
-                <img src={porsche} alt="" />
+                <img src={item.image} alt="" />
               </div>
-              <p>2011 Porsche 911</p>
-              <h4>$40,000</h4>
+              <p>{item.year} {item.title}</p>
+              <h4>${item.price}</h4>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <div className="big-inside-div-for-swiper-sellacar">
-              <div className="div-for0img-swiper-porsche">
-                <img src={porsche} alt="" />
-              </div>
-              <p>2011 Porsche 911</p>
-              <h4>$40,000</h4>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="big-inside-div-for-swiper-sellacar">
-              <div className="div-for0img-swiper-porsche">
-                <img src={porsche} alt="" />
-              </div>
-              <p>2011 Porsche 911</p>
-              <h4>$40,000</h4>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="big-inside-div-for-swiper-sellacar">
-              <div className="div-for0img-swiper-porsche">
-                <img src={porsche} alt="" />
-              </div>
-              <p>2011 Porsche 911</p>
-              <h4>$40,000</h4>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="big-inside-div-for-swiper-sellacar">
-              <div className="div-for0img-swiper-porsche">
-                <img src={porsche} alt="" />
-              </div>
-              <p>2011 Porsche 911</p>
-              <h4>$40,000</h4>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="big-inside-div-for-swiper-sellacar">
-              <div className="div-for0img-swiper-porsche">
-                <img src={porsche} alt="" />
-              </div>
-              <p>2011 Porsche 911</p>
-              <h4>$40,000</h4>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="big-inside-div-for-swiper-sellacar">
-              <div className="div-for0img-swiper-porsche">
-                <img src={porsche} alt="" />
-              </div>
-              <p>2011 Porsche 911</p>
-              <h4>$40,000</h4>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="big-inside-div-for-swiper-sellacar">
-              <div className="div-for0img-swiper-porsche">
-                <img src={porsche} alt="" />
-              </div>
-              <p>2011 Porsche 911</p>
-              <h4>$40,000</h4>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="big-inside-div-for-swiper-sellacar">
-              <div className="div-for0img-swiper-porsche">
-                <img src={porsche} alt="" />
-              </div>
-              <p>2011 Porsche 911</p>
-              <h4>$40,000</h4>
-            </div>
-          </SwiperSlide>
+          })}
         </Swiper>
       </section>
 
