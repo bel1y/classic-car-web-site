@@ -37,11 +37,13 @@ export default function Result() {
             setCategory(res2.data)
           })
           if (a.count && a.count.length > 0) {
+            document.querySelector('#selectpage').value=a.count
             renderP(res.data, a.count)
           } else {
             renderP(res.data, countpage)
           }
           if (a.looking && a.looking.length > 0) {
+            document.querySelector('#oreders1').value=a.looking
             if (a.looking == 1) {
               res.data = res.data.sort((a, b) => a.looking - b.looking)
             } else {
@@ -65,6 +67,7 @@ export default function Result() {
             res.data = res.data.filter(item =>item.location.includes(a.lacotion.slice(0,-3)))
           }
           if (a.sortterm && a.sortterm.length > 0) {
+            document.querySelector('#sort23').value=a.sortterm
             if (a.sortterm == 2) {
               res.data = res.data.sort((a, b) => new Date(a.time_create) - new Date(b.time_create));
             }
@@ -92,6 +95,7 @@ export default function Result() {
          
         
           if (a.looking && a.looking.length > 0) {
+            document.querySelector('#oreders1').value=a.looking
             if (a.looking == 1) {
               res.data = res.data.sort((a, b) => a.looking - b.looking)
             } else {
@@ -115,6 +119,7 @@ export default function Result() {
             res.data = res.data.filter(item =>item.location.includes(a.lacotion.slice(0,-3)))
           }
           if (a.sortterm && a.sortterm.length > 0) {
+            document.querySelector('#sort23').value=a.sortterm
             if (a.sortterm == 2) {
               res.data = res.data.sort((a, b) => new Date(a.time_create) - new Date(b.time_create));
             }
@@ -129,6 +134,7 @@ export default function Result() {
             }
           } 
            if (a.count && a.count.length > 0) {
+            document.querySelector('#selectpage').value=a.count
             renderP(res.data, a.count)
           } else {
             renderP(res.data, countpage)
@@ -276,7 +282,7 @@ export default function Result() {
             <div className="second-div-search-tools-result">
               <div className="select-for-search-div-result">
                 <p>Sort By</p>
-                <select name="" onChange={(e) => { sortData(e.target.value) }} id="">
+                <select name="" onChange={(e) => { sortData(e.target.value) }} id="sort23">
                   <option value="1">Default</option>
                   <option value="2">Date Listed</option>
                   <option value="3">Year</option>
@@ -286,14 +292,14 @@ export default function Result() {
               </div>
               <div className="select-for-search-div-result">
                 <p>Sorting Order</p>
-                <select name="" onChange={(e) => { select_look(e.target.value) }} id="">
+                <select name="" onChange={(e) => { select_look(e.target.value) }} id="oreders1">
                   <option value="1">Highest</option>
                   <option value="2">Lowest</option>
                 </select>
               </div>
               <div className="select-for-search-div-result">
                 <p>Results Per Page</p>
-                <select name="" onChange={(e) => { selectCount(e.target.value) }} id="">
+                <select name="" onChange={(e) => { selectCount(e.target.value) }} id="selectpage">
                   <option value="15">15</option>
                   <option value="30">30</option>
                   <option value="60">60</option>
