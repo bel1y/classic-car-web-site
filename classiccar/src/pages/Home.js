@@ -27,29 +27,29 @@ export default function Home() {
   function openlistinfind() {
     window.location = '/listings-find'
   }
-var [category,setCategory]=useState([])
-var [subcategory,setSubCategory]=useState([])
+  var [category, setCategory] = useState([])
+  var [subcategory, setSubCategory] = useState([])
 
-  useEffect(()=>{
+  useEffect(() => {
 
-axios.get(`${url}/api/v1/cars`)
-.then(res=>{
-axios.get(`${url}/api/v1/category`).then(res2=>{
-  setCategory(res2.data)
-  axios.get(`${url}/api/v1/subcategory`).then(res3=>{
-setSubCategory(res3.data)
-  })
-})
-  setData(res.data)
-})
-.catch(err=>{
+    axios.get(`${url}/api/v1/cars`)
+      .then(res => {
+        axios.get(`${url}/api/v1/category`).then(res2 => {
+          setCategory(res2.data)
+          axios.get(`${url}/api/v1/subcategory`).then(res3 => {
+            setSubCategory(res3.data)
+          })
+        })
+        setData(res.data)
+      })
+      .catch(err => {
 
-})
-  },[])
+      })
+  }, [])
 
   function searchdata() {
     window.location = '/listings-find'
-}
+  }
 
   return (
     <div>
@@ -74,36 +74,37 @@ setSubCategory(res3.data)
                 <p>MAKE</p>
                 <select name="" id="">
                   <option value=""></option>
-                  {category.map(item=>{
+                  {category.map(item => {
                     return <option value="">
-                    <p>
-                      {item.title}
-                    </p>
-                 </option> })}
+                      <p>
+                        {item.title}
+                      </p>
+                    </option>
+                  })}
                 </select>
               </div>
               <div className="select-text-home">
                 <p>MODEL</p>
                 <select name="" id="">
                   <option value=""></option>
-                {subcategory.map(item=>{
-                    return  <option value=""> <p>
+                  {subcategory.map(item => {
+                    return <option value=""> <p>
                       {item.title}
                     </p>
-                </option> 
-               })}
+                    </option>
+                  })}
                 </select>
               </div>
             </div>
           </div>
 
           <div className="add-own-searching-home">
-            <p onClick={()=>opensearch()}>Advanced Search</p>
-            <p onClick={()=>searchdata()}>Search</p>
+            <p onClick={() => opensearch()}>Advanced Search</p>
+            <p onClick={() => searchdata()}>Search</p>
           </div>
         </div>
 
-        <div className="advertisement-home" onClick={()=>openlistinfind()}>
+        <div className="advertisement-home" onClick={() => openlistinfind()}>
           <p>38,034 CLASSIC CARS AND TRUCKS FOR SALE TODAY</p>
         </div>
       </header>
@@ -112,88 +113,90 @@ setSubCategory(res3.data)
 
       <section className="first-section-home">
         <div className="accordion-home">
-          
-            <Accordion defaultActiveKey="0">
-       {category.map((item,key)=>{   return   <Accordion.Item eventKey={key}>
-              <Accordion.Header>{item.title}</Accordion.Header>
-              <Accordion.Body>
-{item.sub.map((item2,key)=>{
- return <p onClick={()=>window.location=`/listings-find/${item.id}?category=${item.id}&&subcategory=${item2.id}`}>{item2.title}</p>
-})}
-         
-              </Accordion.Body>
-            </Accordion.Item>
-           
+
+          <Accordion defaultActiveKey="0">
+            {category.map((item, key) => {
+              return <Accordion.Item eventKey={key}>
+                <Accordion.Header>{item.title}</Accordion.Header>
+                <Accordion.Body>
+                  {item.sub.map((item2, key) => {
+                    return <p onClick={() => window.location = `/listings-find/${item.id}?category=${item.id}&&subcategory=${item2.id}`}>{item2.title}</p>
+                  })}
+
+                </Accordion.Body>
+              </Accordion.Item>
+
             })}
           </Accordion>
-          
-          
+
+
         </div>
 
-         <div className="view-sells-car-home">
+        <div className="view-sells-car-home">
           <div className="add-your-car-to-sell">
             <h1>PRIVATE SELLER LISTINGS</h1>
             <h5>SELL YOUR CAR </h5>
           </div>
           <p className="featured-home">Featured Listings</p>
           <div className="big-cars-div-home">
-          {data.map(item=>{
-                return <div className="cars-div-home" onClick={()=>open(item.id)}>
+            {data.map(item => {
+              return <div className="cars-div-home" onClick={() => open(item.id)}>
 
                 <img src={item.image} alt="" />
 
                 <h3 className="title-home">
-                    {item.title}
+                  {item.title}
                 </h3>
                 <p className="discreaption-home">
-                {item.description}
+                  {item.description}
                 </p>
                 <span className="price-car-home">${item.price}</span>
-            </div>
-              })}
+              </div>
+            })}
 
-              
-              <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}breakpoints={{
-            // when window width is >= 640px
-            300: {
-              spaceBetween: 30,
-              slidesPerView: 1,
-            },
-            600: {
-                spaceBetween: 30,
-                slidesPerView: 2,
-              },
-            // when window width is >= 768px
-            960: {
-              spaceBetween: 30,
-              slidesPerView: 3,
-            },
-          }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >{data.map(item=>{
-        return  <SwiperSlide>       
-                <div className="cars-div-home1" onClick={()=>open(item.id)}>
 
-                <img src={item.image} alt="" />
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }} breakpoints={{
+                // when window width is >= 640px
+                300: {
+                  spaceBetween: 30,
+                  slidesPerView: 1,
+                },
+                600: {
+                  spaceBetween: 30,
+                  slidesPerView: 2,
+                },
+                // when window width is >= 768px
+                960: {
+                  spaceBetween: 30,
+                  slidesPerView: 3,
+                },
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >{data.map(item => {
+              return <SwiperSlide>
+                <div className="cars-div-home1" onClick={() => open(item.id)}>
 
-                <h3 className="title-home">
+                  <img src={item.image} alt="" />
+
+                  <h3 className="title-home">
                     {item.title}
-                </h3>
-                <p className="discreaption-home">
-                {item.description}
-                </p>
-                <span className="price-car-home">{item.price}</span>
-            </div>
-             </SwiperSlide> })}
-        {/* <SwiperSlide>
+                  </h3>
+                  <p className="discreaption-home">
+                    {item.description}
+                  </p>
+                  <span className="price-car-home">{item.price}</span>
+                </div>
+              </SwiperSlide>
+            })}
+              {/* <SwiperSlide>
         <div className="cars-div-home1">
                 <img src={car} alt="" />
 
@@ -232,11 +235,11 @@ setSubCategory(res3.data)
                 <span className="price-car-home">$72,000</span>
             </div>
         </SwiperSlide> */}
-      </Swiper>
+            </Swiper>
           </div>
-        </div> 
+        </div>
       </section>
-{/* 
+      {/* 
       <section className="first-section-home">
         <div className="accordion-home">
          
@@ -778,7 +781,7 @@ setSubCategory(res3.data)
         </div>
       </section> */}
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }

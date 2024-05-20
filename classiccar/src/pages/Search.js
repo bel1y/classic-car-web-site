@@ -16,11 +16,24 @@ export default function Search() {
 
   var [category,setCategory]=useState([])
   var [subcategory,setSubCategory]=useState([])
-  
-    useEffect(()=>{
-  
+  var [country,setCountry]=useState([])
+  useEffect(()=>{
+  var a=[]
   axios.get(`${url}/api/v1/cars`)
   .then(res=>{
+for (let i = 0; i < res.data.length; i++) { 
+  var push=true
+for (let j = 0; j < a.length; j++) {
+if(a[j]==res.data[i].location){
+push=false
+}
+}
+if(push){
+a.push(res.data[i].location)
+}
+}
+setCountry(a)
+
   axios.get(`${url}/api/v1/category`).then(res2=>{
     setCategory(res2.data)
     axios.get(`${url}/api/v1/subcategory`).then(res3=>{
@@ -35,7 +48,6 @@ export default function Search() {
     },[])
 
 function openresult() {
-  window.location = '/listings-find'
   var a = [
     {
       year: document.querySelector("#year-search").value,
@@ -49,7 +61,7 @@ function openresult() {
     }
   ]
   localStorage.setItem("search", JSON.stringify(a));
-
+  window.location = `/listings-find/1?category=${document.querySelector("#select-search").value}&&subcategory=${document.querySelector("#model-search").value}&&count=${document.querySelector("#countpage").value}`
 }
 
   function BigButton1() {
@@ -201,8 +213,8 @@ function openresult() {
                   <p>Country</p>
                   <select name="" id="location-search">
                     <option value=""></option>
-                    {data.map(item=>{
-                      return <option value="">{item.location}</option>
+                    {country.map(item=>{
+                      return <option value="">{item}</option>
                     })}
                   </select>
                   <div className="state-and-zip-search">
@@ -267,10 +279,10 @@ function openresult() {
                     <option value="">Highest</option>
                   </select>
                   <p>Page Size</p>
-                  <select name="" id="">
-                    <option value="">15</option>
-                    <option value="">30</option>
-                    <option value="">60</option>
+                  <select name="" id="countpage">
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="60">60</option>
                   </select>
                 </div>
               </div>

@@ -20,21 +20,21 @@ import 'swiper/css/pagination';
 import { Zoom, Navigation, Pagination } from 'swiper/modules';
 import axios from 'axios'
 import { useParams } from 'react-router-dom';
+import url from './host'
 
 
 export default function AboutCar() {
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const { id } = useParams();
   
 
   useEffect(()=>{
 
-    axios.get('https://car-muhammadali-back.onrender.com/api/v1/cars')
+    axios.get(`${url}/api/v1/cars/${id}`)
     .then(res=>{
-    var a = res.data.filter(item=>item.id == id)
-    console.log(a);
-      setData(a)
+  console.log(res.data);
+      setData(res.data)
     })
     .catch(err=>{
     
@@ -79,53 +79,18 @@ export default function AboutCar() {
         }}
         modules={[Zoom, Navigation, Pagination]}
         className={s.mySwiper}
-      > {data.map(item=>{
-        return <SwiperSlide>
+      > 
+       
+     
+      {data.all_img && data.all_img.map((item,key)=>{
+return <SwiperSlide>
           <div className="swiper-zoom-container">
-            <img src={item.all_img} alt="" className='about-car-img-div'/>
-            </div>
-        </SwiperSlide>
-        })}
-        {/* <SwiperSlide>
-          <div className="swiper-zoom-container">
-          <img src={carinside} alt="" className='about-car-img-div'/>
+          <img src={item.image} alt="" className='about-car-img-div'/>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-zoom-container">
-          <img src={carinside} alt="" className='about-car-img-div'/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-zoom-container">
-          <img src={carinside} alt="" className='about-car-img-div'/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-zoom-container">
-          <img src={carinside} alt="" className='about-car-img-div'/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-zoom-container">
-          <img src={carinside} alt="" className='about-car-img-div'/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-zoom-container">
-          <img src={carinside} alt="" className='about-car-img-div'/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-zoom-container">
-          <img src={carinside} alt="" className='about-car-img-div'/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-zoom-container">
-          <img src={carinside} alt="" className='about-car-img-div'/>
-          </div>
-        </SwiperSlide> */}
+      })}
+      
+
       </Swiper>
           </div>
 
@@ -142,15 +107,14 @@ export default function AboutCar() {
     </div>
     <div className="description-aboutcar-div">
       <h1>Vehicle Description</h1>
-      {data.map(item=>{
-        return <>
-        <p>{item.description}</p>
-      </>
-      })}
+   
+        <p>{data.description}</p>
+   
+     
       
     </div>
     <h1>Vehicle Details</h1>
-    {data.map(item=>{
+    {[data].map(item=>{
       return     <table className='table-in-aboutcar'>
       <tr className='first-tr-in-table-aboutcar'>
         <th>1955 Ford 46 Custom</th>
