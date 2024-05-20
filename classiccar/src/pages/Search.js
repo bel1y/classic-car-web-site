@@ -61,7 +61,7 @@ function openresult() {
     }
   ]
   localStorage.setItem("search", JSON.stringify(a));
-  window.location = `/listings-find/1?category=${document.querySelector("#select-search").value}&&subcategory=${document.querySelector("#model-search").value}&&count=${document.querySelector("#countpage").value}`
+  window.location = `/listings-find/1?category=${document.querySelector("#select-search").value}&&subcategory=${document.querySelector("#model-search").value}&&count=${document.querySelector("#countpage").value}&&lacotion=${document.querySelector("#location-search").value}&&sortterm=${document.querySelector("#sortterm-search").value}&&description=${document.querySelector("#description-search").value}`
 }
 
   function BigButton1() {
@@ -213,8 +213,8 @@ function openresult() {
                   <p>Country</p>
                   <select name="" id="location-search">
                     <option value=""></option>
-                    {country.map(item=>{
-                      return <option value="">{item}</option>
+                    {country.map((item,key)=>{
+                      return <option value={`${item}`}>{item}</option>
                     })}
                   </select>
                   <div className="state-and-zip-search">
@@ -267,11 +267,11 @@ function openresult() {
                 <h3>Sorting Options:</h3>
                 <div className="div-select-page-size-search">
                   <p>Sort Term</p>
-                  <select name="" id="">
-                    <option value="">Default</option>
-                    <option value="">Date List</option>
-                    <option value="">Make/Model</option>
-                    <option value="">Price</option>
+                  <select name="" id="sortterm-search" >
+                    <option value="1">Default</option>
+                    <option value="2">Date List</option>
+                    <option value="3">Make/Model</option>
+                    <option value="4">Price</option>
                   </select>
                   <p>Sort Ascending</p>
                   <select name="" id="">
