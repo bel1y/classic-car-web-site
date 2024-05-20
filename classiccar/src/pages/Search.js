@@ -59,7 +59,7 @@ export default function Search() {
       },
     ];
     localStorage.setItem("search", JSON.stringify(a));
-    window.location = `/listings-find/1?category=${document.querySelector("#select-search").value}&&subcategory=${document.querySelector("#model-search").value}&&count=${document.querySelector("#countpage").value}&&lacotion=${document.querySelector("#location-search").value}&&sortterm=${document.querySelector("#sortterm-search").value}&&description=${document.querySelector("#description-search").value}&&year-min=${document.querySelector("#year-search").value}&&year-max=${document.querySelector("#year-max-search").value}&&price-min=${document.querySelector("#price-search").value}&&price-max=${document.querySelector("#price-search1").value}&&looking=${document.querySelector("#looking-search").value}`;
+    window.location = `/listings-find/1?category=${document.querySelector("#select-search").value}&&subcategory=${document.querySelector("#model-search").value}&&count=${document.querySelector("#countpage").value}&&lacotion=${document.querySelector("#location-search").value}&&sortterm=${document.querySelector("#sortterm-search").value}&&description=${document.querySelector("#description-search").value}&&year_min=${document.querySelector("#year-search").value}&&year_max=${document.querySelector("#year-max-search").value}&&price_min=${document.querySelector("#price-search").value}&&price_max=${document.querySelector("#price-search1").value}&&looking=${document.querySelector("#looking-search").value}`;
   }
 
   function BigButton1() {
