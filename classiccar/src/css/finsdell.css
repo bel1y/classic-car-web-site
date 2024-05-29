@@ -13,7 +13,7 @@
 .work_one {
   width: 100%;
   max-height: 773px;
-  min-height: 500px;
+  min-height: 600px;
   height: 360px;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@
   flex-direction: column;
   background-image: url('../img/header-find-dell.png');
   background-size: cover;
-  background-position: 50%, 50%;
+  background-position: center;
   background-repeat: no-repeat;
   padding-top: 70px;
 }
@@ -54,6 +54,7 @@
 
 .work_two {
   width: 100%;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,13 +63,12 @@
 }
 
 .waty_finddeal {
-  max-width: 1000px;
   width: 100%;
-  height: 333px;
+  height: 450px;
   display: flex;
   align-items: start;
   justify-content: center;
-  margin-top: -100px;
+  margin-top: -200px;
   border-radius: 7px;
   border-color: #d3d3d3;
   border-width: 1px;
@@ -80,8 +80,8 @@
 }
 
 .waty_finddeal iframe {
-  width: 1000px;
-  height: 304px;
+  width: 100%;
+  height: 420px;
 }
 
 .lop_finddeal {
@@ -106,27 +106,38 @@
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  outline: none;
 }
-
+.select_finddeal option{
+  font-size: 15px;
+}
+.div-pagneyshin-find-dealers{
+  width: 100%;
+  height: 420px;
+  
+}
 .scroll {
   width: 180px;
-  height: 275px;
+  height: 378px;
   overflow: hidden;
   overflow-y: scroll;
   background-color: #ffffff;
   border: solid 1px #ddd;
   list-style-type: none;
+  padding: 10px;
 }
 
-.scroll ul li {
-  font-size: 0.95rem;
-  padding: 0.23rem 0 0.23rem 0.33rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
+.scroll p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #666;
   font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
+  margin-bottom: 0;
+  height: 30px;
+  cursor: pointer;
+}
+.scroll p:hover{
+  color: #821213;
 }
 
 .work_three {
@@ -209,11 +220,11 @@
 
 @media (max-width: 1024px) {
   .waty_finddeal iframe {
-    width: 600px;
+    width: 100%;
   }
 
   .waty_finddeal {
-    width: 800px;
+    width: 100%;
   }
 }
 
@@ -245,11 +256,11 @@
   }
 
   .waty_finddeal iframe {
-    width: 400px;
+    width: 100%;
   }
 
   .waty_finddeal {
-    width: 600px;
+    width: 100%;
   }
 }
 
@@ -269,6 +280,7 @@
 
   .scroll {
     width: 100%;
+    height: 200px;
   }
 
   .waty_finddeal iframe {
@@ -277,7 +289,7 @@
   }
 
   .waty_finddeal {
-    width: 470px;
+    width: 100%;
     height: 652px;
   }
 }

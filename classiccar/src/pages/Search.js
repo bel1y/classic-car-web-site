@@ -119,6 +119,10 @@ export default function Search() {
     setPage(3);
   }
 
+  function searchfromccnumber() {
+    window.location = `/about-car/${document.querySelector("#cc-number-searching").value}`
+  }
+
   return (
     <div>
       <Navbar />
@@ -304,7 +308,7 @@ export default function Search() {
                         <h5>Chevrolet Camaro</h5>
                         <h5>Ford F100</h5>
                         <h5>Ford Thunderbird</h5>
-                        <h5>Chevrolet Bel Air</h5>
+                        <h5>Chevrolet Bel Air</h5> 
                       </div>
                     </div>
                     <div className="div-big-search-by-mark">
@@ -435,12 +439,12 @@ export default function Search() {
                       <div className="input-search-div1">
                         <p>CC -</p>
                         <input
-                          type="text"
+                          type="number"
                           name=""
-                          id=""
+                          id="cc-number-searching"
                           placeholder="Enter CC Number"
                         />
-                        <button>SEARCH</button>
+                        <button onClick={()=>searchfromccnumber()}>SEARCH</button>
                       </div>
                     </div>
                     <div className="how-is-it-working-text-search">

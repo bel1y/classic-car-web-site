@@ -75,6 +75,8 @@ export default function Navbar1() {
             <p onClick={()=>windowlocation5()}>JOIN OUR DEALERS</p>
             <p onClick={()=>windowlocation3()}>AUCTION CENTRAL</p>
             <p onClick={()=>windowlocation4()}>RESOURCES</p>
+            <a href="https://journal.classiccars.com/"><p>JOURNAL</p></a>
+            <a href="https://autohunter.com/?utm_source=classiccars.com&utm_medium=main-menu&utm_campaign=cc.com-banners"><p>AUTOHUNTER</p></a>
         </div>
         <div className="my-account-check-open" >
 <div className="name-my-account">
@@ -97,6 +99,8 @@ export default function Navbar1() {
             <p onClick={()=>windowlocation5()}>JOIN OUR DEALERS</p>
             <p onClick={()=>windowlocation3()}>AUCTION CENTRAL</p>
             <p onClick={()=>windowlocation4()}>RESOURCES</p>
+            <a href="https://journal.classiccars.com/"><p>JOURNAL</p></a>
+            <a href="https://autohunter.com/?utm_source=classiccars.com&utm_medium=main-menu&utm_campaign=cc.com-banners"><p>AUTOHUNTER</p></a>
 
         </div>
         <div className="media-text-navbar1">

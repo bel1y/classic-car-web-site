@@ -26,6 +26,7 @@ import url from './host'
 export default function AboutCar() {
 
   const [data, setData] = useState({});
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   const { id } = useParams();
   
 
@@ -33,13 +34,36 @@ export default function AboutCar() {
 
     axios.get(`${url}/api/v1/cars/${id}`)
     .then(res=>{
-  console.log(res.data);
       setData(res.data)
     })
     .catch(err=>{
     
     })
   },[])
+
+  function sendtofriend() {
+    window.location = "/send-message-to-friend"
+  }
+
+  function addtofavorite() {
+if (user == null) {
+  window.location = '/login'
+}else{
+  var formdata = new FormData()
+
+  formdata.append("user_id", user.id)
+  formdata.append("car_id", data.id)
+
+  axios
+  .post(`${url}/api/v1/favorite`, formdata)
+  .then(res => {
+    alert("good")
+  })
+  .catch(err => {
+    alert(err)
+  })
+}
+  }
 
   return (
     <div className='big-div-about-car'>
@@ -95,10 +119,10 @@ return <SwiperSlide>
           </div>
 
     <div className="favorite-cintact-div-aboutcar">
-      <button className="add-favorite-div" onClick={()=> localStorage.setItem("favorite", JSON.stringify(data))}>
+      <button className="add-favorite-div" onClick={()=> addtofavorite()}>
         <p><span><FaHeartCirclePlus /></span> favorite</p>
       </button>
-      <button className="add-favorite-div">
+      <button className="add-favorite-div"  onClick={()=> sendtofriend()}>
         <p><span><MdEmail  /></span> Send to a Friend</p>
       </button>
       <button className="add-favorite-div">
@@ -122,7 +146,7 @@ return <SwiperSlide>
       </tr>
       <tr className='first-tr-in-table-aboutcar1'>
         <td>Listing ID:</td>
-        <td>{item.listing_id}</td>
+        <td>CC-{item.id}</td>
       </tr>
       <tr className='first-tr-in-table-aboutcar'>
         <td>Price:</td>

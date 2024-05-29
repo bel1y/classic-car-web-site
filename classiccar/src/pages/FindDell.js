@@ -1,9 +1,63 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import '../css/finsdell.css'
 import Navbar  from './Nav'
 import Footer from './Footer'
+import axios from 'axios'
+import url from './host'
+import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet'
 
 export default function FindDell() {
+  const [data, setData] = useState([]);
+  var [country, setCountry] = useState([]);
+  var [state, setState] = useState([]);
+
+  useEffect(() => {
+ var a = [];
+    axios.get(`${url}/api/v1/cars`)
+      .then(res => {
+          for (let i = 0; i < res.data.length; i++) {
+            var push = true;
+            for (let j = 0; j < a.length; j++) {
+              if (a[j] == res.data[i].location) {
+                push = false;
+              }
+            }
+            if (push) {
+              a.push(res.data[i].location);
+            }
+          }
+          setCountry(a);
+      })
+      .catch(err => {
+
+      })
+      var b = [];
+      axios.get(`${url}/api/v1/cars`)
+        .then(res1 => {
+            for (let i = 0; i < res1.data.length; i++) {
+              var push = true;
+              for (let j = 0; j < a.length; j++) {
+                if (b[j] == res1.data[i].state) {
+                  push = false;
+                }
+              }
+              if (push) {
+                b.push(res1.data[i].state);
+              }
+            }
+            setState(b);
+        })
+        .catch(err => {
+  
+        })
+  }, [])
+
+
+  function open() {
+    window.location = `/listings-find/1?lacotion=${document.querySelector("#country-in-find-dealers").value}
+   `
+  }
+
   return(
         <>
         <Navbar/>
@@ -15,136 +69,27 @@ export default function FindDell() {
       <div className="work_two">
         <div className="waty_finddeal">
           <div className="lop_finddeal">
-            <select className="select_finddeal">
-              <option value="">3rd Coast Motors</option>
-              <option value="">427 Garage</option>
-              <option value="">4 waty-finddeal</option>
-              <option value="">500 -Automoteea</option>
-              <option value="">920 aumatibkb</option>
-              <option value="">A Tmcbl of nnumjg</option>
-              <option value="">A$E Cojnb Cars</option>
-              <option value="">A7 Auto Sales</option>
-              <option value="">ajd jslhdfbj ejuadfsbhv</option>
-              <option value="">fdsh gf jsgf ns jfg</option>
-              <option value="">g dfg hhs hsfh</option>
-              <option value="">dghg djhjd dshh</option>
-              <option value="">3rd Coast Motors</option>
-              <option value="">427 Garage</option>
-              <option value="">4 waty-finddeal</option>
-              <option value="">500 -Automoteea</option>
-              <option value="">920 aumatibkb</option>
-              <option value="">A Tmcbl of nnumjg</option>
-              <option value="">A$E Cojnb Cars</option>
-              <option value="">A7 Auto Sales</option>
-              <option value="">ajd jslhdfbj ejuadfsbhv</option>
-              <option value="">fdsh gf jsgf ns jfg</option>
-              <option value="">g dfg hhs hsfh</option>
-              <option value="">dghg djhjd dshh</option>
-              <option value="">3rd Coast Motors</option>
-              <option value="">427 Garage</option>
-              <option value="">4 waty-finddeal</option>
-              <option value="">500 -Automoteea</option>
-              <option value="">920 aumatibkb</option>
-              <option value="">A Tmcbl of nnumjg</option>
-              <option value="">A$E Cojnb Cars</option>
-              <option value="">A7 Auto Sales</option>
-              <option value="">ajd jslhdfbj ejuadfsbhv</option>
-              <option value="">fdsh gf jsgf ns jfg</option>
-              <option value="">g dfg hhs hsfh</option>
-              <option value="">dghg djhjd dshh</option>
-              <option value="">3rd Coast Motors</option>
-              <option value="">427 Garage</option>
-              <option value="">4 waty-finddeal</option>
-              <option value="">500 -Automoteea</option>
-              <option value="">920 aumatibkb</option>
-              <option value="">A Tmcbl of nnumjg</option>
-              <option value="">A$E Cojnb Cars</option>
-              <option value="">A7 Auto Sales</option>
-              <option value="">ajd jslhdfbj ejuadfsbhv</option>
-              <option value="">fdsh gf jsgf ns jfg</option>
-              <option value="">g dfg hhs hsfh</option>
-              <option value="">dghg djhjd dshh</option>
+            <select className="select_finddeal" >
+              <option value="">All Dealers</option>
+             {country.map((item,key)=>{
+             return <option value={`${item}`}>{item}</option>
+             })}
             </select>
             <div className="scroll">
-              <ul>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-<li>3rd Coast Motors</li>
-              </ul>
+            {state.map((item,key)=>{
+              return <p >{item}</p>
+             })}
             </div>
-          </div>
+          </div>  
           <iframe title=''
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36847185.09711013!2d-122.02558324179805!3d37.140116580889845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sAmerika%20Qo%E2%80%98shma%20Shtatlari!5e0!3m2!1suz!2s!4v1714130368648!5m2!1suz!2s"
-            width={'600'}
-            height="450"
-            style={{border: 0}}
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52918450.40025156!2d-161.85240697328845!3d35.949761324666035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2z0KHQvtC10LTQuNC90LXQvdC90YvQtSDQqNGC0LDRgtGLINCQ0LzQtdGA0LjQutC4!5e0!3m2!1sru!2s!4v1716629711202!5m2!1sru!2s" 
+          width={'600'}
+          height="450" 
+          style={{border: 0}}
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+           
         </div>
       </div>
       <div className="work_three">
@@ -155,66 +100,62 @@ export default function FindDell() {
           <div className="work_three_card">
             <div className="work_three_card_small">
               <ul>
-                <li>Alabama (6)</li>
-                <li>Arizona (24)</li>
-                <li>Arkansas (2)</li>
-                <li>British Columbia (1)</li>
-                <li>California (58)</li>
-                <li>Colorado (10)</li>
-                <li>Connecticut (7)</li>
-                <li>Florida (50)</li>
-                <li>Georgia (21)</li>
-              </ul>
-            </div>
-            <div className="work_three_card_small">
-              <ul>
-                <li>Illinois (27)</li>
-                <li>Indiana (13)</li>
-                <li>Iowa (8)</li>
-                <li>Kansas (4)</li>
-                <li>Kentucky (3)</li>
-                <li>Maine (1)</li>
-                <li>Maryland (3)</li>
-                <li>Massachusetts (9)</li>
-              </ul>
-            </div>
-            <div className="work_three_card_small">
-              <ul>
-                <li>Michigan (22)</li>
-                <li>Minnesota (14)</li>
-                <li>Mississippi (4)</li>
-                <li>Missouri (20)</li>
-                <li>Montana (2)</li>
-                <li>Nebraska (5)</li>
-                <li>Nevada (6)</li>
-                <li>New Hampshire (1)</li>
-              </ul>
-            </div>
-            <div className="work_three_card_small">
-              <ul>
+              {state.map((item,key)=>{
+             if(item.length < 9){
+              return <li>{item}</li>
+             }
+             else {
 
-𝖆𝖇𝖇𝖆𝖘, [03.05.2024 16:04]
-<li>New Jersey (13)</li>
-                <li>New York (21)</li>
-                <li>North Carolina (23)</li>
-                <li>Ohio (33)</li>
-                <li>Oklahoma (6)</li>
-                <li>Oregon (7)</li>
-                <li>Pennsylvania (28)</li>
-                <li>Rhode Island (3)</li>
+             }
+             })}
               </ul>
             </div>
             <div className="work_three_card_small">
               <ul>
-                <li>South Carolina (5)</li>
-                <li>South Dakota (5)</li>
-                <li>Tennessee (9)</li>
-                <li>Texas (28)</li>
-                <li>California (58)</li>
-                <li>Virginia (5)</li>
-                <li>Washington (9)</li>
-                <li>West Virginia (1)</li>
-                <li>Wisconsin (9)</li>
+              {state.map((item,key)=>{
+             if(item.length > 9 &&  item.length < 17){
+              return <li>{item}</li>
+             }
+             else {
+
+             }
+             })}
+              </ul>
+            </div>
+            <div className="work_three_card_small">
+              <ul>
+              {state.map((item,key)=>{
+             if(item.length > 17 &&  item.length < 25){
+              return <li>{item}</li>
+             }
+             else {
+
+             }
+             })}
+              </ul>
+            </div>
+            <div className="work_three_card_small">
+              <ul>
+              {state.map((item,key)=>{
+             if(item.length > 25 &&  item.length < 33){
+              return <li>{item}</li>
+             }
+             else {
+
+             }
+             })}
+              </ul>
+            </div>
+            <div className="work_three_card_small">
+              <ul>
+              {state.map((item,key)=>{
+             if(item.length > 33 &&  item.length < 42){
+              return <li>{item}</li>
+             }
+             else {
+
+             }
+             })}
               </ul>
             </div>
           </div>
@@ -226,15 +167,68 @@ export default function FindDell() {
         <div className="kichkina_h1">
           <h1>List by Country</h1>
         </div>
-        <div className="kichkina_p">
-          <p>Canada (16)</p>
-          <p>Denmaek (1)</p>
-          <p>Italy (1)</p>
-          <p>Japan (2)</p>
-          <p>Netherlands (2)</p>
-          <p>Sveden (1)</p>
-          <p>United Kingdom (1)</p>
-        </div>
+        <div className="work_three_card">
+            <div className="work_three_card_small">
+              <ul id='location-in-find-dealers'>
+              {country.map((item,key)=>{
+             if(item.length < 9){
+              return <li>{item}</li>
+             }
+             else {
+
+             }
+             })}
+              </ul>
+            </div>
+            <div className="work_three_card_small">
+              <ul id='location-in-find-dealers'>
+              {country.map((item,key)=>{
+             if(item.length > 9 &&  item.length < 17){
+              return <li>{item}</li>
+             }
+             else {
+
+             }
+             })}
+              </ul>
+            </div>
+            <div className="work_three_card_small">
+              <ul>
+              {country.map((item,key)=>{
+             if(item.length > 17 &&  item.length < 25){
+              return <li>{item}</li>
+             }
+             else {
+
+             }
+             })}
+              </ul>
+            </div>
+            <div className="work_three_card_small">
+              <ul>
+              {country.map((item,key)=>{
+             if(item.length > 25 &&  item.length < 33){
+              return <li>{item}</li>
+             }
+             else {
+
+             }
+             })}
+              </ul>
+            </div>
+            <div className="work_three_card_small">
+              <ul>
+              {country.map((item,key)=>{
+             if(item.length > 33 &&  item.length < 42){
+              return <li>{item}</li>
+             }
+             else {
+
+             }
+             })}
+              </ul>
+            </div>
+          </div>
       </div>
     </div>
     <Footer/>

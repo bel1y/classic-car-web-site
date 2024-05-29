@@ -65,9 +65,10 @@
     display: flex;
     gap: 15px;
     color: #821213;
+    text-decoration: none !important;
   }
   .add-favorite-div a{
-    text-decoration: none;
+    text-decoration: none !important;
   }
   .add-favorite-div span{
     color: #000;

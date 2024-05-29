@@ -55,10 +55,10 @@ export default function Footer() {
                 <p>GET DAILY NEWSLETTER</p>
             </div>
             <div className="network-footer">
-                <p className='FaInstagram'><FaFacebookF /></p>
-                <p className='FaInstagram'><FaXTwitter /></p>
-                <p className='FaInstagram'><FaInstagram /></p>
-                <p className='FaInstagram'><FaYoutube /></p>
+                <a href='https://www.facebook.com/classiccarsdotcom/' className='FaInstagram'><FaFacebookF /></a>
+                <a href='https://x.com/ClassicCars_com' className='FaInstagram'><FaXTwitter /></a>
+                <a href='https://www.instagram.com/classiccarsdotcom/' className='FaInstagram'><FaInstagram /></a>
+                <a href='https://www.youtube.com/user/ClassicCarsDotCom' className='FaInstagram'><FaYoutube /></a>
                 </div>
             </div>
 

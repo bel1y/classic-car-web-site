@@ -1,37 +1,142 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../css/addlisting.css'
 import { MdArrowBackIosNew } from "react-icons/md";
 import logo from '../img/classiccarlogo.webp'
 import { FaLock, FaEyeSlash, FaPhoneAlt, FaQuestion, FaInfo } from "react-icons/fa";
 import { PiExportBold } from "react-icons/pi";
 import { FaPlus } from "react-icons/fa6";
+import axios from 'axios'
+import url from './host'  
 
 export default function AddListing() {
 
   const [data, setData] = useState(JSON.parse(localStorage.getItem("user")));
+  const [massive, setMassive] = useState([]);
+  var [category, setCategory] = useState([]);
+  var [subcategory, setSubCategory] = useState([]);
+
+
+    useEffect(()=>{
+      axios.get(`${url}/api/v1/cars`)
+      .then(res => {
+        axios.get(`${url}/api/v1/category`).then((res2) => {
+          setCategory(res2.data);
+          axios.get(`${url}/api/v1/subcategory`).then((res3) => {
+            setSubCategory(res3.data);
+          });
+        });
+        setMassive(res.data)
+      })
+      .catch(err => {
+
+      })
+    }, [])
 
     function return1(){
     window.location="/my-list"
     }
 
     function open() {
-      document.querySelector(".for-display-block-and-none-addlist").style = "display: block"
-      document.querySelector(".for-alittle-bitten-info-next-page").style = "display: none"
-      document.querySelector(".third-button-information-div-add-listing").style = "display: none"
+
+        document.querySelector(".for-display-block-and-none-addlist").style = "display: block"
+        document.querySelector(".for-alittle-bitten-info-next-page").style = "display: none"
+        document.querySelector(".third-button-information-div-add-listing").style = "display: none"
+
+
     }
     function open1() {
-      document.querySelector(".for-display-block-and-none-addlist1").style = "display: block"
-      document.querySelector(".for-alittle-bitten-info-next-page1").style = "display: none"
-      document.querySelector(".third1-button-information-div-add-listing").style = "display: none"
+      if (document.querySelector("#year-add-listing").value == "") {
+        document.querySelector("#year-add-listing").style = "box-shadow: 0px 0px 10px red"
+      }
+      else if(document.querySelector("#make-add-listing").value == ""){
+        document.querySelector("#make-add-listing").style = "box-shadow: 0px 0px 10px red"
+      }
+      else if(document.querySelector("#model-add-listing").value == ""){
+        document.querySelector("#model-add-listing").style = "box-shadow: 0px 0px 10px red"
+      }
+      else if(document.querySelector("#price-add-listing").value == ""){
+        document.querySelector("#price-add-listing").style = "box-shadow: 0px 0px 10px red"
+      }
+      else if(document.querySelector("#location-add-listing").value == ""){
+        document.querySelector("#location-add-listing").style = "box-shadow: 0px 0px 10px red"
+      }
+      else if(document.querySelector("#state-add-listing").value == ""){
+        document.querySelector("#state-add-listing").style = "box-shadow: 0px 0px 10px red"
+      }
+      else{
+        document.querySelector(".for-display-block-and-none-addlist1").style = "display: block"
+        document.querySelector(".for-alittle-bitten-info-next-page1").style = "display: none"
+        document.querySelector(".third1-button-information-div-add-listing").style = "display: none"
+        document.querySelector("#year-add-listing").style = "box-shadow: none"
+        document.querySelector("#make-add-listing").style = "box-shadow: none"
+        document.querySelector("#model-add-listing").style = "box-shadow: none"
+        document.querySelector("#price-add-listing").style = "box-shadow: none"
+        document.querySelector("#location-add-listing").style = "box-shadow: none"
+      }
+
+
+
     }
     function open2() {
-      document.querySelector(".for-display-block-and-none-addlist2").style = "display: block"
-      document.querySelector(".for-alittle-bitten-info-next-page2").style = "display: none"
-      document.querySelector(".third2-button-information-div-add-listing").style = "display: none"
+      if(document.querySelector("#exterior-color-add-listing").value == ""){
+        document.querySelector("#exterior-color-add-listing").style = "box-shadow: 0px 0px 10px red"
+      }
+      else if(document.querySelector("#interior-color-add-listing").value == ""){
+        document.querySelector("#interior-color-add-listing").style = "box-shadow: 0px 0px 10px red"
+      }
+      else if(document.querySelector("#transmission-add-listing").value == ""){
+        document.querySelector("#transmission-add-listing").style = "box-shadow: 0px 0px 10px red"
+      }
+      else if(document.querySelector("#description-add-listing").value == ""){
+        document.querySelector("#description-add-listing").style = "box-shadow: 0px 0px 10px red"
+      }
+      else{
+        document.querySelector(".for-display-block-and-none-addlist2").style = "display: block"
+        document.querySelector(".for-alittle-bitten-info-next-page2").style = "display: none"
+        document.querySelector(".third2-button-information-div-add-listing").style = "display: none"
+        document.querySelector("#exterior-color-add-listing").style = "box-shadow: none"
+        document.querySelector("#interior-color-add-listing").style = "box-shadow: none"
+        document.querySelector("#transmission-add-listing").style = "box-shadow: none"
+        document.querySelector("#description-add-listing").style = "box-shadow: none"
+      }
     }
     function open3() {
       document.querySelector(".third3-button-information-div-add-listing").style = "display: none"
       document.querySelector(".for-display-block-and-none-addlist4").style = "display: flex"
+    }
+
+    function newcar() {
+      var formdata = new FormData()
+
+      formdata.append("year", document.querySelector("#year-add-listing").value);
+      formdata.append("category", document.querySelector("#make-add-listing").value);
+      formdata.append("subcategory", document.querySelector("#model-add-listing").value);
+      formdata.append("price", document.querySelector("#price-add-listing").value);
+      formdata.append("location", document.querySelector("#location-add-listing").value);
+      formdata.append("exterior_color", document.querySelector("#exterior-color-add-listing").value);
+      formdata.append("interior_color", document.querySelector("#interior-color-add-listing").value);
+      formdata.append("transmission", document.querySelector("#transmission-add-listing").value);
+      formdata.append("odometer", document.querySelector("#odometer-add-listing").value);
+      formdata.append("description", document.querySelector("#description-add-listing").value);
+      formdata.append("title", document.querySelector("#make-add-listing").value && document.querySelector("#model-add-listing").value);
+      formdata.append("image", document.querySelector("#image-add-listing").file[0]);
+      formdata.append("state", document.querySelector("#state-add-listing").value);
+      formdata.append("user_id", data.id);
+      formdata.append("power_windows", true);
+      formdata.append("air_conditioning", true);
+      formdata.append("power_brakes", true);
+      formdata.append("engine_condition", "good");
+      formdata.append("looking", 0);
+      formdata.append("all_img", document.querySelector("#image-add-listing").value);
+
+      axios
+      .post(`${url}/api/v1/cars`, formdata)
+      .then(res => {
+        window.location = '/my-list'
+      })
+      .catch(err => {
+        alert(err)
+      })
     }
 
   return (
@@ -83,6 +188,7 @@ export default function AddListing() {
           <button onClick={()=>open()}>CONTINUE</button>
         </div>
       </div>
+
       <div className="account-information-div-add-listing for-display-block-and-none-addlist">
         <div className="first-account-information-div-add-listing">
           <p>Basic Vehicle Information</p>
@@ -91,37 +197,48 @@ export default function AddListing() {
     <div className="inside-input-acc-div-add-listing">
       <div className="first-inside-input-acc-div-add-listing">
         <p>Year</p>
-        <input type="number" />
+        <input type="number" id='year-add-listing'/>
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Make</p>
-        <input type="text" name="" id="" />
+        {/* <input type="text" name="" id="make-add-listing" /> */}
+        <select name="" id="make-add-listing">
+        {category.map((item) => {
+      return <option value={item.id}>{item.title}</option>;
+})}
+        </select>
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Model</p>
-        <input type="text" name="" id="" />
+        {/* <input type="text" name="" id="model-add-listing" /> */}
+        <select name="" id="model-add-listing">
+        {subcategory.map((item) => {
+      return <option value={item.id}>{item.title}</option>;
+})}          
+        </select>
+
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Price</p>
-        <input type="text" placeholder='0,00'/>
+        <input type="number" placeholder='0,00' id='price-add-listing'/>
       </div>
     </div>
     <div className="inside-input-acc-div-add-listing">
       <div className="first-inside-input-acc-div-add-listing">
         <p>Country</p>
-        <input type="text" />
+        <input type="text" id='location-add-listing'/>
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>City</p>
-        <input type="text" />
+        <input type="text" id='city-add-listing'/>
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>State</p>
-        <input type="text" />
+        <input type="text" id='state-add-listing'/>
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Zip Code</p>
-        <input type="text"/>
+        <input type="text" id='zip-add-listing'/>
       </div>
     </div>
         </div>
@@ -129,6 +246,7 @@ export default function AddListing() {
           <button onClick={()=>open1()}>CONTINUE</button>
         </div>
       </div>
+
       <div className="account-information-div-add-listing for-display-block-and-none-addlist1">
         <div className="first-account-information-div-add-listing">
           <p>Extended Vehicle Information</p>
@@ -137,35 +255,36 @@ export default function AddListing() {
     <div className="inside-input-acc-div-add-listing">
       <div className="first-inside-input-acc-div-add-listing">
         <p>Exterior Color</p>
-        <input type="number" />
+        <input type="text" id='exterior-color-add-listing'/>
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Interior Color</p>
-    <input type="text" />
+    <input type="text" id='interior-color-add-listing'/>
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Transmission</p>
-        <select name="" id="">
-        <option value="">Manual</option>
-        <option value="">Automatic</option>
+        <select name="" id="transmission-add-listing">
+        <option value="Manual">Manual</option>
+        <option value="Automatic">Automatic</option>
         </select>
       </div>
     </div>
     <div className="inside-input-acc-div-add-listing">
       <div className="first-inside-input-acc-div-add-listing">
         <p>Odometer</p>
-        <input type="text" />
+        <input type="number" id='odometer-add-listing'/>
       </div>
     </div>
         </div>
         <div className="fourth-input-information-div-add-listing">
           <p>Description</p>
-          <textarea name="" id=""></textarea>
+          <textarea name="" id="description-add-listing"></textarea>
         </div>
         <div className="third2-button-information-div-add-listing">
           <button onClick={()=>open2()}>CONTINUE</button>
         </div>
       </div>
+
       <div className="account-information-div-add-listing for-display-block-and-none-addlist2">
         <div className="first-account-information-div-add-listing">
           <p>Photos</p>
@@ -203,7 +322,7 @@ export default function AddListing() {
    <h5>Please note: For best representation of your vehicle, photos should be taken in landscape mode only.</h5>
         </div>
         <div className="sixth-add-photo-information-div-add-listing">
-        {/* <input type="file" /> */}
+        <input type="file" id='image-add-listing'/>
         <div className="inside-sixth-add-photo-information-div-add-listing">
         <h2><PiExportBold /></h2>
         <p>Drag & Drop images here or click to select files - use only photos taken in landscape mode.</p>
@@ -214,8 +333,9 @@ export default function AddListing() {
           <button onClick={()=>open3()}>CONTINUE</button>
         </div>
       </div>
+
       <div className="for-display-block-and-none-addlist4">
-        <button>Continue to Check-Out</button>
+        <button onClick={() => newcar()}>ADD CAR</button>
       </div>
 
       <div className="for-alittle-bitten-info-next-page">

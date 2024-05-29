@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './pages/Navbar'
 import Footer from './pages/Footer'
 import Home from './pages/Home'
+import Send from './pages/SendFriend'
 import Search from "./pages/Search";
 import Sell from './pages/Sellacar'
 import Auction from './pages/Auction'
@@ -35,6 +36,7 @@ import Inventoryanalytic from './pages/Inventoryanalytic';
 import Nav from './pages/Navbar1'
 import Result from './pages/Result';
 import AddListing from './pages/AddListing';
+import Pay from './pages/Pay'
 
 export default function App() {
   return (
@@ -42,6 +44,8 @@ export default function App() {
       <BrowserRouter>
 <Routes>
   <Route path="/" element={<Home/>} />
+  <Route path="/pay" element={<Pay/>} />
+  <Route path="/send-message-to-friend" element={<Send/>} />
   <Route path="/add-listing" element={<AddListing/>} />
   <Route path="/listings-find/:id" element={<Result/>} />
   <Route path="/search" element={<Search/>}/>

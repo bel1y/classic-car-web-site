@@ -21,6 +21,7 @@ import axios from 'axios'
 
 export default function Sellacar() {
   const [data, setData]=useState([])
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
 
 
   function open() {
@@ -48,6 +49,15 @@ export default function Sellacar() {
       "display:none";
   }
 
+  function addlisting() {
+    if (user == null) {
+      window.location = '/login'
+    }
+    else{
+      window.location = '/add-listing'
+    }
+  }
+
   useEffect(()=>{
 
     axios.get(`${url}/api/v1/cars`)
@@ -60,7 +70,7 @@ export default function Sellacar() {
     })
   })
 
-  function open(id) {
+  function openaboutcar(id) {
     window.location = `/about-car/${id}`
   }
   return (
@@ -83,10 +93,14 @@ export default function Sellacar() {
               Choose the right package for you and sell your classic car safely,
               quickly and for the best price
             </th>
-            <th className="small-th-in-sellacar">Regular</th>
-            <th className="small-th-in-sellacar">Plus</th>
+            <th className="small-th-in-sellacar">
+              <h5>Regular</h5>
+              </th>
+            <th className="small-th-in-sellacar small-th-in-sellacar1 small-th-in-sellacar3">
+              <p><FaStar/> Most Popular <FaStar/></p><h5>Plus</h5>
+              </th>
             <th className="small-th-in-sellacar special-for-padding-sellacar1">
-              Premium
+              <h5>Premium</h5>
             </th>
           </tr>
           <tr className="special-for-bgc-in-sellacar1">
@@ -94,7 +108,7 @@ export default function Sellacar() {
               Pricing
             </td>
             <td className="small-td-in-sellacar">$149.99</td>
-            <td className="small-td-in-sellacar">$189.99</td>
+            <td className="small-td-in-sellacar small-th-in-sellacar1">$189.99</td>
             <td className="small-td-in-sellacar special-for-padding-sellacar1">
               $349.99
             </td>
@@ -102,13 +116,13 @@ export default function Sellacar() {
           <tr className="special-for-bgc-in-sellacar">
             <td className="big-td-in-sellacar special-for-padding-sellacar"></td>
             <td className="small-td-in-sellacar">
-              <button>LIST NOW</button>
+              <button onClick={()=>addlisting()}>LIST NOW</button>
             </td>
-            <td className="small-td-in-sellacar">
-              <button>LIST NOW</button>
+            <td className="small-td-in-sellacar small-th-in-sellacar1">
+              <button onClick={()=>addlisting()}>LIST NOW</button>
             </td>
             <td className="small-td-in-sellacar special-for-padding-sellacar1">
-              <button>LIST NOW</button>
+              <button onClick={()=>addlisting()}>LIST NOW</button>
             </td>
           </tr>
           <tr className="special-for-bgc-in-sellacar">
@@ -123,7 +137,7 @@ export default function Sellacar() {
             <td className="small-td-in-sellacar">
               <p>Guaranteed</p>
             </td>
-            <td className="small-td-in-sellacar">
+            <td className="small-td-in-sellacar small-th-in-sellacar1">
               <p>Guaranteed</p>
             </td>
             <td className="small-td-in-sellacar special-for-padding-sellacar1">
@@ -142,7 +156,7 @@ export default function Sellacar() {
             <td className="small-td-in-sellacar">
               <IoCloseSharp className="IoCloseSharp-sellacar" />
             </td>
-            <td className="small-td-in-sellacar">
+            <td className="small-td-in-sellacar small-th-in-sellacar1">
               <h6>4 Weeks</h6>
             </td>
             <td className="small-td-in-sellacar special-for-padding-sellacar1">
@@ -162,7 +176,7 @@ export default function Sellacar() {
             <td className="small-td-in-sellacar">
               <IoCloseSharp className="IoCloseSharp-sellacar" />
             </td>
-            <td className="small-td-in-sellacar">
+            <td className="small-td-in-sellacar small-th-in-sellacar1">
               <h5>2 Social Media Posts</h5>
             </td>
             <td className="small-td-in-sellacar special-for-padding-sellacar1">
@@ -182,7 +196,7 @@ export default function Sellacar() {
             <td className="small-td-in-sellacar">
               <IoCloseSharp className="IoCloseSharp-sellacar" />
             </td>
-            <td className="small-td-in-sellacar">
+            <td className="small-td-in-sellacar small-th-in-sellacar1">
               <IoCloseSharp className="IoCloseSharp-sellacar" />
             </td>
             <td className="small-td-in-sellacar special-for-padding-sellacar1">
@@ -202,7 +216,7 @@ export default function Sellacar() {
             <td className="small-td-in-sellacar">
               <IoCloseSharp className="IoCloseSharp-sellacar" />
             </td>
-            <td className="small-td-in-sellacar">
+            <td className="small-td-in-sellacar small-th-in-sellacar1 small-th-in-sellacar2">
               <IoCloseSharp className="IoCloseSharp-sellacar" />
             </td>
             <td className="small-td-in-sellacar special-for-padding-sellacar1">
@@ -228,7 +242,7 @@ export default function Sellacar() {
               <h1>Guaranteed</h1>
             </div>
             <div className="special-for-button-div-sellacar">
-              <button>LIST NOW</button>
+              <button onClick={()=>addlisting()}>LIST NOW</button>
             </div>
           </div>
         </div>
@@ -255,7 +269,7 @@ export default function Sellacar() {
               <h1>4 Weeks</h1>
             </div>
             <div className="special-for-button-div-sellacar">
-              <button>LIST NOW</button>
+              <button onClick={()=>addlisting()}>LIST NOW</button>
             </div>
           </div>
         </div>
@@ -303,7 +317,7 @@ export default function Sellacar() {
               </h1>
             </div>
             <div className="special-for-button-div-sellacar">
-              <button>LIST NOW</button>
+              <button onClick={()=>addlisting()}>LIST NOW</button>
             </div>
           </div>
         </div>
@@ -691,7 +705,7 @@ export default function Sellacar() {
           }}
         >
           {data.map(item=>{
-            return <SwiperSlide onClick={()=>open(item.id)}>
+            return <SwiperSlide onClick={()=>openaboutcar(item.id)}>
             <div className="big-inside-div-for-swiper-sellacar">
               <div className="div-for0img-swiper-porsche">
                 <img src={item.image} alt="" />

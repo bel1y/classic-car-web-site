@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+}
+.header-send-to-friend{
+    padding: 5px;
+}
+.header-send-to-friend h1{
+    color: #821213;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 150px;
+}
+.header-send-to-friend h3{
+    color: #000000;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 550;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.section-send-to-friend{
+    width: 95%;
+    margin: auto;
+}
+.text-and-input-for-send-message-to-friend{
+    display: flex;
+    align-items: start;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+.text-and-input-for-send-message-to-friend p{
+    color: #000000;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 550;
+    margin-bottom: 0px;
+    width: 150px;
+}
+.text-and-input-for-send-message-to-friend input{
+    width: 500px;
+    height: 40px;
+    border-left: 3px solid #821213 !important;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding-left: 10px;
+    outline: none;
+}
+.text-and-input-for-send-message-to-friend input:focus{
+    box-shadow: 0px 0px 5px #007bff;
+}
+.text-and-input-for-send-message-to-friend textarea{
+    width: 500px;
+    min-height: 150px;
+    border-left: 3px solid #821213 !important;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+}
+.text-and-input-for-send-message-to-friend textarea:focus{
+    box-shadow: 0px 0px 5px #007bff;
+}
+.text-and-input-for-send-message-to-friend button{
+    background-color: #821213;
+    color: #fff;
+    border-radius: 10px;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 550;
+    border: none;
+    width: 200px;
+    height: 40px;
+}
+
+@media (max-width:700px) {
+    .text-and-input-for-send-message-to-friend{
+        display: block;
+    }
+    .text-and-input-for-send-message-to-friend input{
+        width: 100%;
+    }
+    .text-and-input-for-send-message-to-friend textarea{
+        width: 100%;
+    }
+    .text-and-input-for-send-message-to-friend button{
+        width: 100%;
+    }
+}

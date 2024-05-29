@@ -136,4 +136,159 @@
     font-weight: 600;
     font-size: 17px;
     margin-top: 30px;
+    padding: 10px;
+}
+
+.big-div-for-my-add-listing{
+    display: flex;
+    align-items: start;
+    gap: 1%;
+    width: 95%;
+    margin: auto;
+    box-shadow: 0px 0px 5px #666;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.img-div-for-my-add-listing{
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+}
+.img-div-for-my-add-listing img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.text-div-for-my-add-listing{
+    width: 70%;
+}
+.df-title-and-delete-edit{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.df-title-and-delete-edit p{
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    font-size: 25px;
+}
+.df-title-and-delete-edit button{
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #821213;
+    color: #fff;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+}
+.df-title-and-delete-edit button:hover{
+    background-color: #bd1c1f;
+}
+.df-another-things-my-listing{
+    display: flex;
+    align-items: start;
+    width: 100%;
+    gap: 20px;
+    padding: 10px;
+}
+.first-another-things-my-listing{
+    width: 33%;
+}
+.first-another-things-my-listing p{
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #000;
+}
+.first-another-things-my-listing h6{
+    color: #821213;
+    margin-bottom: 20px;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+}
+.first-another-things-my-listing h5{
+    color: #821213;
+    margin-bottom: 20px;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+    text-align: start;
+    margin-top: 0px !important;
+    padding: 0px !important;
+}
+.first-another-things-my-listing b{
+    color: #000;
+}
+
+@media (max-width:800px) {
+    .big-div-for-my-add-listing{
+        display: block;
+    }
+    .df-title-and-delete-edit button{
+        display: none;
+    }
+    .for-button-in-media-my-add-listing{
+        display: block !important; 
+    }
+    .img-div-for-my-add-listing{
+        width: 100%;
+        height: 350px;
+    }
+    .df-another-things-my-listing{
+        width: 100%;
+        padding: 20px;
+        gap: 30px !important;
+    }
+    .df-title-and-delete-edit{
+        padding: 20px;
+    }
+    .text-div-for-my-add-listing{
+        width: 100%;
+    }
+}
+.for-button-in-media-my-add-listing{
+    width: 95%;
+    margin: auto;
+    padding: 10px;
+    display: none;
+}
+.for-button-in-media-my-add-listing button{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #821213;
+    color: #fff;
+    font-family: "Arimo", sans-serif; 
+    font-weight: 600;
+}
+.for-button-in-media-my-add-listing button:hover{
+    background-color: #bd1c1f;
+}
+@media (max-width: 500px) {
+    .df-another-things-my-listing{
+        flex-wrap: wrap;
+        gap: 10px !important;
+    }
+    .first-another-things-my-listing{
+        width: 150px;
+    }
+}
+@media (max-width: 369px) {
+    .df-another-things-my-listing{
+        flex-wrap: wrap;
+        gap: 0px !important;
+    }
+    .first-another-things-my-listing{
+        width: 130px;
+    }
+}
+@media (max-width:450px) {
+    .img-div-for-my-add-listing{
+        width: 100%;
+        height: 250px;
+    }
 }

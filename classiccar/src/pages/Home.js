@@ -25,7 +25,10 @@ export default function Home() {
     window.location = '/search'
   }
   function openlistinfind(id) {
-    window.location = `/listings-find/${id}`
+    window.location = `/listings-find/1?category=${document.querySelector("#make-search-in-home").value}
+    &&subcategory=${document.querySelector("#make-search-in-home").value}
+    &&year_min=${document.querySelector("#year-min-search-in-home").value}
+    &&year_max=${document.querySelector("#year-max-search-in-home").value}`
   }
 
   var [category, setCategory] = useState([])
@@ -48,6 +51,9 @@ export default function Home() {
       })
   }, [])
 
+  function openselacar() {
+    window.location = '/sell-a-car'
+  }
 
   return (
     <div>
@@ -60,20 +66,20 @@ export default function Home() {
             <div className="input-div-home">
               <div className="input-text-home">
                 <p>YEAR FROM</p>
-                <input type="text" />
+                <input type="number" id="year-min-search-in-home"/>
               </div>
               <div className="input-text-home">
                 <p>YEAR TO</p>
-                <input type="text" />
+                <input type="number" id="year-max-search-in-home"/>
               </div>
             </div>
             <div className="selec-div-home">
               <div className="select-text-home">
                 <p>MAKE</p>
-                <select name="" id="">
+                <select name="" id="make-search-in-home">
                   <option value=""></option>
                   {category.map(item => {
-                    return <option value="">
+                    return <option value={item.id}>
                       <p>
                         {item.title}
                       </p>
@@ -83,10 +89,10 @@ export default function Home() {
               </div>
               <div className="select-text-home">
                 <p>MODEL</p>
-                <select name="" id="">
-                  <option value=""></option>
+                <select name="" id="model-search-in-home">
+                <option value=""></option>
                   {subcategory.map(item => {
-                    return <option value=""> <p>
+                    return <option value={item.id}> <p>
                       {item.title}
                     </p>
                     </option>
@@ -133,24 +139,26 @@ export default function Home() {
 
         <div className="view-sells-car-home">
           <div className="add-your-car-to-sell">
-            <h1>PRIVATE SELLER LISTINGS</h1>
-            <h5>SELL YOUR CAR </h5>
+            <h1 onClick={()=>openlistinfind()}>PRIVATE SELLER LISTINGS</h1>
+            <h5 onClick={()=>openselacar()}>SELL YOUR CAR </h5>
           </div>
           <p className="featured-home">Featured Listings</p>
           <div className="big-cars-div-home">
-            {data.map(item => {
+            {data.map((item,key) => {
+             if (key < 100) {
               return <div className="cars-div-home" onClick={() => open(item.id)}>
 
-                <img src={item.image} alt="" />
+              <img src={item.image} alt="" />
 
-                <h3 className="title-home">
-                  {item.title}
-                </h3>
-                <p className="discreaption-home">
-                  {item.description}
-                </p>
-                <span className="price-car-home">${item.price}</span>
-              </div>
+              <h3 className="title-home">
+              {item.year}  {item.title}
+              </h3>
+              <p className="discreaption-home">
+                {item.description.slice(0,100)}...
+              </p>
+              <span className="price-car-home">${item.price}</span>
+            </div>
+             }
             })}
 
 
@@ -179,606 +187,259 @@ export default function Home() {
               navigation={true}
               modules={[Pagination, Navigation]}
               className="mySwiper"
-            >{data.map(item => {
-              return <SwiperSlide>
+            >{data.map((item, key) => {
+              if(key < 15){
+                return <SwiperSlide>
                 <div className="cars-div-home1" onClick={() => open(item.id)}>
 
                   <img src={item.image} alt="" />
 
                   <h3 className="title-home">
-                    {item.title}
-                  </h3>
+              {item.year}  {item.title}
+              </h3>
                   <p className="discreaption-home">
-                    {item.description}
+                    {item.description.slice(0,100)}...
                   </p>
-                  <span className="price-car-home">{item.price}</span>
+                  <span className="price-car-home">${item.price}</span>
                 </div>
               </SwiperSlide>
+              }
             })}
-              {/* <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
+            </Swiper>
 
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }} breakpoints={{
+                // when window width is >= 640px
+                300: {
+                  spaceBetween: 30,
+                  slidesPerView: 1,
+                },
+                600: {
+                  spaceBetween: 30,
+                  slidesPerView: 2,
+                },
+                // when window width is >= 768px
+                960: {
+                  spaceBetween: 30,
+                  slidesPerView: 3,
+                },
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >{data.map((item, key) => {
+  
+              if(key > 15 && key < 30){
+                return <SwiperSlide>
+                <div className="cars-div-home1" onClick={() => open(item.id)}>
 
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
+                  <img src={item.image} alt="" />
 
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide> */}
+                  <h3 className="title-home">
+              {item.year}  {item.title}
+              </h3>
+                  <p className="discreaption-home">
+                    {item.description.slice(0,100)}...
+                  </p>
+                  <span className="price-car-home">${item.price}</span>
+                </div>
+              </SwiperSlide>
+              }
+            })}
+            </Swiper>
+
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }} breakpoints={{
+                // when window width is >= 640px
+                300: {
+                  spaceBetween: 30,
+                  slidesPerView: 1,
+                },
+                600: {
+                  spaceBetween: 30,
+                  slidesPerView: 2,
+                },
+                // when window width is >= 768px
+                960: {
+                  spaceBetween: 30,
+                  slidesPerView: 3,
+                },
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >{data.map((item, key) => {
+  
+              if(key > 30 && key < 45){
+                return <SwiperSlide>
+                <div className="cars-div-home1" onClick={() => open(item.id)}>
+
+                  <img src={item.image} alt="" />
+
+                  <h3 className="title-home">
+              {item.year}  {item.title}
+              </h3>
+                  <p className="discreaption-home">
+                    {item.description.slice(0,100)}...
+                  </p>
+                  <span className="price-car-home">${item.price}</span>
+                </div>
+              </SwiperSlide>
+              }
+            })}
+            </Swiper>
+
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }} breakpoints={{
+                // when window width is >= 640px
+                300: {
+                  spaceBetween: 30,
+                  slidesPerView: 1,
+                },
+                600: {
+                  spaceBetween: 30,
+                  slidesPerView: 2,
+                },
+                // when window width is >= 768px
+                960: {
+                  spaceBetween: 30,
+                  slidesPerView: 3,
+                },
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >{data.map((item, key) => {
+  
+              if(key > 45 && key < 60){
+                return <SwiperSlide>
+                <div className="cars-div-home1" onClick={() => open(item.id)}>
+
+                  <img src={item.image} alt="" />
+
+                  <h3 className="title-home">
+              {item.year}  {item.title}
+              </h3>
+                  <p className="discreaption-home">
+                    {item.description.slice(0,100)}...
+                  </p>
+                  <span className="price-car-home">${item.price}</span>
+                </div>
+              </SwiperSlide>
+              }
+            })}
+            </Swiper>
+
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }} breakpoints={{
+                // when window width is >= 640px
+                300: {
+                  spaceBetween: 30,
+                  slidesPerView: 1,
+                },
+                600: {
+                  spaceBetween: 30,
+                  slidesPerView: 2,
+                },
+                // when window width is >= 768px
+                960: {
+                  spaceBetween: 30,
+                  slidesPerView: 3,
+                },
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >{data.map((item, key) => {
+  
+              if(key > 60 && key < 75){
+                return <SwiperSlide>
+                <div className="cars-div-home1" onClick={() => open(item.id)}>
+
+                  <img src={item.image} alt="" />
+
+                  <h3 className="title-home">
+              {item.year}  {item.title}
+              </h3>
+                  <p className="discreaption-home">
+                    {item.description.slice(0,100)}...
+                  </p>
+                  <span className="price-car-home">${item.price}</span>
+                </div>
+              </SwiperSlide>
+              }
+            })}
+            </Swiper>
+
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }} breakpoints={{
+                // when window width is >= 640px
+                300: {
+                  spaceBetween: 30,
+                  slidesPerView: 1,
+                },
+                600: {
+                  spaceBetween: 30,
+                  slidesPerView: 2,
+                },
+                // when window width is >= 768px
+                960: {
+                  spaceBetween: 30,
+                  slidesPerView: 3,
+                },
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >{data.map((item, key) => {
+  
+              if(key > 75 && key < 100){
+                return <SwiperSlide>
+                <div className="cars-div-home1" onClick={() => open(item.id)}>
+
+                  <img src={item.image} alt="" />
+
+                  <h3 className="title-home">
+              {item.year}  {item.title}
+              </h3>
+                  <p className="discreaption-home">
+                    {item.description.slice(0,100)}...
+                  </p>
+                  <span className="price-car-home">${item.price}</span>
+                </div>
+              </SwiperSlide>
+              }
+            })}
             </Swiper>
           </div>
         </div>
       </section>
-      {/* 
-      <section className="first-section-home">
-        <div className="accordion-home">
-         
-        </div>
-
-        <div className="view-sells-car-home">
-          <p className="featured-home">High-priced Listings</p>
-          <div className="big-cars-div-home">
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-              <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}breakpoints={{
-            // when window width is >= 640px
-            300: {
-              spaceBetween: 30,
-              slidesPerView: 1,
-            },
-            500: {
-                spaceBetween: 30,
-                slidesPerView: 2,
-              },
-            // when window width is >= 768px
-            960: {
-              spaceBetween: 30,
-              slidesPerView: 3,
-            },
-          }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide><div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div></SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-      </Swiper>
-          </div>
-        </div>
-      </section>
-
-      <section className="first-section-home">
-        <div className="accordion-home">
-         
-        </div>
-
-        <div className="view-sells-car-home">
-          <div className="add-your-car-to-sell1">
-            <h1>DEALER LISTINGS</h1>
-            <h5>SELL YOUR INVENTORY</h5>
-          </div>
-          <p className="featured-home">Showcased Listings</p>
-          <div className="big-cars-div-home">
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-              <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}breakpoints={{
-            // when window width is >= 640px
-            300: {
-              spaceBetween: 30,
-              slidesPerView: 1,
-            },
-            500: {
-                spaceBetween: 30,
-                slidesPerView: 2,
-              },
-            // when window width is >= 768px
-            960: {
-              spaceBetween: 30,
-              slidesPerView: 3,
-            },
-          }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide><div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div></SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-      </Swiper>
-          </div>
-        </div>
-      </section>
-
-
-      <section className="first-section-home">
-        <div className="accordion-home">
-         
-        </div>
-
-        <div className="view-sells-car-home">
-          <p className="featured-home">High-priced Listings</p>
-          <div className="big-cars-div-home">
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-              <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}breakpoints={{
-            // when window width is >= 640px
-            300: {
-              spaceBetween: 30,
-              slidesPerView: 1,
-            },
-            500: {
-                spaceBetween: 30,
-                slidesPerView: 2,
-              },
-            // when window width is >= 768px
-            960: {
-              spaceBetween: 30,
-              slidesPerView: 3,
-            },
-          }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide><div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div></SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-      </Swiper>
-          </div>
-        </div>
-      </section>
-
-
-      <section className="first-section-home">
-        <div className="accordion-home">
-         
-        </div>
-
-        <div className="view-sells-car-home">
-          <div className="add-your-car-to-sell1">
-            <h1>AUCTION LISTINGS</h1>
-          </div>
-          <p className="featured-home">National Auctions</p>
-          <div className="big-cars-div-home">
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-            <div className="cars-div-home">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-              <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}breakpoints={{
-            // when window width is >= 640px
-            300: {
-              spaceBetween: 30,
-              slidesPerView: 1,
-            },
-            500: {
-                spaceBetween: 30,
-                slidesPerView: 2,
-              },
-            // when window width is >= 768px
-            960: {
-              spaceBetween: 30,
-              slidesPerView: 3,
-            },
-          }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide><div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div></SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="cars-div-home1">
-                <img src={car} alt="" />
-
-                <h3 className="title-home">
-                    1972 Chevrolet Camaro SS
-                </h3>
-                <p className="discreaption-home">
-                1972 Chevrolet Camaro SS396 Only a small handful were created by GM for 1972 and most were by special
-                </p>
-                <span className="price-car-home">$72,000</span>
-            </div>
-        </SwiperSlide>
-      </Swiper>
-          </div>
-        </div>
-      </section> */}
+       
 
       <Footer />
     </div>

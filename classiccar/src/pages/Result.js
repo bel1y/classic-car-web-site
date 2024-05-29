@@ -369,7 +369,7 @@ export default function Result() {
                 <div className="first-text-result-div">
                   <div className="inside-little-result-div">
                     <p>Featured Private Seller</p>
-                    <span>{item.listing_id}</span>
+                    <span>CC-{item.id}</span>
                   </div>
                   <h4> {item.year} {item.title}</h4>
                   <p>{item.description}</p>

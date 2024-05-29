@@ -1,9 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "../css/mylist.css";
 import Footer from "./Footer";
 import Navbar from "./Nav";
+import url from "./host";
+import axios from "axios";
 
 export default function MyList() {
+  const [data, setData] = useState([]);
+  const [data1, setData1] = useState(JSON.parse(localStorage.getItem("user")));
+
+  useEffect(()=>{
+    axios.get(`${url}/api/v1/cars`)
+    .then(res=>{
+      setData(res.data)
+    })
+    .catch(err=>{
+
+    })
+  },[])
 
   function openaddlisting() {
     window.location = '/add-listing'
@@ -54,6 +68,57 @@ export default function MyList() {
         Items with a tan background are featured listings. Items with a silver
         background are listings requiring renewal.
       </h5>
+
+      <div className="my-add-car-div-my-listing">
+        {
+          data.map((item,key)=>{
+           if(item.user_id == data1.id){
+            return <>
+            <div className="big-div-for-my-add-listing">
+              <div className="img-div-for-my-add-listing">
+                <img src={item.image} alt="" />
+              </div>
+              <div className="text-div-for-my-add-listing">
+                <div className="df-title-and-delete-edit">
+                  <p>{item.year} {item.title}</p>
+                  <button>Delete</button>
+                </div>
+                <div className="df-another-things-my-listing">
+                  <div className="first-another-things-my-listing">
+                    <p>Listing ID:</p>
+                    <h6>CC-{item.id}</h6>
+                    <p>Listed since:</p>
+                    <h6>{item.time_create.slice(0,10)}</h6>
+                    <p>Featured:</p>
+                    <h6>No</h6>
+                  </div>
+                  <div className="first-another-things-my-listing">
+                    <p>Package:</p>
+                    <h6>Regular Listing</h6>
+                    <p>Price:</p>
+                    <h6>{item.price}</h6>
+                    <p>Status:</p>
+                    <h6>added</h6>
+                  </div>
+                  <div className="first-another-things-my-listing">
+                    <p>View:</p>
+                  <h5>Today: <b>0</b></h5>
+                  <h5>Month: <b>0</b></h5>
+                  <h5>Total: <b>{item.looking}</b></h5>
+                  </div>
+                </div>
+              </div>
+            <div className="for-button-in-media-my-add-listing">
+              <button>Delete</button>
+            </div>
+            </div>
+            </>
+           }else{
+
+           }
+          })
+        }
+      </div>
       <Footer />
     </div>
   );

@@ -28,20 +28,39 @@
 .section-table-sellacar{
     width: 95%;
     margin: auto;
-}
-.section-table-sellacar table{
-    width: 100%;
+    background-color: #fff;
     box-shadow: 0px 0px 5px #666666;
     border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-top: -150px;
+}
+.section-table-sellacar table{
+    width: 98%;
+    margin: auto;
     background-color: #fff;
+    border-spacing: 10px !important;
 }
 
 .section-table-sellacar tr{
     height: 80px;
     width: 97% !important;
     margin: auto;
+} 
+.section-table-sellacar th{
+  padding: 10px;
 }
+.section-table-sellacar .small-th-in-sellacar1{
+  border-left: 3px solid #000;
+  border-right: 3px solid #000;
+}
+.small-th-in-sellacar2{
+border-bottom: 3px solid #000;
+}
+.small-th-in-sellacar3{
+  border-top: 3px solid #000;
+}
+
 
 .big-th-in-sellacar{
     width: 40%;
@@ -50,12 +69,24 @@
 
 .small-th-in-sellacar{
     width: 20%;
-    font-family: "Arimo", sans-serif;
-    color: #821213;
-    text-align: center;
-    font-size: 35px;
+    margin-top: 10px;
 }
-
+.small-th-in-sellacar h5{
+  font-family: "Arimo", sans-serif;
+  color: #821213;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 50px;
+}
+.small-th-in-sellacar p{
+  font-family: "Arimo", sans-serif;
+  color: #821213;
+  text-align: center;
+  font-size: 15px !important;
+  padding-top: 10px;
+  margin-bottom: -30px;
+}
 .big-td-in-sellacar{
     width: 40%;
     font-family: "Arimo", sans-serif;
@@ -550,6 +581,7 @@ text-align: center;
     align-items: center;
     justify-content: space-around;
     background: #fff;
+    padding: 3px;
   }
   .div-mediya-sellacar2{
     width: 100%;
