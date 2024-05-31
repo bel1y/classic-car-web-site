@@ -33,7 +33,9 @@ export default function Signpage() {
 
       })
       .catch((err) => {
-        alert("Не правильная электронная почта или пароль");
+        document.querySelector(".existing-user-input h5").style = 'display:block;'
+        document.querySelector(".if-error-bolsa-siginin").style="display:block;"
+       
       });
   }
   
@@ -84,7 +86,9 @@ export default function Signpage() {
       });
   }
 
-
+function forgot() {
+  window.location="/forgot-password"
+}
   return (
     <div className="big-div-signinandup">
       <Navbar />
@@ -96,13 +100,17 @@ export default function Signpage() {
       <div className="signin-signup-big-div">
         <div className="Login-big-div">
           <h2>Existing User</h2>
+          <div className="if-error-bolsa-siginin">
+            <h4>Invalid username or password. Please try again or contact support.</h4>
+          </div>
           <div className="existing-user-input">
             <p>Email</p>
             <input type="text" id="email-for-signin" />
+            <h5>The Email field is not a valid e-mail address.</h5>
             <p>Password</p>
             <input type="password" id="password-for-signin" />
             <div className="forgot-password-login">
-              <p>
+              <p onClick={()=>forgot()}>
                 <b>Forgot your password?</b>
               </p>
             </div>

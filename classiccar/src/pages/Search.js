@@ -59,7 +59,22 @@ export default function Search() {
       },
     ];
     localStorage.setItem("search", JSON.stringify(a));
-    window.location = `/listings-find/1?category=${document.querySelector("#select-search").value}&&subcategory=${document.querySelector("#model-search").value}&&count=${document.querySelector("#countpage").value}&&lacotion=${document.querySelector("#location-search").value}&&sortterm=${document.querySelector("#sortterm-search").value}&&description=${document.querySelector("#description-search").value}&&year_min=${document.querySelector("#year-search").value}&&year_max=${document.querySelector("#year-max-search").value}&&price_min=${document.querySelector("#price-search").value}&&price_max=${document.querySelector("#price-search1").value}&&looking=${document.querySelector("#looking-search").value}`;
+    window.location = `/listings-find/1?category=${
+      document.querySelector("#select-search").value
+    }&&subcategory=${document.querySelector("#model-search").value}&&count=${
+      document.querySelector("#countpage").value
+    }&&lacotion=${document.querySelector("#location-search").value}&&sortterm=${
+      document.querySelector("#sortterm-search").value
+    }&&description=${
+      document.querySelector("#description-search").value
+    }&&year_min=${document.querySelector("#year-search").value}&&year_max=${
+      document.querySelector("#year-max-search").value
+    }&&price_min=${document.querySelector("#price-search").value}&&price_max=${
+      document.querySelector("#price-search1").value
+    }&&looking=${document.querySelector("#looking-search").value}`;
+  }
+  function openresult1() {
+    window.location = `/listings-find/1?category=&&subcategory=&&count=15&&lacotion=&&sortterm=1&&description=&&year_min=&&year_max=&&price_min=&&price_max=&&looking=1`;
   }
 
   function BigButton1() {
@@ -120,7 +135,9 @@ export default function Search() {
   }
 
   function searchfromccnumber() {
-    window.location = `/about-car/${document.querySelector("#cc-number-searching").value}`
+    window.location = `/about-car/${
+      document.querySelector("#cc-number-searching").value
+    }`;
   }
 
   return (
@@ -302,13 +319,15 @@ export default function Search() {
                         <h1>Popular Searches:</h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5>Chevrolet Corvette</h5>
-                        <h5>Ford Mustang</h5>
-                        <h5>Chevrolet C10</h5>
-                        <h5>Chevrolet Camaro</h5>
-                        <h5>Ford F100</h5>
-                        <h5>Ford Thunderbird</h5>
-                        <h5>Chevrolet Bel Air</h5> 
+                        <h5 onClick={() => openresult1()}>
+                          Chevrolet Corvette
+                        </h5>
+                        <h5 onClick={() => openresult1()}>Ford Mustang</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet C10</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Camaro</h5>
+                        <h5 onClick={() => openresult1()}>Ford F100</h5>
+                        <h5 onClick={() => openresult1()}>Ford Thunderbird</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Bel Air</h5>
                       </div>
                     </div>
                     <div className="div-big-search-by-mark">
@@ -316,13 +335,13 @@ export default function Search() {
                         <h1>Browse by Category:</h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5>Trucks</h5>
-                        <h5>Motorcycles</h5>
-                        <h5>$250,000 and Up</h5>
-                        <h5>Under $5,000</h5>
-                        <h5>Future Classics</h5>
-                        <h5>Convertibles</h5>
-                        <h5>Muscle Cars</h5>
+                        <h5 onClick={() => openresult1()}>Trucks</h5>
+                        <h5 onClick={() => openresult1()}>Motorcycles</h5>
+                        <h5 onClick={() => openresult1()}>$250,000 and Up</h5>
+                        <h5 onClick={() => openresult1()}>Under $5,000</h5>
+                        <h5 onClick={() => openresult1()}>Future Classics</h5>
+                        <h5 onClick={() => openresult1()}>Convertibles</h5>
+                        <h5 onClick={() => openresult1()}>Muscle Cars</h5>
                       </div>
                     </div>
                   </div>
@@ -332,20 +351,20 @@ export default function Search() {
                         <h1>Browse by Make:</h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5>Chevrolet Corvette</h5>
-                        <h5>Ford Mustang</h5>
-                        <h5>Chevrolet C10</h5>
-                        <h5>Chevrolet Camaro</h5>
-                        <h5>Ford F100</h5>
-                        <h5>Ford Thunderbird</h5>
-                        <h5>Chevrolet Bel Air</h5>
-                        <h5>Trucks</h5>
-                        <h5>Motorcycles</h5>
-                        <h5>$250,000 and Up</h5>
-                        <h5>Under $5,000</h5>
-                        <h5>Future Classics</h5>
-                        <h5>Convertibles</h5>
-                        <h5>Muscle Cars</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Corvette</h5>
+                        <h5 onClick={() => openresult1()}>Ford Mustang</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet C10</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Camaro</h5>
+                        <h5 onClick={() => openresult1()}>Ford F100</h5>
+                        <h5 onClick={() => openresult1()}>Ford Thunderbird</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Bel Air</h5>
+                        <h5 onClick={() => openresult1()}>Trucks</h5>
+                        <h5 onClick={() => openresult1()}>Motorcycles</h5>
+                        <h5 onClick={() => openresult1()}>$250,000 and Up</h5>
+                        <h5 onClick={() => openresult1()}>Under $5,000</h5>
+                        <h5 onClick={() => openresult1()}>Future Classics</h5>
+                        <h5 onClick={() => openresult1()}>Convertibles</h5>
+                        <h5 onClick={() => openresult1()}>Muscle Cars</h5>
                       </div>
                     </div>
                   </div>
@@ -355,20 +374,20 @@ export default function Search() {
                         <h1></h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5>Chevrolet Corvette</h5>
-                        <h5>Ford Mustang</h5>
-                        <h5>Chevrolet C10</h5>
-                        <h5>Chevrolet Camaro</h5>
-                        <h5>Ford F100</h5>
-                        <h5>Ford Thunderbird</h5>
-                        <h5>Chevrolet Bel Air</h5>
-                        <h5>Trucks</h5>
-                        <h5>Motorcycles</h5>
-                        <h5>$250,000 and Up</h5>
-                        <h5>Under $5,000</h5>
-                        <h5>Future Classics</h5>
-                        <h5>Convertibles</h5>
-                        <h5>Muscle Cars</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Corvette</h5>
+                        <h5 onClick={() => openresult1()}>Ford Mustang</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet C10</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Camaro</h5>
+                        <h5 onClick={() => openresult1()}>Ford F100</h5>
+                        <h5 onClick={() => openresult1()}>Ford Thunderbird</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Bel Air</h5>
+                        <h5 onClick={() => openresult1()}>Trucks</h5>
+                        <h5 onClick={() => openresult1()}>Motorcycles</h5>
+                        <h5 onClick={() => openresult1()}>$250,000 and Up</h5>
+                        <h5 onClick={() => openresult1()}>Under $5,000</h5>
+                        <h5 onClick={() => openresult1()}>Future Classics</h5>
+                        <h5 onClick={() => openresult1()}>Convertibles</h5>
+                        <h5 onClick={() => openresult1()}>Muscle Cars</h5>
                       </div>
                     </div>
                   </div>
@@ -378,20 +397,20 @@ export default function Search() {
                         <h1></h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5>Chevrolet Corvette</h5>
-                        <h5>Ford Mustang</h5>
-                        <h5>Chevrolet C10</h5>
-                        <h5>Chevrolet Camaro</h5>
-                        <h5>Ford F100</h5>
-                        <h5>Ford Thunderbird</h5>
-                        <h5>Chevrolet Bel Air</h5>
-                        <h5>Trucks</h5>
-                        <h5>Motorcycles</h5>
-                        <h5>$250,000 and Up</h5>
-                        <h5>Under $5,000</h5>
-                        <h5>Future Classics</h5>
-                        <h5>Convertibles</h5>
-                        <h5>Muscle Cars</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Corvette</h5>
+                        <h5 onClick={() => openresult1()}>Ford Mustang</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet C10</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Camaro</h5>
+                        <h5 onClick={() => openresult1()}>Ford F100</h5>
+                        <h5 onClick={() => openresult1()}>Ford Thunderbird</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Bel Air</h5>
+                        <h5 onClick={() => openresult1()}>Trucks</h5>
+                        <h5 onClick={() => openresult1()}>Motorcycles</h5>
+                        <h5 onClick={() => openresult1()}>$250,000 and Up</h5>
+                        <h5 onClick={() => openresult1()}>Under $5,000</h5>
+                        <h5 onClick={() => openresult1()}>Future Classics</h5>
+                        <h5 onClick={() => openresult1()}>Convertibles</h5>
+                        <h5 onClick={() => openresult1()}>Muscle Cars</h5>
                       </div>
                     </div>
                   </div>
@@ -401,20 +420,20 @@ export default function Search() {
                         <h1></h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5>Chevrolet Corvette</h5>
-                        <h5>Ford Mustang</h5>
-                        <h5>Chevrolet C10</h5>
-                        <h5>Chevrolet Camaro</h5>
-                        <h5>Ford F100</h5>
-                        <h5>Ford Thunderbird</h5>
-                        <h5>Chevrolet Bel Air</h5>
-                        <h5>Trucks</h5>
-                        <h5>Motorcycles</h5>
-                        <h5>$250,000 and Up</h5>
-                        <h5>Under $5,000</h5>
-                        <h5>Future Classics</h5>
-                        <h5>Convertibles</h5>
-                        <h5>Muscle Cars</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Corvette</h5>
+                        <h5 onClick={() => openresult1()}>Ford Mustang</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet C10</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Camaro</h5>
+                        <h5 onClick={() => openresult1()}>Ford F100</h5>
+                        <h5 onClick={() => openresult1()}>Ford Thunderbird</h5>
+                        <h5 onClick={() => openresult1()}>Chevrolet Bel Air</h5>
+                        <h5 onClick={() => openresult1()}>Trucks</h5>
+                        <h5 onClick={() => openresult1()}>Motorcycles</h5>
+                        <h5 onClick={() => openresult1()}>$250,000 and Up</h5>
+                        <h5 onClick={() => openresult1()}>Under $5,000</h5>
+                        <h5 onClick={() => openresult1()}>Future Classics</h5>
+                        <h5 onClick={() => openresult1()}>Convertibles</h5>
+                        <h5 onClick={() => openresult1()}>Muscle Cars</h5>
                       </div>
                     </div>
                   </div>
@@ -444,7 +463,9 @@ export default function Search() {
                           id="cc-number-searching"
                           placeholder="Enter CC Number"
                         />
-                        <button onClick={()=>searchfromccnumber()}>SEARCH</button>
+                        <button onClick={() => searchfromccnumber()}>
+                          SEARCH
+                        </button>
                       </div>
                     </div>
                     <div className="how-is-it-working-text-search">

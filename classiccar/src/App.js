@@ -37,6 +37,8 @@ import Nav from './pages/Navbar1'
 import Result from './pages/Result';
 import AddListing from './pages/AddListing';
 import Pay from './pages/Pay'
+import Forgot from './pages/ForgotPasswor' 
+import ForgotPasswordConfirmation from './pages/ForgotPasswordConfirmation'
 
 export default function App() {
   return (
@@ -44,6 +46,8 @@ export default function App() {
       <BrowserRouter>
 <Routes>
   <Route path="/" element={<Home/>} />
+  <Route path="/forgot-password-confirmation" element={<ForgotPasswordConfirmation/>} />
+  <Route path="/forgot-password" element={<Forgot/>} />
   <Route path="/pay" element={<Pay/>} />
   <Route path="/send-message-to-friend" element={<Send/>} />
   <Route path="/add-listing" element={<AddListing/>} />

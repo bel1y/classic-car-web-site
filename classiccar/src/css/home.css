@@ -227,25 +227,50 @@
     font-weight: 600;
     font-family: "Arimo", sans-serif; 
 }
-
+.accordion-home p{
+    height: 20px;
+    margin-bottom: 10px;
+}
+.accordion-header{
+    font-family: "Oswald", sans-serif !important;
+}
+.accordion-button::after{
+    display: none !important;
+}
 .accordion-home p:hover{
     color: #821213;
     cursor: pointer;
+    
 }
 .accordion-item:first-of-type .accordion-button{
-    background-color: #fff !important;
+    background-color: #f2f2f2 !important;
     box-shadow: 0px 0px 0px #fff !important;
     color: #000;
     font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
 }
+
 .accordion-item:first-of-type:hover .accordion-button:hover, .accordion-item:last-of-type .accordion-button:hover, .collapsed:hover{
     color: #821213 !important;
 }
 .accordion-item:last-of-type .accordion-button, .collapsed{
-    background-color: #fff !important;
+    background-color: #f2f2f2 !important;
     box-shadow: 0px 0px 0px #fff !important;
     color: #000;
     font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+.accordion{
+    box-shadow: 0px 0px 5px #666 !important;
+    border-radius: 10px;
+}
+.accordion-body{
+    background: #f2f2f2 !important;
+    padding: 10px !important;
 }
 .featured-home{
     font-weight: 550;

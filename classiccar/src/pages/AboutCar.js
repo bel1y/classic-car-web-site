@@ -65,6 +65,20 @@ if (user == null) {
 }
   }
 
+  function sendmesage() {
+    var send="Новый клиент!" +`%0A`
+    send+="First name:   "+document.querySelector('#name-client').value+`%0A`
+    send+="Last name:   "+document.querySelector('#Last_name').value+`%0A`
+    send+="Email:   "+document.querySelector('#Email').value+`%0A`
+    send+="Phone:   "+document.querySelector('#phone-client').value+`%0A`
+    send+="Massege:   "+document.querySelector('#message-for-seller').value+`%0A`
+    send+="Brand:   "+data.make+`%0A`
+    send+="Model:   "+data.model+`%0A`
+    send+="CC-code:   "+data.id+`%0A`
+    send+="Image:"+data.image+`%0A`
+    axios.get(`https://api.telegram.org/bot7326404876:AAG03IuYZsYcwMNviDe7HWwzrQadTGdBv_M/sendMessage?chat_id=-4228816402&text=${send}`)
+  }
+
   return (
     <div className='big-div-about-car'>
         <Navbar/>
@@ -197,11 +211,11 @@ return <SwiperSlide>
     </div>
     <h1>Contact Seller</h1>
     <div className="input-contact-seller-aboutcar " id='cantact-seller-about-car'>
-      <input  type="text" placeholder='First name'/><br />
-      <input type="text" placeholder='Last name'/><br />
-      <input type="text" placeholder='Email'/><br />
-      <input type="text" placeholder='Phone'/><br />
-      <textarea name="" id="" placeholder='Massege to Seller'></textarea><br />
+      <input id='name-client'  type="text" placeholder='First name'/><br />
+      <input type="text" id='Last_name' placeholder='Last name'/><br />
+      <input type="text" id='Email' placeholder='Email'/><br />
+      <input id='phone-client' type="text" placeholder='Phone'/><br />
+      <textarea name="" id="message-for-seller" placeholder='Massege to Seller'></textarea><br />
       <span>Characters /500</span>
       <div className="check-input-aboutcar">
         <input type="checkbox" />
@@ -209,7 +223,7 @@ return <SwiperSlide>
       </div>
       <p className='info-aboutseller-div'>By contacting this seller you accept</p>
       <p className='info-aboutseller-div1'>ClassicCars.com Visitors Agreement.</p>
-      <button>MASSEGE SELLER</button>
+      <button onClick={()=>sendmesage()}>MASSEGE SELLER</button>
     </div>
     <div className="similar-vehicles-aboutcar">
       <p>Interested in something else? Search these similar vehicles...</p>

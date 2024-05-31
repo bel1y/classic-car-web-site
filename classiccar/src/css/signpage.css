@@ -70,6 +70,9 @@
     color: #821213;
     cursor: pointer;
 }
+.forgot-password-login p:hover{
+    color: #b91d1f;   
+}
 .sing-for-button-login {
     display: flex;
     align-items: center;
@@ -149,4 +152,25 @@
         font-size: 15px;
         width: 80%;
     }
+}
+
+.if-error-bolsa-siginin{
+    width: 100%;
+    font-family: "Arimo", sans-serif;  
+    color: #bb181a;
+    font-weight: 600;
+    border: 1px solid #bb181a;
+    background: linear-gradient( 180deg, #fff 20%, #bb181b1a 100%);
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+}
+.if-error-bolsa-siginin h4{
+    font-weight: 600;
+}
+.existing-user-input h5{
+    color: #bb181a;
+    margin-bottom: 20px;
+    font-size: 18px;
+    display: none;
 }

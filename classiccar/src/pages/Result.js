@@ -12,6 +12,8 @@ import nowlife from '../img/now-life.png';
 import Footer from './Footer';
 import url from './host';
 import { useSearchParams, useParams } from 'react-router-dom';
+import { FaCaretDown } from "react-icons/fa";
+
 
 export default function Result() {
   const [data, setData] = useState([]);
@@ -22,6 +24,8 @@ export default function Result() {
   var [countpage, setCountPage] = useState(15)
   var [pagnation, setPagnation] = useState([{ start: 1, end: 15 }])
   var [choose, setChoose] = useState(0)
+  var [category1, setCategory1] = useState([]);
+  var [subcategory, setSubCategory] = useState([]);
   function getData() {
     var a = Object.fromEntries(searchParams);
     console.log(a);
@@ -163,7 +167,21 @@ export default function Result() {
   }
   useEffect(() => {
     getData()
+    axios
+    .get(`${url}/api/v1/cars`)
+    .then((res) => {
+      axios.get(`${url}/api/v1/category`).then((res2) => {
 
+          setCategory1(res2.data);
+
+          res2.data = res2.data.sort((a, b) => a.looking - b.looking)
+
+        axios.get(`${url}/api/v1/subcategory`).then((res3) => {
+          setSubCategory(res3.data);
+        });
+      }); 
+    })
+    .catch((err) => {});
   }, [searchParams]);
 
 
@@ -249,25 +267,128 @@ export default function Result() {
       <Nav />
       <h1>Classic Cars for Sale</h1>
       <h3>Classifieds for Classic Cars. New listings are added daily.</h3>
-      <h5><b>{data.length}</b> vehicles matched. Page 1 of <b>{Math.ceil(data.length / 15)}</b>. 15 results per page.</h5>
+      <h5><b>{data.length}</b> vehicles matched. Page 1 of <b>{Math.ceil(data.length / 1.5)}</b>. 15 results per page.</h5>
 
       <div className="df-result-div-big">
-        <div className="accordion-home">
+      <div className="accordion-home">
           <Accordion defaultActiveKey="0">
-            {category.map((item, key) => {
-              return <Accordion.Item eventKey={`${key}`}>
-                <Accordion.Header>{item.title}</Accordion.Header>
-                <Accordion.Body>
-                  {item.sub.map((item2, key) => {
-                    return <p onClick={() => window.location = `/listings-find/${item.id}?category=${item.id}&&subcategory=${item2.id}`}>{item2.title}</p>
-                  })}
-
-                </Accordion.Body>
-              </Accordion.Item>
+          
+                <Accordion.Item eventKey="1">
+                  <Accordion.Header>Popular Searches <FaCaretDown /></Accordion.Header>
+                  <Accordion.Body>  
+                    {category1.map((item, key) => {
+if(key < 3){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+if(key > 3 && key < 6){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+if(key > 9 && key < 15){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+                          
+                        
             })}
-
-
-
+                    {subcategory.map((item, key) => {
+if(key < 3){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+if(key > 3 && key < 6){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+if(key > 9 && key < 15){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+                          
+                        
+            })}
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="2">
+                  <Accordion.Header>Browse By Category <FaCaretDown /></Accordion.Header>
+                  <Accordion.Body>  
+                    {category1.map((item, key) => {
+                        if(item.title.length < 11){
+                          return (
+                            <p
+                              onClick={() =>
+                                (window.location = `/listings-find/${item.id}?subcategory=${item.id}`)
+                              }
+                            >
+                              {item.title}
+                            </p>
+                            );
+                        }
+            })}
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="3">
+                  <Accordion.Header>Browse By Make <FaCaretDown /></Accordion.Header>
+                  <Accordion.Body>  
+                    {subcategory.map((item, key) => {
+                        if(item.title.length < 11){
+                          return (
+                            <p
+                              onClick={() =>
+                                (window.location = `/listings-find/${item.id}?subcategory=${item.id}`)
+                              }
+                            >
+                              {item.title}
+                            </p>
+                            );
+                        }
+            })}
+                  </Accordion.Body>
+                </Accordion.Item>
+              
           </Accordion>
         </div>
         <div className="zillions-big-div-result-block">

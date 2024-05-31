@@ -201,21 +201,21 @@ export default function AddListing() {
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Make</p>
-        {/* <input type="text" name="" id="make-add-listing" /> */}
-        <select name="" id="make-add-listing">
+        <input type="text" name="" id="make-add-listing" />
+        {/* <select name="" id="make-add-listing">
         {category.map((item) => {
       return <option value={item.id}>{item.title}</option>;
 })}
-        </select>
+        </select> */}
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Model</p>
-        {/* <input type="text" name="" id="model-add-listing" /> */}
-        <select name="" id="model-add-listing">
+        <input type="text" name="" id="model-add-listing" />
+        {/* <select name="" id="model-add-listing">
         {subcategory.map((item) => {
       return <option value={item.id}>{item.title}</option>;
 })}          
-        </select>
+        </select> */}
 
       </div>
       <div className="first-inside-input-acc-div-add-listing">

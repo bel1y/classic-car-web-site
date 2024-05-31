@@ -5,54 +5,55 @@ import "../css/home.css";
 import Accordion from "react-bootstrap/Accordion";
 import reklama from "../img/reklama.gif";
 import car from "../img/car.jpg";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Pagination, Navigation } from 'swiper/modules';
-import axios from 'axios'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
+import { FaCaretDown } from "react-icons/fa";
+import axios from "axios";
 import url from "./host.js";
-
 
 export default function Home() {
   const [data, setData] = useState([]);
 
-
   function open(id) {
-    window.location = `/about-car/${id}`
+    window.location = `/about-car/${id}`;
   }
   function opensearch() {
-    window.location = '/search'
+    window.location = "/search";
   }
   function openlistinfind(id) {
     window.location = `/listings-find/1?category=${document.querySelector("#make-search-in-home").value}
     &&subcategory=${document.querySelector("#make-search-in-home").value}
     &&year_min=${document.querySelector("#year-min-search-in-home").value}
-    &&year_max=${document.querySelector("#year-max-search-in-home").value}`
+    &&year_max=${document.querySelector("#year-max-search-in-home").value}`;
   }
 
-  var [category, setCategory] = useState([])
-  var [subcategory, setSubCategory] = useState([])
+  var [category, setCategory] = useState([]);
+  var [subcategory, setSubCategory] = useState([]);
 
   useEffect(() => {
+    axios
+      .get(`${url}/api/v1/cars`)
+      .then((res) => {
+        axios.get(`${url}/api/v1/category`).then((res2) => {
 
-    axios.get(`${url}/api/v1/cars`)
-      .then(res => {
-        axios.get(`${url}/api/v1/category`).then(res2 => {
-          setCategory(res2.data)
-          axios.get(`${url}/api/v1/subcategory`).then(res3 => {
-            setSubCategory(res3.data)
-          })
-        })
-        setData(res.data)
-      })
-      .catch(err => {
+            setCategory(res2.data);
 
+            res2.data = res2.data.sort((a, b) => a.looking - b.looking)
+
+          axios.get(`${url}/api/v1/subcategory`).then((res3) => {
+            setSubCategory(res3.data);
+          });
+        });
+        setData(res.data);
       })
-  }, [])
+      .catch((err) => {});
+  }, []);
 
   function openselacar() {
-    window.location = '/sell-a-car'
+    window.location = "/sell-a-car";
   }
 
   return (
@@ -66,11 +67,11 @@ export default function Home() {
             <div className="input-div-home">
               <div className="input-text-home">
                 <p>YEAR FROM</p>
-                <input type="number" id="year-min-search-in-home"/>
+                <input type="number" id="year-min-search-in-home" />
               </div>
               <div className="input-text-home">
                 <p>YEAR TO</p>
-                <input type="number" id="year-max-search-in-home"/>
+                <input type="number" id="year-max-search-in-home" />
               </div>
             </div>
             <div className="selec-div-home">
@@ -78,24 +79,26 @@ export default function Home() {
                 <p>MAKE</p>
                 <select name="" id="make-search-in-home">
                   <option value=""></option>
-                  {category.map(item => {
-                    return <option value={item.id}>
-                      <p>
-                        {item.title}
-                      </p>
-                    </option>
+                  {category.map((item) => {
+                    return (
+                      <option value={item.id}>
+                        <p>{item.title}</p>
+                      </option>
+                    );
                   })}
                 </select>
               </div>
               <div className="select-text-home">
                 <p>MODEL</p>
                 <select name="" id="model-search-in-home">
-                <option value=""></option>
-                  {subcategory.map(item => {
-                    return <option value={item.id}> <p>
-                      {item.title}
-                    </p>
-                    </option>
+                  <option value=""></option>
+                  {subcategory.map((item) => {
+                    return (
+                      <option value={item.id}>
+                        {" "}
+                        <p>{item.title}</p>
+                      </option>
+                    );
                   })}
                 </select>
               </div>
@@ -108,9 +111,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="advertisement-home" onClick={() => openlistinfind(data.id)}>
-           <p>{data.length} CLASSIC CARS AND TRUCKS FOR SALE TODAY</p>
-          
+        <div
+          className="advertisement-home"
+          onClick={() => openlistinfind(data.id)}
+        >
+          <p>{data.length} CLASSIC CARS AND TRUCKS FOR SALE TODAY</p>
         </div>
       </header>
 
@@ -118,49 +123,151 @@ export default function Home() {
 
       <section className="first-section-home">
         <div className="accordion-home">
-
           <Accordion defaultActiveKey="0">
-            {category.map((item, key) => {
-              return <Accordion.Item eventKey={key}>
-                <Accordion.Header>{item.title}</Accordion.Header>
-                <Accordion.Body>
-                  {item.sub.map((item2, key) => {
-                    return <p onClick={() => window.location = `/listings-find/${item.id}?category=${item.id}&&subcategory=${item2.id}`}>{item2.title}</p>
-                  })}
-
-                </Accordion.Body>
-              </Accordion.Item>
-
+          
+                <Accordion.Item eventKey="1">
+                  <Accordion.Header>Popular Searches <FaCaretDown /></Accordion.Header>
+                  <Accordion.Body>  
+                    {category.map((item, key) => {
+if(key < 3){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+if(key > 3 && key < 6){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+if(key > 9 && key < 15){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+                          
+                        
             })}
+                    {subcategory.map((item, key) => {
+if(key < 3){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+if(key > 3 && key < 6){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+if(key > 9 && key < 15){
+  return <>
+  <p
+    onClick={() =>
+      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </p>
+  </>
+}
+                          
+                        
+            })}
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="2">
+                  <Accordion.Header>Browse By Category <FaCaretDown /></Accordion.Header>
+                  <Accordion.Body>  
+                    {category.map((item, key) => {
+                        if(item.title.length < 11){
+                          return (
+                            <p
+                              onClick={() =>
+                                (window.location = `/listings-find/${item.id}?subcategory=${item.id}`)
+                              }
+                            >
+                              {item.title}
+                            </p>
+                            );
+                        }
+            })}
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="3">
+                  <Accordion.Header>Browse By Make <FaCaretDown /></Accordion.Header>
+                  <Accordion.Body>  
+                    {subcategory.map((item, key) => {
+                        if(item.title.length < 11){
+                          return (
+                            <p
+                              onClick={() =>
+                                (window.location = `/listings-find/${item.id}?subcategory=${item.id}`)
+                              }
+                            >
+                              {item.title}
+                            </p>
+                            );
+                        }
+            })}
+                  </Accordion.Body>
+                </Accordion.Item>
+              
           </Accordion>
-
-
         </div>
 
         <div className="view-sells-car-home">
           <div className="add-your-car-to-sell">
-            <h1 onClick={()=>openlistinfind()}>PRIVATE SELLER LISTINGS</h1>
-            <h5 onClick={()=>openselacar()}>SELL YOUR CAR </h5>
+            <h1 onClick={() => openlistinfind()}>PRIVATE SELLER LISTINGS</h1>
+            <h5 onClick={() => openselacar()}>SELL YOUR CAR </h5>
           </div>
           <p className="featured-home">Featured Listings</p>
           <div className="big-cars-div-home">
-            {data.map((item,key) => {
-             if (key < 100) {
-              return <div className="cars-div-home" onClick={() => open(item.id)}>
+            {data.map((item, key) => {
+              if (key < 100) {
+                return (
+                  <div className="cars-div-home" onClick={() => open(item.id)}>
+                    <img src={item.image} alt="" />
 
-              <img src={item.image} alt="" />
-
-              <h3 className="title-home">
-              {item.year}  {item.title}
-              </h3>
-              <p className="discreaption-home">
-                {item.description.slice(0,100)}...
-              </p>
-              <span className="price-car-home">${item.price}</span>
-            </div>
-             }
+                    <h3 className="title-home">
+                      {item.year} {item.title}
+                    </h3>
+                    <p className="discreaption-home">
+                      {item.description.slice(0, 100)}...
+                    </p>
+                    <span className="price-car-home">${item.price}</span>
+                  </div>
+                );
+              }
             })}
-
 
             <Swiper
               slidesPerView={3}
@@ -168,7 +275,8 @@ export default function Home() {
               loop={true}
               pagination={{
                 clickable: true,
-              }} breakpoints={{
+              }}
+              breakpoints={{
                 // when window width is >= 640px
                 300: {
                   spaceBetween: 30,
@@ -187,24 +295,29 @@ export default function Home() {
               navigation={true}
               modules={[Pagination, Navigation]}
               className="mySwiper"
-            >{data.map((item, key) => {
-              if(key < 15){
-                return <SwiperSlide>
-                <div className="cars-div-home1" onClick={() => open(item.id)}>
+            >
+              {data.map((item, key) => {
+                if (key < 15) {
+                  return (
+                    <SwiperSlide>
+                      <div
+                        className="cars-div-home1"
+                        onClick={() => open(item.id)}
+                      >
+                        <img src={item.image} alt="" />
 
-                  <img src={item.image} alt="" />
-
-                  <h3 className="title-home">
-              {item.year}  {item.title}
-              </h3>
-                  <p className="discreaption-home">
-                    {item.description.slice(0,100)}...
-                  </p>
-                  <span className="price-car-home">${item.price}</span>
-                </div>
-              </SwiperSlide>
-              }
-            })}
+                        <h3 className="title-home">
+                          {item.year} {item.title}
+                        </h3>
+                        <p className="discreaption-home">
+                          {item.description.slice(0, 100)}...
+                        </p>
+                        <span className="price-car-home">${item.price}</span>
+                      </div>
+                    </SwiperSlide>
+                  );
+                }
+              })}
             </Swiper>
 
             <Swiper
@@ -213,7 +326,8 @@ export default function Home() {
               loop={true}
               pagination={{
                 clickable: true,
-              }} breakpoints={{
+              }}
+              breakpoints={{
                 // when window width is >= 640px
                 300: {
                   spaceBetween: 30,
@@ -232,25 +346,29 @@ export default function Home() {
               navigation={true}
               modules={[Pagination, Navigation]}
               className="mySwiper"
-            >{data.map((item, key) => {
-  
-              if(key > 15 && key < 30){
-                return <SwiperSlide>
-                <div className="cars-div-home1" onClick={() => open(item.id)}>
+            >
+              {data.map((item, key) => {
+                if (key > 15 && key < 30) {
+                  return (
+                    <SwiperSlide>
+                      <div
+                        className="cars-div-home1"
+                        onClick={() => open(item.id)}
+                      >
+                        <img src={item.image} alt="" />
 
-                  <img src={item.image} alt="" />
-
-                  <h3 className="title-home">
-              {item.year}  {item.title}
-              </h3>
-                  <p className="discreaption-home">
-                    {item.description.slice(0,100)}...
-                  </p>
-                  <span className="price-car-home">${item.price}</span>
-                </div>
-              </SwiperSlide>
-              }
-            })}
+                        <h3 className="title-home">
+                          {item.year} {item.title}
+                        </h3>
+                        <p className="discreaption-home">
+                          {item.description.slice(0, 100)}...
+                        </p>
+                        <span className="price-car-home">${item.price}</span>
+                      </div>
+                    </SwiperSlide>
+                  );
+                }
+              })}
             </Swiper>
 
             <Swiper
@@ -259,7 +377,8 @@ export default function Home() {
               loop={true}
               pagination={{
                 clickable: true,
-              }} breakpoints={{
+              }}
+              breakpoints={{
                 // when window width is >= 640px
                 300: {
                   spaceBetween: 30,
@@ -278,25 +397,29 @@ export default function Home() {
               navigation={true}
               modules={[Pagination, Navigation]}
               className="mySwiper"
-            >{data.map((item, key) => {
-  
-              if(key > 30 && key < 45){
-                return <SwiperSlide>
-                <div className="cars-div-home1" onClick={() => open(item.id)}>
+            >
+              {data.map((item, key) => {
+                if (key > 30 && key < 45) {
+                  return (
+                    <SwiperSlide>
+                      <div
+                        className="cars-div-home1"
+                        onClick={() => open(item.id)}
+                      >
+                        <img src={item.image} alt="" />
 
-                  <img src={item.image} alt="" />
-
-                  <h3 className="title-home">
-              {item.year}  {item.title}
-              </h3>
-                  <p className="discreaption-home">
-                    {item.description.slice(0,100)}...
-                  </p>
-                  <span className="price-car-home">${item.price}</span>
-                </div>
-              </SwiperSlide>
-              }
-            })}
+                        <h3 className="title-home">
+                          {item.year} {item.title}
+                        </h3>
+                        <p className="discreaption-home">
+                          {item.description.slice(0, 100)}...
+                        </p>
+                        <span className="price-car-home">${item.price}</span>
+                      </div>
+                    </SwiperSlide>
+                  );
+                }
+              })}
             </Swiper>
 
             <Swiper
@@ -305,7 +428,8 @@ export default function Home() {
               loop={true}
               pagination={{
                 clickable: true,
-              }} breakpoints={{
+              }}
+              breakpoints={{
                 // when window width is >= 640px
                 300: {
                   spaceBetween: 30,
@@ -324,25 +448,29 @@ export default function Home() {
               navigation={true}
               modules={[Pagination, Navigation]}
               className="mySwiper"
-            >{data.map((item, key) => {
-  
-              if(key > 45 && key < 60){
-                return <SwiperSlide>
-                <div className="cars-div-home1" onClick={() => open(item.id)}>
+            >
+              {data.map((item, key) => {
+                if (key > 45 && key < 60) {
+                  return (
+                    <SwiperSlide>
+                      <div
+                        className="cars-div-home1"
+                        onClick={() => open(item.id)}
+                      >
+                        <img src={item.image} alt="" />
 
-                  <img src={item.image} alt="" />
-
-                  <h3 className="title-home">
-              {item.year}  {item.title}
-              </h3>
-                  <p className="discreaption-home">
-                    {item.description.slice(0,100)}...
-                  </p>
-                  <span className="price-car-home">${item.price}</span>
-                </div>
-              </SwiperSlide>
-              }
-            })}
+                        <h3 className="title-home">
+                          {item.year} {item.title}
+                        </h3>
+                        <p className="discreaption-home">
+                          {item.description.slice(0, 100)}...
+                        </p>
+                        <span className="price-car-home">${item.price}</span>
+                      </div>
+                    </SwiperSlide>
+                  );
+                }
+              })}
             </Swiper>
 
             <Swiper
@@ -351,7 +479,8 @@ export default function Home() {
               loop={true}
               pagination={{
                 clickable: true,
-              }} breakpoints={{
+              }}
+              breakpoints={{
                 // when window width is >= 640px
                 300: {
                   spaceBetween: 30,
@@ -370,25 +499,29 @@ export default function Home() {
               navigation={true}
               modules={[Pagination, Navigation]}
               className="mySwiper"
-            >{data.map((item, key) => {
-  
-              if(key > 60 && key < 75){
-                return <SwiperSlide>
-                <div className="cars-div-home1" onClick={() => open(item.id)}>
+            >
+              {data.map((item, key) => {
+                if (key > 60 && key < 75) {
+                  return (
+                    <SwiperSlide>
+                      <div
+                        className="cars-div-home1"
+                        onClick={() => open(item.id)}
+                      >
+                        <img src={item.image} alt="" />
 
-                  <img src={item.image} alt="" />
-
-                  <h3 className="title-home">
-              {item.year}  {item.title}
-              </h3>
-                  <p className="discreaption-home">
-                    {item.description.slice(0,100)}...
-                  </p>
-                  <span className="price-car-home">${item.price}</span>
-                </div>
-              </SwiperSlide>
-              }
-            })}
+                        <h3 className="title-home">
+                          {item.year} {item.title}
+                        </h3>
+                        <p className="discreaption-home">
+                          {item.description.slice(0, 100)}...
+                        </p>
+                        <span className="price-car-home">${item.price}</span>
+                      </div>
+                    </SwiperSlide>
+                  );
+                }
+              })}
             </Swiper>
 
             <Swiper
@@ -397,7 +530,8 @@ export default function Home() {
               loop={true}
               pagination={{
                 clickable: true,
-              }} breakpoints={{
+              }}
+              breakpoints={{
                 // when window width is >= 640px
                 300: {
                   spaceBetween: 30,
@@ -416,30 +550,33 @@ export default function Home() {
               navigation={true}
               modules={[Pagination, Navigation]}
               className="mySwiper"
-            >{data.map((item, key) => {
-  
-              if(key > 75 && key < 100){
-                return <SwiperSlide>
-                <div className="cars-div-home1" onClick={() => open(item.id)}>
+            >
+              {data.map((item, key) => {
+                if (key > 75 && key < 100) {
+                  return (
+                    <SwiperSlide>
+                      <div
+                        className="cars-div-home1"
+                        onClick={() => open(item.id)}
+                      >
+                        <img src={item.image} alt="" />
 
-                  <img src={item.image} alt="" />
-
-                  <h3 className="title-home">
-              {item.year}  {item.title}
-              </h3>
-                  <p className="discreaption-home">
-                    {item.description.slice(0,100)}...
-                  </p>
-                  <span className="price-car-home">${item.price}</span>
-                </div>
-              </SwiperSlide>
-              }
-            })}
+                        <h3 className="title-home">
+                          {item.year} {item.title}
+                        </h3>
+                        <p className="discreaption-home">
+                          {item.description.slice(0, 100)}...
+                        </p>
+                        <span className="price-car-home">${item.price}</span>
+                      </div>
+                    </SwiperSlide>
+                  );
+                }
+              })}
             </Swiper>
           </div>
         </div>
       </section>
-       
 
       <Footer />
     </div>
