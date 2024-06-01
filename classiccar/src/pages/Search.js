@@ -319,15 +319,80 @@ export default function Search() {
                         <h1>Popular Searches:</h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5 onClick={() => openresult1()}>
-                          Chevrolet Corvette
-                        </h5>
-                        <h5 onClick={() => openresult1()}>Ford Mustang</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet C10</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet Camaro</h5>
-                        <h5 onClick={() => openresult1()}>Ford F100</h5>
-                        <h5 onClick={() => openresult1()}>Ford Thunderbird</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet Bel Air</h5>
+                      {category.map((item, key) => {
+if(key < 3){
+  return <>
+  <h5
+    onClick={() =>
+      (window.location = `/listings-find/1?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </h5>
+  </>
+}
+if(key > 3 && key < 6){
+  return <>
+  <h5
+    onClick={() =>
+      (window.location = `/listings-find/1?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </h5>
+  </>
+}
+if(key > 9 && key < 15){
+  return <>
+  <h5
+    onClick={() =>
+      (window.location = `/listings-find/1?category=${item.id}`)
+    }
+  >
+    {item.title}
+  </h5>
+  </>
+}
+                          
+                        
+            })}
+                    {subcategory.map((item, key) => {
+if(key < 3){
+  return <>
+  <h5
+    onClick={() =>
+      (window.location = `/listings-find/1?subcategory=${item.id}`)
+    }
+  >
+    {item.title}
+  </h5>
+  </>
+}
+if(key > 3 && key < 6){
+  return <>
+  <h5
+    onClick={() =>
+      (window.location = `/listings-find/1?subcategory=${item.id}`)
+    }
+  >
+    {item.title}
+  </h5>
+  </>
+}
+if(key > 9 && key < 15){
+  return <>
+  <h5
+    onClick={() =>
+      (window.location = `/listings-find/1?subcategory=${item.id}`)
+    }
+  >
+    {item.title}
+  </h5>
+  </>
+}
+                          
+                        
+            })}
                       </div>
                     </div>
                     <div className="div-big-search-by-mark">
@@ -335,13 +400,12 @@ export default function Search() {
                         <h1>Browse by Category:</h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5 onClick={() => openresult1()}>Trucks</h5>
-                        <h5 onClick={() => openresult1()}>Motorcycles</h5>
-                        <h5 onClick={() => openresult1()}>$250,000 and Up</h5>
-                        <h5 onClick={() => openresult1()}>Under $5,000</h5>
-                        <h5 onClick={() => openresult1()}>Future Classics</h5>
-                        <h5 onClick={() => openresult1()}>Convertibles</h5>
-                        <h5 onClick={() => openresult1()}>Muscle Cars</h5>
+                    {category.map(item=>{
+                      return <h5     
+                      onClick={() =>
+                        (window.location = `/listings-find/1?category=${item.id}`)
+                      }>{item.title}</h5>
+                    })}
                       </div>
                     </div>
                   </div>
@@ -351,20 +415,13 @@ export default function Search() {
                         <h1>Browse by Make:</h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5 onClick={() => openresult1()}>Chevrolet Corvette</h5>
-                        <h5 onClick={() => openresult1()}>Ford Mustang</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet C10</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet Camaro</h5>
-                        <h5 onClick={() => openresult1()}>Ford F100</h5>
-                        <h5 onClick={() => openresult1()}>Ford Thunderbird</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet Bel Air</h5>
-                        <h5 onClick={() => openresult1()}>Trucks</h5>
-                        <h5 onClick={() => openresult1()}>Motorcycles</h5>
-                        <h5 onClick={() => openresult1()}>$250,000 and Up</h5>
-                        <h5 onClick={() => openresult1()}>Under $5,000</h5>
-                        <h5 onClick={() => openresult1()}>Future Classics</h5>
-                        <h5 onClick={() => openresult1()}>Convertibles</h5>
-                        <h5 onClick={() => openresult1()}>Muscle Cars</h5>
+                    {subcategory.map((item,key)=>{
+                      if (key < 14) {
+                        return <h5    onClick={() =>
+                          (window.location = `/listings-find/1?subcategory=${item.id}`)
+                        }>{item.title}</h5>
+                      }
+                    })}
                       </div>
                     </div>
                   </div>
@@ -374,20 +431,13 @@ export default function Search() {
                         <h1></h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5 onClick={() => openresult1()}>Chevrolet Corvette</h5>
-                        <h5 onClick={() => openresult1()}>Ford Mustang</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet C10</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet Camaro</h5>
-                        <h5 onClick={() => openresult1()}>Ford F100</h5>
-                        <h5 onClick={() => openresult1()}>Ford Thunderbird</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet Bel Air</h5>
-                        <h5 onClick={() => openresult1()}>Trucks</h5>
-                        <h5 onClick={() => openresult1()}>Motorcycles</h5>
-                        <h5 onClick={() => openresult1()}>$250,000 and Up</h5>
-                        <h5 onClick={() => openresult1()}>Under $5,000</h5>
-                        <h5 onClick={() => openresult1()}>Future Classics</h5>
-                        <h5 onClick={() => openresult1()}>Convertibles</h5>
-                        <h5 onClick={() => openresult1()}>Muscle Cars</h5>
+                      {subcategory.map((item,key)=>{
+                      if (key > 14 && key <28) {
+                        return <h5    onClick={() =>
+                          (window.location = `/listings-find/1?subcategory=${item.id}`)
+                        }>{item.title}</h5>
+                      }
+                    })}
                       </div>
                     </div>
                   </div>
@@ -397,20 +447,13 @@ export default function Search() {
                         <h1></h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5 onClick={() => openresult1()}>Chevrolet Corvette</h5>
-                        <h5 onClick={() => openresult1()}>Ford Mustang</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet C10</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet Camaro</h5>
-                        <h5 onClick={() => openresult1()}>Ford F100</h5>
-                        <h5 onClick={() => openresult1()}>Ford Thunderbird</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet Bel Air</h5>
-                        <h5 onClick={() => openresult1()}>Trucks</h5>
-                        <h5 onClick={() => openresult1()}>Motorcycles</h5>
-                        <h5 onClick={() => openresult1()}>$250,000 and Up</h5>
-                        <h5 onClick={() => openresult1()}>Under $5,000</h5>
-                        <h5 onClick={() => openresult1()}>Future Classics</h5>
-                        <h5 onClick={() => openresult1()}>Convertibles</h5>
-                        <h5 onClick={() => openresult1()}>Muscle Cars</h5>
+                      {subcategory.map((item,key)=>{
+                      if (key > 28 && key < 42) {
+                        return <h5    onClick={() =>
+                          (window.location = `/listings-find/1?subcategory=${item.id}`)
+                        }>{item.title}</h5>
+                      }
+                    })}
                       </div>
                     </div>
                   </div>
@@ -420,20 +463,13 @@ export default function Search() {
                         <h1></h1>
                       </div>
                       <div className="div-big-search-by-mark-p">
-                        <h5 onClick={() => openresult1()}>Chevrolet Corvette</h5>
-                        <h5 onClick={() => openresult1()}>Ford Mustang</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet C10</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet Camaro</h5>
-                        <h5 onClick={() => openresult1()}>Ford F100</h5>
-                        <h5 onClick={() => openresult1()}>Ford Thunderbird</h5>
-                        <h5 onClick={() => openresult1()}>Chevrolet Bel Air</h5>
-                        <h5 onClick={() => openresult1()}>Trucks</h5>
-                        <h5 onClick={() => openresult1()}>Motorcycles</h5>
-                        <h5 onClick={() => openresult1()}>$250,000 and Up</h5>
-                        <h5 onClick={() => openresult1()}>Under $5,000</h5>
-                        <h5 onClick={() => openresult1()}>Future Classics</h5>
-                        <h5 onClick={() => openresult1()}>Convertibles</h5>
-                        <h5 onClick={() => openresult1()}>Muscle Cars</h5>
+                      {subcategory.map((item,key)=>{
+                      if (key > 42 && key < 56) {
+                        return <h5     onClick={() =>
+                          (window.location = `/listings-find/1?subcategory=${item.id}`)
+                        }>{item.title}</h5>
+                      }
+                    })}
                       </div>
                     </div>
                   </div>

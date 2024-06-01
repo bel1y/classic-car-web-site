@@ -41,8 +41,6 @@ export default function Home() {
 
             setCategory(res2.data);
 
-            res2.data = res2.data.sort((a, b) => a.looking - b.looking)
-
           axios.get(`${url}/api/v1/subcategory`).then((res3) => {
             setSubCategory(res3.data);
           });
@@ -133,7 +131,7 @@ if(key < 3){
   return <>
   <p
     onClick={() =>
-      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+      (window.location = `/listings-find/1?category=${item.id}`)
     }
   >
     {item.title}
@@ -144,7 +142,7 @@ if(key > 3 && key < 6){
   return <>
   <p
     onClick={() =>
-      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+      (window.location = `/listings-find/1?category=${item.id}`)
     }
   >
     {item.title}
@@ -155,7 +153,7 @@ if(key > 9 && key < 15){
   return <>
   <p
     onClick={() =>
-      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+      (window.location = `/listings-find/1?category=${item.id}`)
     }
   >
     {item.title}
@@ -170,7 +168,7 @@ if(key < 3){
   return <>
   <p
     onClick={() =>
-      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+      (window.location = `/listings-find/1?subcategory=${item.id}`)
     }
   >
     {item.title}
@@ -181,7 +179,7 @@ if(key > 3 && key < 6){
   return <>
   <p
     onClick={() =>
-      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+      (window.location = `/listings-find/1?subcategory=${item.id}`)
     }
   >
     {item.title}
@@ -192,7 +190,7 @@ if(key > 9 && key < 15){
   return <>
   <p
     onClick={() =>
-      (window.location = `/listings-find/${item.id}?category=${item.id}`)
+      (window.location = `/listings-find/1?subcategory=${item.id}`)
     }
   >
     {item.title}
@@ -212,7 +210,7 @@ if(key > 9 && key < 15){
                           return (
                             <p
                               onClick={() =>
-                                (window.location = `/listings-find/${item.id}?subcategory=${item.id}`)
+                                (window.location = `/listings-find/1?subcategory=${item.id}`)
                               }
                             >
                               {item.title}
@@ -230,7 +228,7 @@ if(key > 9 && key < 15){
                           return (
                             <p
                               onClick={() =>
-                                (window.location = `/listings-find/${item.id}?subcategory=${item.id}`)
+                                (window.location = `/listings-find/1?subcategory=${item.id}`)
                               }
                             >
                               {item.title}

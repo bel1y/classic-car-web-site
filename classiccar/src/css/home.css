@@ -231,6 +231,26 @@
     height: 20px;
     margin-bottom: 10px;
 }
+@media (max-width:500px) {
+    .accordion-home p{
+        background-color: #333;
+        color: #fff;
+        width: auto;
+        border-radius: 10px;
+        font-weight: 600;
+        font-family: "Arimo", sans-serif; 
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .accordion-body{
+        display: flex !important;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap !important;
+    }
+}
 .accordion-header{
     font-family: "Oswald", sans-serif !important;
 }
@@ -240,7 +260,27 @@
 .accordion-home p:hover{
     color: #821213;
     cursor: pointer;
-    
+}
+.accordion-button{
+    background-color: #f2f2f2 !important;
+    box-shadow: 0px 0px 0px #fff !important;
+    color: #000;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+.accordion-button:hover{
+    color: #821213 !important;
+}
+.accordion-button:first-of-type {
+    background-color: #f2f2f2 !important;
+    box-shadow: 0px 0px 0px #fff !important;
+    color: #000;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
 }
 .accordion-item:first-of-type .accordion-button{
     background-color: #f2f2f2 !important;
