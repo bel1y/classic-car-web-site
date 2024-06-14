@@ -334,7 +334,7 @@
 .cars-div-home{
     cursor: pointer;
     width: 244px;
-    min-height: 300px;
+    min-height: 330px;
     height: auto;
     margin-top: 20px;
     border-top-left-radius: 10px;
@@ -344,6 +344,7 @@
     box-shadow: 0px 0px 5px #666666;
     overflow: hidden;
     padding: 0px 0px 10px 0px;
+    position: relative;
 }
 
 .cars-div-home img{
@@ -354,7 +355,7 @@
     padding: 5px 5px;
     margin-top: 0;
     color: #000000;
-    font-size: 18px;
+    font-size: 16px;
     text-align: start !important;
     font-family: "Arimo", sans-serif;
     font-weight: 600;
@@ -363,9 +364,10 @@
     padding: 0px 5px;
     color: #a0a0a0;
     margin-top: 0;
-    font-size: 12px;
+    font-size: 14px;
     text-align: start !important;
     height: 30px ;
+    margin-top: 20px;
 }
 .price-car-home{
     padding: 5px;
@@ -373,8 +375,11 @@
     align-items: flex-end;
     justify-content: flex-end;
     color: #821213;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 550;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }
 
 
@@ -446,8 +451,10 @@
 
   .cars-div-home1{
     cursor: pointer;
-    width: 250px !important;
-    height: 320px;
+    width: 244px;
+    min-height: 330px;
+    height: auto;
+    margin-top: 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -455,6 +462,7 @@
     box-shadow: 0px 0px 5px #666666;
     overflow: hidden;
     padding: 0px 0px 10px 0px;
+    position: relative;
 }
 
 .mySwiper{
@@ -477,4 +485,21 @@
         width: 100% !important;
         margin-top: 20px;
     }
+}
+
+
+
+#special-for-this-option-select1{
+    color: #666 ;
+    font-size: 15px;
+    width: 80%;
+    margin: auto;
+}
+#special-for-this-option-select{
+    color: #000;
+    font-size: 13px ;
+    padding: 20px;
+}
+#special-for-this-option-select:hover{
+    background: #fff;
 }

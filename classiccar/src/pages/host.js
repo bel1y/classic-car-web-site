@@ -1,2 +1,2 @@
-var url ="https://car-muhammadali-back.onrender.com"
+var url ="https://api.abbas.uz"
 export default url

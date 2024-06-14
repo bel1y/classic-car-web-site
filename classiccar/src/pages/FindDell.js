@@ -100,62 +100,62 @@ export default function FindDell() {
           <div className="work_three_card">
             <div className="work_three_card_small">
               <ul>
-              {state.map((item,key)=>{
-             if(item.length < 9){
-              return <li>{item}</li>
-             }
-             else {
+        {state.map((item,key)=>{
+        if(key < 9){
+        return <li >{item}</li>
+        }
+        else {
 
-             }
-             })}
-              </ul>
-            </div>
-            <div className="work_three_card_small">
-              <ul>
-              {state.map((item,key)=>{
-             if(item.length > 9 &&  item.length < 17){
-              return <li>{item}</li>
-             }
-             else {
+        }
+        })}
+        </ul>
+      </div>
+      <div className="work_three_card_small">
+        <ul>
+        {state.map((item,key)=>{
+        if(key > 9 &&  key < 18){
+        return <li>{item}</li>
+        }
+        else {
 
-             }
-             })}
-              </ul>
-            </div>
-            <div className="work_three_card_small">
-              <ul>
-              {state.map((item,key)=>{
-             if(item.length > 17 &&  item.length < 25){
-              return <li>{item}</li>
-             }
-             else {
+        }
+        })}
+        </ul>
+      </div>
+      <div className="work_three_card_small">
+        <ul>
+        {state.map((item,key)=>{
+        if(key > 18 &&  key < 27){
+        return <li>{item}</li>
+        }
+        else {
 
-             }
-             })}
-              </ul>
-            </div>
-            <div className="work_three_card_small">
-              <ul>
-              {state.map((item,key)=>{
-             if(item.length > 25 &&  item.length < 33){
-              return <li>{item}</li>
-             }
-             else {
+        }
+        })}
+        </ul>
+      </div>
+      <div className="work_three_card_small">
+        <ul>
+        {state.map((item,key)=>{
+        if(key > 27 &&  key < 36){
+        return <li>{item}</li>
+        }
+        else {
 
-             }
-             })}
-              </ul>
-            </div>
-            <div className="work_three_card_small">
-              <ul>
-              {state.map((item,key)=>{
-             if(item.length > 33 &&  item.length < 42){
-              return <li>{item}</li>
-             }
-             else {
+        }
+        })}
+        </ul>
+      </div>
+      <div className="work_three_card_small">
+        <ul>
+        {state.map((item,key)=>{
+        if(key > 36 &&  key < 45){
+        return <li>{item}</li>
+        }
+        else {
 
-             }
-             })}
+        }
+        })}
               </ul>
             </div>
           </div>
@@ -169,64 +169,32 @@ export default function FindDell() {
         </div>
         <div className="work_three_card">
             <div className="work_three_card_small">
-              <ul id='location-in-find-dealers'>
-              {country.map((item,key)=>{
-             if(item.length < 9){
-              return <li>{item}</li>
-             }
-             else {
-
-             }
-             })}
-              </ul>
-            </div>
-            <div className="work_three_card_small">
-              <ul id='location-in-find-dealers'>
-              {country.map((item,key)=>{
-             if(item.length > 9 &&  item.length < 17){
-              return <li>{item}</li>
-             }
-             else {
-
-             }
-             })}
-              </ul>
-            </div>
-            <div className="work_three_card_small">
-              <ul>
-              {country.map((item,key)=>{
-             if(item.length > 17 &&  item.length < 25){
-              return <li>{item}</li>
-             }
-             else {
-
-             }
-             })}
-              </ul>
-            </div>
-            <div className="work_three_card_small">
-              <ul>
-              {country.map((item,key)=>{
-             if(item.length > 25 &&  item.length < 33){
-              return <li>{item}</li>
-             }
-             else {
-
-             }
-             })}
-              </ul>
-            </div>
-            <div className="work_three_card_small">
-              <ul>
-              {country.map((item,key)=>{
-             if(item.length > 33 &&  item.length < 42){
-              return <li>{item}</li>
-             }
-             else {
-
-             }
-             })}
-              </ul>
+          <ul>
+          <li>Canada (18)</li>
+          <li>Netherlands (2)</li>
+        </ul>
+      </div>
+      <div className="work_three_card_small">
+      <ul>
+          <li>Denmark (1)</li>
+        </ul>
+      </div>
+      <div className="work_three_card_small">
+      <ul>
+          <li>Italy (1)</li>
+          <li>Sweden (1)</li>
+        </ul>
+      </div>
+      <div className="work_three_card_small">
+      <ul>
+          <li>Japan (2)</li>
+        </ul>
+      </div>
+      <div className="work_three_card_small">
+      <ul>
+          <li>Mexico (1)</li>
+          <li>United Kingdom (1)</li>
+        </ul>
             </div>
           </div>
       </div>

@@ -3,6 +3,7 @@ import Navbar from './Nav'
 import Footer from './Footer'
 import '../css/edityouracc.css'
 import axios from 'axios'
+import url from './host'
 
 export default function Edityouracc() {
     const [data, setData] = useState(JSON.parse(localStorage.getItem("user")));
@@ -17,7 +18,7 @@ export default function Edityouracc() {
         formdata.append("phone", document.querySelector("#phone-for-edit").value);
     
         axios
-          .put(`https://car-muhammadali-back.onrender.com/auth/v1/users/${id}`, formdata)
+          .put(`${url}/auth/v1/users/${id}`, formdata)
           .then((res) => {
             if (document.querySelector("#password-for-edit").value == document.querySelector("#password-for-edit1").value) {
             alert("уcпешно")

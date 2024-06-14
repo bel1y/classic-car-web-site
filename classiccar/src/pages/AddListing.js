@@ -119,7 +119,7 @@ export default function AddListing() {
       formdata.append("odometer", document.querySelector("#odometer-add-listing").value);
       formdata.append("description", document.querySelector("#description-add-listing").value);
       formdata.append("title", document.querySelector("#make-add-listing").value && document.querySelector("#model-add-listing").value);
-      formdata.append("image", document.querySelector("#image-add-listing").file[0]);
+      formdata.append("image", "https://photos.classiccars.com/cc-temp/listing/183/8996/45508634-2011-bmw-1-series-thumb.jpg");
       formdata.append("state", document.querySelector("#state-add-listing").value);
       formdata.append("user_id", data.id);
       formdata.append("power_windows", true);
@@ -127,7 +127,7 @@ export default function AddListing() {
       formdata.append("power_brakes", true);
       formdata.append("engine_condition", "good");
       formdata.append("looking", 0);
-      formdata.append("all_img", document.querySelector("#image-add-listing").value);
+      // formdata.append("all_img", document.querySelector("#image-add-listing").value);
 
       axios
       .post(`${url}/api/v1/cars`, formdata)
@@ -201,21 +201,23 @@ export default function AddListing() {
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Make</p>
-        <input type="text" name="" id="make-add-listing" />
-        {/* <select name="" id="make-add-listing">
+        <select name="" id="make-add-listing" onChange={(e)=>{
+                  var a =[...category]
+                  var d=a.filter(item=>item.id==e.target.value)
+                  setSubCategory(d[0].sub)  
+                }}>
         {category.map((item) => {
       return <option value={item.id}>{item.title}</option>;
 })}
-        </select> */}
+        </select>
       </div>
       <div className="first-inside-input-acc-div-add-listing">
         <p>Model</p>
-        <input type="text" name="" id="model-add-listing" />
-        {/* <select name="" id="model-add-listing">
+        <select name="" id="model-add-listing">
         {subcategory.map((item) => {
       return <option value={item.id}>{item.title}</option>;
 })}          
-        </select> */}
+        </select>
 
       </div>
       <div className="first-inside-input-acc-div-add-listing">

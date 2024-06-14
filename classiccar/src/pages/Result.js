@@ -71,7 +71,7 @@ if(a.category && a.subcategory){
           }
         
           if (a.price_max && a.price_max.length > 0 && a.price_min && a.price_min.length > 0) {
-            res.data = res.data.filter(item =>(a.price_max*1>=item.price && a.price_min*1<=item.price))
+            res.data = res.data.filter(item => (a.price_max*1>=item.price && a.price_min*1<=item.price))
           }
 
           if (a.lacotion && a.lacotion.length > 0) {
@@ -121,9 +121,9 @@ if(a.category && a.subcategory){
           if (a.year_max && a.year_max.length > 0 && a.year_min && a.year_min.length > 0) {
             res.data = res.data.filter(item => (a.year_max*1>=item.year && a.year_min*1<=item.year))
           }
-        
+          
           if (a.price_max && a.price_max.length > 0 && a.price_min && a.price_min.length > 0) {
-            res.data = res.data.filter(item =>(a.price_max*1>=item.price && a.price_min*1<=item.price))
+            res.data = res.data.filter(item => (a.price_max*1>=item.price && a.price_min*1<=item.price))
           }
 
           if (a.lacotion && a.lacotion.length > 0) {
@@ -270,130 +270,89 @@ if(a.category && a.subcategory){
       <Nav />
       <h1>Classic Cars for Sale</h1>
       <h3>Classifieds for Classic Cars. New listings are added daily.</h3>
-      <h5><b>{data.length}</b> vehicles matched. Page 1 of <b>{Math.ceil(data.length / 1.5)}</b>. 15 results per page.</h5>
+      <h5><b>{data.length}</b> vehicles matched. Page <b>1</b> of <b>{Math.ceil(data.length / 15)}</b>. 15 results per page.</h5>
 
       <div className="df-result-div-big">
       <div className="accordion-home">
-          <Accordion defaultActiveKey="0">
-          
-                <Accordion.Item eventKey="1">
-                  <Accordion.Header>Popular Searches <FaCaretDown /></Accordion.Header>
-                  <Accordion.Body>  
-                    {category1.map((item, key) => {
-if(key < 3){
-  return <>
-  <p
-    onClick={() =>
-      (window.location = `/listings-find/1?category=${item.id}`)
-    }
-  >
-    {item.title}
-  </p>
-  </>
-}
-if(key > 3 && key < 6){
-  return <>
-  <p
-    onClick={() =>
-      (window.location = `/listings-find/1?category=${item.id}`)
-    }
-  >
-    {item.title}
-  </p>
-  </>
-}
-if(key > 9 && key < 15){
-  return <>
-  <p
-    onClick={() =>
-      (window.location = `/listings-find/1?category=${item.id}`)
-    }
-  >
-    {item.title}
-  </p>
-  </>
-}
-                          
-                        
-            })}
-                    {subcategory.map((item, key) => {
-if(key < 3){
-  return <>
-  <p
-    onClick={() =>
-      (window.location = `/listings-find/1?subcategory=${item.id}`)
-    }
-  >
-    {item.title}
-  </p>
-  </>
-}
-if(key > 3 && key < 6){
-  return <>
-  <p
-    onClick={() =>
-      (window.location = `/listings-find/1?category=${item.id}`)
-    }
-  >
-    {item.title}
-  </p>
-  </>
-}
-if(key > 9 && key < 15){
-  return <>
-  <p
-    onClick={() =>
-      (window.location = `/listings-find/1?category=${item.id}`)
-    }
-  >
-    {item.title}
-  </p>
-  </>
-}
-                          
-                        
-            })}
-                  </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="2">
-                  <Accordion.Header>Browse By Category <FaCaretDown /></Accordion.Header>
-                  <Accordion.Body>  
-                    {category1.map((item, key) => {
-                        if(item.title.length < 11){
-                          return (
-                            <p
-                              onClick={() =>
-                                (window.location = `/listings-find/1?category=${item.id}`)
-                              }
-                            >
-                              {item.title}
-                            </p>
-                            );
-                        }
-            })}
-                  </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="3">
-                  <Accordion.Header>Browse By Make <FaCaretDown /></Accordion.Header>
-                  <Accordion.Body>  
-                    {subcategory.map((item, key) => {
-                        if(item.title.length < 11){
-                          return (
-                            <p
-                              onClick={() =>
-                                (window.location = `/listings-find/1?subcategory=${item.id}`)
-                              }
-                            >
-                              {item.title}
-                            </p>
-                            );
-                        }
-            })}
-                  </Accordion.Body>
-                </Accordion.Item>
-              
-          </Accordion>
-        </div>
+
+<Accordion defaultActiveKey={['0']} alwaysOpen>
+<Accordion.Item eventKey="0">
+<Accordion.Header>Popular Searches <FaCaretDown /></Accordion.Header>
+<Accordion.Body>
+<p onClick={()=>{
+        window.location="/listings-find/1?category=10&&subcategory=340"
+      }}>Chevrolet Corvette</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?category=16&&subcategory=593"
+      }}>Ford Mustang</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?category=10&&subcategory=330"
+      }}>Chevrolet Camaro</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?category=10&&subcategory=328"
+      }}>Chevrolet C10</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?category=10&&subcategory=335"
+      }}>Chevrolet Chevelle</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?category=10&&subcategory=347"
+      }}>Chevrolet Impala</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?category=16&&subcategory=607"
+      }}>Ford Thunderbird</p>
+</Accordion.Body>
+</Accordion.Item>
+<Accordion.Item eventKey="1">
+<Accordion.Header>Browse By Category <FaCaretDown /></Accordion.Header>
+<Accordion.Body>
+<p onClick={()=>{
+        window.location="/listings-find/1?price_min=250000&&price_max=1000000000000"
+      }}>$250,000 and Up</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?year_min=1800&&year_max=1950"
+      }}>Antiques / Pre-War</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?year_min=1900&&year_max=2001"
+      }}>Convertibles</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?year_min=1974&&year_max=2030"
+      }}>Future Classics</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?year_min=2020&&year_max=2030"
+      }}>Luxury Performance</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?category=18"
+      }}>Motorcycles</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?year_min=1900&&year_max=2001"
+      }}>Muscle Cars</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?year_min=1900&&year_max=2001"
+      }}>Newest Listings</p>
+      <p onClick={()=>{
+        window.location="/listings-find/1?price_min=0&&price_max=5000"
+      }}>Under $5,000</p>
+</Accordion.Body>
+</Accordion.Item>
+<Accordion.Item eventKey="2">
+<Accordion.Header>Browse By Make <FaCaretDown /></Accordion.Header>
+<Accordion.Body>
+{category.map((item, key) => {
+          return (
+            <p
+              onClick={() =>
+                (window.location = `/listings-find/1?category=${item.id}`)
+              }
+            >
+              {item.title} ({item .count})
+            </p>
+          )
+      })}
+</Accordion.Body>
+</Accordion.Item>
+</Accordion>
+</div>
+
         <div className="zillions-big-div-result-block">
           <div className="search-tools-dig-div">
             <div className="first-div-search-tools-result">
@@ -493,12 +452,12 @@ if(key > 9 && key < 15){
                 <div className="first-text-result-div">
                   <div className="inside-little-result-div">
                     <p>Featured Private Seller</p>
-                    <span>CC-{item.id}</span>
+                    <span>{item.listing_id}</span>
                   </div>
-                  <h4> {item.year} {item.title}</h4>
-                  <p>{item.description}</p>
+                  <h4>{item.title}</h4>
+                  <p>{item.description.slice(0, 100)}...</p>
                   <div className="df-delete-and-price-result">
-                    <p>${item.price}</p>
+                    <p>{item.price}</p>
                   </div>
                 </div>
               </div>

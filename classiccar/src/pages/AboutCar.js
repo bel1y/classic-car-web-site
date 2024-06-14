@@ -73,17 +73,23 @@ if (user == null) {
     send+="Phone:   "+document.querySelector('#phone-client').value+`%0A`
     send+="Massege:   "+document.querySelector('#message-for-seller').value+`%0A`
     send+="Brand:   "+data.make+`%0A`
-    send+="Model:   "+data.model+`%0A`
+    send+="Model:   "+data.model+`%0A`  
     send+="CC-code:   "+data.id+`%0A`
     send+="Image:"+data.image+`%0A`
-    axios.get(`https://api.telegram.org/bot7326404876:AAG03IuYZsYcwMNviDe7HWwzrQadTGdBv_M/sendMessage?chat_id=-4228816402&text=${send}`)
+    axios.get(`https://api.telegram.org/bot7326404876:AAG03IuYZsYcwMNviDe7HWwzrQadTGdBv_M/sendMessage?chat_id=-1002225115585&text=${send}`)
+    .then(res=>{
+      alert( "Wait for an answer.  Our operator will contact you"
+      )
+    })
   }
 
   return (
     <div className='big-div-about-car'>
         <Navbar/>
         {id}
-        <h1 className='h1-aboutcar-div'>For Sale: 1955 Chrysler 300 in Bozeman, Montana</h1>
+        {[data].map(item=>{
+          return <h1 className='h1-aboutcar-div'>For Sale: {item.title} in {item.location}</h1>
+        })} 
         <div className="df-anons-aboutcar">
             <div className="first-anons-aboutcar">
     <img src={hangerty} alt="" />
@@ -155,16 +161,16 @@ return <SwiperSlide>
     {[data].map(item=>{
       return     <table className='table-in-aboutcar'>
       <tr className='first-tr-in-table-aboutcar'>
-        <th>1955 Ford 46 Custom</th>
+        <th>{item.title}</th>
         <th></th>
       </tr>
       <tr className='first-tr-in-table-aboutcar1'>
         <td>Listing ID:</td>
-        <td>CC-{item.id}</td>
+        <td>{item.listing_id}</td>
       </tr>
       <tr className='first-tr-in-table-aboutcar'>
         <td>Price:</td>
-        <td className='special-for-color-aboutcar'>${item.price}</td>
+        <td className='special-for-color-aboutcar'>{item.price}</td>
       </tr>
       <tr className='first-tr-in-table-aboutcar1'>
         <td>Location:</td>

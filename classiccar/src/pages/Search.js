@@ -73,9 +73,7 @@ export default function Search() {
       document.querySelector("#price-search1").value
     }&&looking=${document.querySelector("#looking-search").value}`;
   }
-  function openresult1() {
-    window.location = `/listings-find/1?category=&&subcategory=&&count=15&&lacotion=&&sortterm=1&&description=&&year_min=&&year_max=&&price_min=&&price_max=&&looking=1`;
-  }
+
 
   function BigButton1() {
     document.querySelector(".button-search1").style =
@@ -135,7 +133,7 @@ export default function Search() {
   }
 
   function searchfromccnumber() {
-    window.location = `/about-car/${
+    window.location = `/about-car1/${
       document.querySelector("#cc-number-searching").value
     }`;
   }
@@ -196,7 +194,11 @@ export default function Search() {
                 <h3>Vehicle:</h3>
                 <div className="select-search-div">
                   <p>Make</p>
-                  <select name="" id="select-search">
+                  <select name="" id="select-search" onChange={(e)=>{
+                  var a =[...category]
+                  var d=a.filter(item=>item.id==e.target.value)
+                  setSubCategory(d[0].sub)  
+                }}>
                     <option value=""></option>
                     {category.map((item) => {
                       return <option value={item.id}>{item.title}</option>;
