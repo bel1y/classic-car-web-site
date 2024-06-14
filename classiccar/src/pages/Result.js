@@ -48,6 +48,7 @@ if(a.category && a.subcategory){
           axios.get(`${url}/api/v1/category`).then(res2 => {
             setCategory(res2.data)
           })
+      
           if (a.count && a.count.length > 0) {
             document.querySelector('#selectpage').value=a.count
             renderP(res.data, a.count)
@@ -71,7 +72,13 @@ if(a.category && a.subcategory){
           }
         
           if (a.price_max && a.price_max.length > 0 && a.price_min && a.price_min.length > 0) {
-            res.data = res.data.filter(item => (a.price_max*1>=item.price && a.price_min*1<=item.price))
+            console.log(res.data,"sd");
+            res.data = res.data.filter(item => {
+              var  price = typeof item.price === 'string' ? parseFloat(item.price.replace(/[$,(OBO)]/g, '')) : item.price;
+             
+
+            
+            return  a.price_max*1>=price && a.price_min*1<=price})
           }
 
           if (a.lacotion && a.lacotion.length > 0) {
@@ -106,6 +113,15 @@ if(a.category && a.subcategory){
           })
          
         
+         if (a.price_max && a.price_max.length > 0 && a.price_min && a.price_min.length > 0) {
+          console.log(res.data,"sd");
+          res.data = res.data.filter(item => {
+            var  price = typeof item.price === 'string' ? parseFloat(item.price.replace(/[$,(OBO)]/g, '')) : item.price;
+           
+
+          
+          return  a.price_max*1>=price && a.price_min*1<=price})
+        }
           if (a.looking && a.looking.length > 0) {
             document.querySelector('#oreders1').value=a.looking
             if (a.looking == 1) {
@@ -122,9 +138,7 @@ if(a.category && a.subcategory){
             res.data = res.data.filter(item => (a.year_max*1>=item.year && a.year_min*1<=item.year))
           }
           
-          if (a.price_max && a.price_max.length > 0 && a.price_min && a.price_min.length > 0) {
-            res.data = res.data.filter(item => (a.price_max*1>=item.price && a.price_min*1<=item.price))
-          }
+       
 
           if (a.lacotion && a.lacotion.length > 0) {
             console.log(a.lacotion);
